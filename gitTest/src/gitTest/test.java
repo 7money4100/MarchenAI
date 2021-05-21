@@ -7,8 +7,8 @@ public class test {
 		System.out.println("dkdfkwjflwejo");
 		
 		System.out.println("수정 1차");
-		
-		System.out.println("안녕하세여");
+		System.out.println("asdf");
+		System.out.println("안녕하세여222");
 	}
 
 }
