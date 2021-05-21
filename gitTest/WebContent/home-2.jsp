@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="UTF-8"%>
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
- <title>Luma - Webflow Ecommerce website template</title>
+  <meta charset="utf-8">
+  <title>Luma - Webflow Ecommerce website template</title>
   <meta content="A sleek, modern (and free) retail template that will keep the attention on your products. Take full control of the colors, web fonts, images, and other styles that make your brand shine." name="description">
   <meta content="Luma - Webflow Ecommerce website template" property="og:title">
   <meta content="A sleek, modern (and free) retail template that will keep the attention on your products. Take full control of the colors, web fonts, images, and other styles that make your brand shine." property="og:description">
-  <meta content="https://uploads-ssl.webflow.com/5d9d08afa8a650dd43830c03/5db6e65183d31e01125ee94b_grit-og.png" property="og:image">
+  <meta content="https://uploads-ssl.webflow.com/5d9c8fcaca1c6c013b521b95/5dc23e129dcd8e59a2a18652_luma-og.jpg" property="og:image">
   <meta content="Luma - Webflow Ecommerce website template" property="twitter:title">
   <meta content="A sleek, modern (and free) retail template that will keep the attention on your products. Take full control of the colors, web fonts, images, and other styles that make your brand shine." property="twitter:description">
-  <meta content="https://uploads-ssl.webflow.com/5d9d08afa8a650dd43830c03/5db6e65183d31e01125ee94b_grit-og.png" property="twitter:image">
+  <meta content="https://uploads-ssl.webflow.com/5d9c8fcaca1c6c013b521b95/5dc23e129dcd8e59a2a18652_luma-og.jpg" property="twitter:image">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -25,7 +25,6 @@
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
-<title>Insert title here</title>
 </head>
 <body>
   <a id="notification" data-w-id="fc560965-213c-5f5a-18ab-3a6cb5c55beb" href="https://webflow.com/website/Prospero-Ecommerce-UI-Kit" target="_blank" class="notification-link-wrap w-inline-block">
@@ -46,7 +45,7 @@
         <nav role="navigation" class="nav1-menu w-nav-menu">
           <a href="index.jsp" class="nav-link w-nav-link">Home</a>
           <a href="all-products.jsp" class="nav-link w-nav-link">Our Products</a>
-          <a href="about.jsp" aria-current="page" class="nav-link w-nav-link w--current">About</a>
+          <a href="about.jsp" class="nav-link w-nav-link">About</a>
           <a href="contact.jsp" class="nav-link w-nav-link">Contact</a>
           <a href="blog.jsp" class="nav-link w-nav-link">Blog</a>
           <a href="help/styleguide.jsp" class="nav-link w-nav-link">Styleguide</a>
@@ -132,123 +131,202 @@
       </div>
     </div>
   </div>
+  <div class="wrapper m0-100">
+    <div class="w-dyn-list">
+      <div role="list" class="w-dyn-items">
+        <div role="listitem" class="w-dyn-item">
+          <div class="hero-with-background-wrap hero2-wrap">
+            <div class="w-layout-grid hero2-grid">
+              <div id="w-node-_1c8e674e-3cef-b4ac-3e58-e51f03a48609-413fd68f" class="hero2-content">
+                <div class="hero2-title">
+                  <div class="size1-text">Thoughtfully curated modern lighting fixtures</div>
+                  <p class="paragraph-70">Create inspiring, beautifully illuminated rooms. Review our wide selection of stylish contemporary lamps for living room, bedroom, bath and kitchen—and get enlightened about modern design.</p>
+                </div>
+                <a href="all-products.jsp" class="hero2-latest w-inline-block">
+                  <div class="hero2-image-collection"></div>
+                  <div>
+                    <div class="size5-text">Meet the Bola Halo</div>
+                    <div class="paragraph-70">Create inspiring, beautifully illuminated rooms. Review our wide selection of stylish contemporary lamps for living room or bedroom.</div>
+                  </div>
+                </a>
+                <a data-w-id="1c8e674e-3cef-b4ac-3e58-e51f03a48616" href="all-products.jsp" class="button-large hero3-button w-inline-block">
+                  <div>Shop Lighting</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
+                </a>
+              </div>
+              <div id="w-node-_1c8e674e-3cef-b4ac-3e58-e51f03a4861a-413fd68f" class="hero2-product">
+                <a href="#" class="hero2-product-name-link-wrap w-inline-block">
+                  <p class="hero2-product-name"></p>
+                </a>
+                <p class="hero2-product-price"></p>
+              </div>
+            </div>
+            <div class="w-layout-grid hero2-background">
+              <div id="w-node-_1c8e674e-3cef-b4ac-3e58-e51f03a48621-413fd68f" class="hero2-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="empty-state w-dyn-empty">
+        <div>No items found.</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper m0-100">
+    <div class="section">
+      <div class="w-dyn-list">
+        <div role="list" class="product2-grid w-dyn-items">
+          <div id="w-node-_049bf1f7-3a3a-4d9b-d5e9-5c4146cdc1cf-413fd68f" role="listitem" class="w-dyn-item">
+            <div id="w-node-_049bf1f7-3a3a-4d9b-d5e9-5c4146cdc1d0-413fd68f" class="product2-content-wrap">
+              <div class="text-label spaced-word-label">Trending</div>
+              <div class="product2-content-card-wrap">
+                <div class="product2-name-wrap">
+                  <a href="#" class="size3-link"></a>
+                  <div class="paragraph-70"></div>
+                </div>
+                <a data-w-id="049bf1f7-3a3a-4d9b-d5e9-5c4146cdc1d6" href="#" class="button-text w-inline-block">
+                  <div class="button-label">Explore All Products</div><img src="images/arrow-dark2x.svg" alt="" class="button-arrow">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="empty-state w-dyn-empty">
+          <div>No items found.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="w-layout-grid headline-grid">
+      <div id="w-node-ef7261df-8462-f5ef-5504-5680af4d03bb-413fd68f" class="headline-wrap-centered">
+        <div class="text-label">Explore</div>
+        <div class="size3-text size3-bottom-clear">All Our Products</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper m80-50">
+    <div class="section">
+      <div class="w-dyn-list">
+        <div role="list" class="product3-grid w-dyn-items">
+          <div id="w-node-fd262acb-b615-e409-b1c0-cbb3072deee2-413fd68f" role="listitem" class="w-dyn-item">
+            <div class="image-wrap">
+              <a data-w-id="fd262acb-b615-e409-b1c0-cbb3072deee4" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Product</div>
+                </div>
+              </a>
+              <div class="product-image product-image-size-l">
+                <div class="label inside-label">Featured</div>
+                <div class="label black-label sale-label">On Sale</div>
+              </div>
+            </div>
+            <div class="product3-content-wrap">
+              <a href="#" class="size6-link"></a>
+              <div class="size4-text"></div>
+            </div>
+          </div>
+        </div>
+        <div class="empty-state w-dyn-empty">
+          <div>No items found.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="content">
+      <a data-w-id="b25b777e-97cb-7f36-0061-514a82f1e76d" href="all-products.jsp" class="button-small w-inline-block">
+        <div class="button-label">View All Products</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
+      </a>
+    </div>
+  </div>
   <div class="wrapper m100">
+    <div class="home2-deco-part"></div>
+  </div>
+  <div class="wrapper m0-100">
     <div class="section">
-      <div class="w-layout-grid content6-grid">
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1d0-e23fd67b" class="content6-headline-grid">
-          <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1d1-e23fd67b" class="content6-headline-wrap">
-            <div class="text-label">Stylish modern lighting options</div>
-            <div class="size1-text">Thoughtfully curated modern lighting fixtures</div>
-            <p class="paragraph-70">Create inspiring, beautifully illuminated rooms. Review our wide selection of stylish contemporary lamps for living room, bedroom, bath and kitchen—and get enlightened about modern design.</p>
+      <div class="w-layout-grid content7-grid">
+        <div id="w-node-b9822256-bcec-35dd-9e7b-33e4c0cdd70a-413fd68f" class="content7-content-wrap">
+          <div>
+            <div class="size1-text">Circa is designed for versatility and portability.</div>
+            <div class="paragraph-70">Circa’s revolutionary flat-panel LED technology combines seamless movement with warm, even light.</div>
           </div>
         </div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1da-e23fd67b" class="content6-image1"></div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1db-e23fd67b" class="content6-image2"></div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1dc-e23fd67b" class="content6-image3"></div>
+        <div id="w-node-b9822256-bcec-35dd-9e7b-33e4c0cdd710-413fd68f" class="content7-image"></div>
       </div>
     </div>
   </div>
-  <div class="wrapper m20">
+  <div class="wrapper m0-100">
     <div class="section">
-      <div class="w-layout-grid content16-grid">
-        <div id="w-node-_15579270-7173-ae0f-f9a7-7d9d44b340ab-e23fd67b" class="content16-left-column">
-          <div class="content16-headline-wrap">
-            <div class="text-label">Let there be light</div>
-            <div class="size1-text">Stylish modern lighting options<br></div>
-            <p class="paragraph-70">The living room is easily the hardest working room in the house, as its entire purpose to serve multiple key functions all in one shared space. The goal is to make everyday living just a little easier, and to make a communal space a little more enticing.</p>
+      <div class="w-layout-grid blog3-grid">
+        <div id="w-node-e5e1a5e5-8b7c-13b4-a5d6-0df72ade44bc-413fd68f" class="blog3-headline-wrap">
+          <div class="text-label">OUR ARTICLES<br></div>
+          <div class="size3-text">Genius Blog Posts about the Use of Lighting in Your Home<br></div>
+        </div>
+        <div id="w-node-e5e1a5e5-8b7c-13b4-a5d6-0df72ade44c2-413fd68f" class="w-dyn-list">
+          <div role="list" class="grid w-dyn-items">
+            <div id="w-node-e5e1a5e5-8b7c-13b4-a5d6-0df72ade44c4-413fd68f" role="listitem" class="w-dyn-item">
+              <div class="blog3-image">
+                <div class="blog3-content-wrap">
+                  <div>
+                    <div class="label white-outline-label">News</div>
+                    <a href="#" class="blog3-link"></a>
+                  </div>
+                  <div>
+                    <a data-w-id="e5e1a5e5-8b7c-13b4-a5d6-0df72ade44cc" href="#" class="button-small white-small w-inline-block">
+                      <div class="button-label">Explore</div><img src="images/arrow-dark2x.svg" alt="" class="button-arrow">
+                    </a>
+                  </div>
+                </div>
+                <div class="blog3-image-dark-overlay"></div>
+              </div>
+            </div>
           </div>
-          <a data-w-id="15579270-7173-ae0f-f9a7-7d9d44b340b6" href="all-products.jsp" class="button-small w-inline-block">
-            <div class="button-label">Shop Lighting</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
-          </a>
+          <div class="empty-state w-dyn-empty">
+            <div>No items found.</div>
+          </div>
         </div>
-        <p id="w-node-_15579270-7173-ae0f-f9a7-7d9d44b340ba-e23fd67b" class="paragraph-70">Lighting does not just illuminate your home. It actually creates an ambiance and functions like any other piece of decor. Simply put, the fixture you choose can make or break your space.<br><br>Pablo’s designs have been propelled to the forefront of American contemporary lighting by an uncompromising devotion to simplicity and utility. By fusing the highest technical sensibilities with the most appropriate material palette, Pablo is able to create unique, timeless designs with the power to transform any environment.<br><br>Looking for a way to make your outdoor and indoor spaces shine this summer? From ceilings draped in LED lights to shimmering outdoor patios, here are eight illuminating ways to dress up your home with lighting.<br><br>If you’ve ever rented or bought a house, you know that lighting can make or break an entire space. From dingy overhead lighting to fluorescent bathroom lights, the wrong lighting can be the difference between a good mood and a bad day.</p>
-      </div>
-    </div>
-  </div>
-  <div class="wrapper m100-50">
-    <div class="section">
-      <div class="w-layout-grid content17-grid">
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca743f3-e23fd67b" class="content17-headline-wrap">
-          <div class="text-label">People Behind the Lights</div>
-          <div class="size3-text">Meet our team<br></div>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca743f9-e23fd67b">
-          <div class="content17-author-pic content17-image1"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Calvin Holmes<br></div>
-          <p class="paragraph-70">The multidisciplinary designer specializes in furniture for the contract, hospitality and residential markets, as well as lighting, packaging.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74403-e23fd67b">
-          <div class="content17-author-pic content17-image2"></div>
-          <div class="text-label">Store Manager</div>
-          <div class="size4-text">Ellen Webb<br></div>
-          <p class="paragraph-70">Based in Amsterdam and Milan, Webb’s creative process begins with materiality and an empirical approach that is highly experimental.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7440d-e23fd67b">
-          <div class="content17-author-pic content17-image3"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Ivan Daniel<br></div>
-          <p class="paragraph-70">Interested in how the pragmatism of the traditional craftsman can create new design, he focuses on simplicity to spur technical innovations.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74417-e23fd67b">
-          <div class="content17-author-pic content17-image4"></div>
-          <div class="text-label">Store Manager</div>
-          <div class="size4-text">Daisy Bradley<br></div>
-          <p class="paragraph-70">Born in Venezuela, Daisy is a prolific designer with over twenty years of experience creating products for the transportation and consumer electronics.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74421-e23fd67b">
-          <div class="content17-author-pic content17-image5"></div>
-          <div class="text-label">Blog Writer</div>
-          <div class="size4-text">Elmer Walton<br></div>
-          <p class="paragraph-70">Interested in how the pragmatism of the traditional craftsman can create new design, he focuses on simplicity to spur technical innovations.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7442b-e23fd67b">
-          <div class="content17-author-pic content17-image6"></div>
-          <div class="text-label">Marketing</div>
-          <div class="size4-text">Ronnie Kelly<br></div>
-          <p class="paragraph-70">Born in Portugal, Kelly is a prolific designer with over twenty years of experience creating products for the transportation and consumer electronics.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74435-e23fd67b">
-          <div class="content17-author-pic content17-image7"></div>
-          <div class="text-label">Marketing</div>
-          <div class="size4-text">Bettie Walker<br></div>
-          <p class="paragraph-70">The multidisciplinary designer specializes in furniture for the contract, hospitality and residential markets, as well as lighting, packaging.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7443f-e23fd67b">
-          <div class="content17-author-pic content17-image8"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Francis Cobb<br></div>
-          <p class="paragraph-70">Based in Amsterdam and Milan, Cobb’s creative process begins with materiality and an empirical approach that is highly experimental.<br></p>
+        <div id="w-node-e5e1a5e5-8b7c-13b4-a5d6-0df72ade44d4-413fd68f" class="w-dyn-list">
+          <div role="list" class="w-dyn-items">
+            <div role="listitem" class="w-dyn-item">
+              <div class="blog3-image">
+                <div class="blog3-content-wrap">
+                  <div>
+                    <div class="label white-outline-label">News</div>
+                    <a href="#" class="blog3-link"></a>
+                  </div>
+                  <div>
+                    <a data-w-id="e5e1a5e5-8b7c-13b4-a5d6-0df72ade44de" href="#" class="button-small white-small w-inline-block">
+                      <div class="button-label">Explore</div><img src="images/arrow-dark2x.svg" alt="" class="button-arrow">
+                    </a>
+                  </div>
+                </div>
+                <div class="blog3-image-dark-overlay"></div>
+              </div>
+            </div>
+          </div>
+          <div class="empty-state w-dyn-empty">
+            <div>No items found.</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="wrapper m100">
+  <div class="wrapper m50-100">
     <div class="section">
-      <div class="w-layout-grid content24-grid">
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8a-e23fd67b" class="content24-quote">&quot;Bel Occhio is a study in weightlessness and transparency,” notes designer Pablo Pardo on his inspiration for this luminaire.&quot;</div>
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8c-e23fd67b" class="content24-image"></div>
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8d-e23fd67b">
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Transformative Light</div>
-              <p class="paragraph-70">Provides both focused and ambient illumination.<br></p>
-            </div>
+      <div class="w-layout-grid cta8-grid">
+        <div id="w-node-fd837f25-dc92-e7f3-49c0-d2094fa8efec-413fd68f" class="cta8-content-wrap">
+          <div class="cta8-headline-wrap">
+            <div class="size3-text">Subscribe to our newsletter<br></div>
+            <p class="paragraph-70">Stay up to date with our newest collections, latest deals and special offers! We announce new collection every three weeks so be sure to stay in touch to catch the hottest pieces for you.<br></p>
           </div>
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Two-In-One<br></div>
-              <p class="paragraph-70">Designed for pendant and tabletop applications.<br></p>
-            </div>
+        </div>
+        <div id="w-node-fd837f25-dc92-e7f3-49c0-d2094fa8eff4-413fd68f" class="cta8-form w-form">
+          <form id="email-form" name="email-form" data-name="Email Form" class="cta8-form-wrap w-node-fd837f25-dc92-e7f3-49c0-d2094fa8eff5-413fd68f"><input type="email" class="text-field w-node-fd837f25-dc92-e7f3-49c0-d2094fa8eff6-413fd68f w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Enter your email" id="email-2" required=""><input type="email" class="text-field w-node-fd837f25-dc92-e7f3-49c0-d2094fa8eff7-413fd68f w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Enter your number" id="email-2" required=""><input type="email" class="text-field w-node-fd837f25-dc92-e7f3-49c0-d2094fa8eff8-413fd68f w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Enter your email" id="email-2" required=""><input type="submit" value="Submit" data-wait="Please wait..." id="w-node-fd837f25-dc92-e7f3-49c0-d2094fa8eff9-413fd68f" class="button-small form-centered-button w-button"></form>
+          <div class="success-message w-form-done">
+            <div>Thank you! Your submission has been received!</div>
           </div>
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Light Anywhere You Want It<br></div>
-              <p class="paragraph-70">Infinite adjustment with the touch of a hand.<br></p>
-            </div>
+          <div class="error-message w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
           </div>
         </div>
       </div>
@@ -261,13 +339,13 @@
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f7f1-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Pages</div>
             <a href="index.jsp" class="footer1-link">Homepage</a>
-            <a href="home-2.jsp" class="footer1-link">Homepage 2</a>
+            <a href="home-2.jsp" aria-current="page" class="footer1-link w--current">Homepage 2</a>
             <a href="blog.jsp" class="footer1-link">Blog</a>
             <a href="all-products.jsp" class="footer1-link">All Products</a>
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f7fa-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Subpages</div>
-            <a href="about.jsp" aria-current="page" class="footer1-link w--current">About</a>
+            <a href="about.jsp" class="footer1-link">About</a>
             <a href="about-2.jsp" class="footer1-link">About 2</a>
             <a href="contact.jsp" class="footer1-link">Contact</a>
             <a href="contact-2.jsp" class="footer1-link">Contact 2</a>

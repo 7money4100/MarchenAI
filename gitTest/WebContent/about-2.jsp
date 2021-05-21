@@ -43,13 +43,13 @@
       <a href="#" id="w-node-_8bdc9590-22a2-e972-4daa-ca5062e76206-62e76204" class="brand w-nav-brand"><img src="images/LUMA.svg" alt=""></a>
       <div id="w-node-_8bdc9590-22a2-e972-4daa-ca5062e76209-62e76204" class="nav1-menu-wrap">
         <nav role="navigation" class="nav1-menu w-nav-menu">
-          <a href="index.html" class="nav-link w-nav-link">Home</a>
-          <a href="all-products.html" class="nav-link w-nav-link">Our Products</a>
-          <a href="about.html" class="nav-link w-nav-link">About</a>
-          <a href="contact.html" class="nav-link w-nav-link">Contact</a>
-          <a href="blog.html" class="nav-link w-nav-link">Blog</a>
-          <a href="help/styleguide.html" class="nav-link w-nav-link">Styleguide</a>
-          <a href="help/license.html" class="nav-link w-nav-link">License</a>
+          <a href="index.jsp" class="nav-link w-nav-link">Home</a>
+          <a href="all-products.jsp" class="nav-link w-nav-link">Our Products</a>
+          <a href="about.jsp" class="nav-link w-nav-link">About</a>
+          <a href="contact.jsp" class="nav-link w-nav-link">Contact</a>
+          <a href="blog.jsp" class="nav-link w-nav-link">Blog</a>
+          <a href="help/styleguide.jsp" class="nav-link w-nav-link">Styleguide</a>
+          <a href="help/license.jsp" class="nav-link w-nav-link">License</a>
         </nav>
         <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart">
           <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block"><img src="images/Cart-Icon2x_1Cart-Icon2x.png" width="16" alt="">
@@ -108,14 +108,14 @@
                       <div style="position:relative" data-wf-paypal-button="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;color&quot;:&quot;black&quot;,&quot;shape&quot;:&quot;rect&quot;,&quot;label&quot;:&quot;paypal&quot;,&quot;tagline&quot;:false,&quot;note&quot;:false}" class="paypal">
                         <div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;z-index:999;cursor:auto"></div>
                       </div>
-                      <a href="checkout.html" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton button-small white-small" data-loading-text="Hang Tight...">Continue to Checkout</a>
+                      <a href="checkout.jsp" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton button-small white-small" data-loading-text="Hang Tight...">Continue to Checkout</a>
                     </div>
                   </div>
                 </form>
                 <div class="w-commerce-commercecartemptystate empty-state dark-cart-empty-state">
                   <div>No items found.</div>
                   <div class="keep-shopping-button-wrap">
-                    <a data-w-id="7fd4a83d-fa61-1e98-2570-9f9b65c13f7e" href="all-products.html" class="button-small white-small w-inline-block">
+                    <a data-w-id="7fd4a83d-fa61-1e98-2570-9f9b65c13f7e" href="all-products.jsp" class="button-small white-small w-inline-block">
                       <div class="button-label">Keep Shopping</div><img src="images/arrow-dark2x.svg" alt="" class="button-arrow">
                     </a>
                   </div>
@@ -207,7 +207,7 @@
             <div class="size1-text">Stylish modern lighting options<br></div>
             <p class="paragraph-70">The living room is easily the hardest working room in the house, as its entire purpose to serve multiple key functions all in one shared space. The goal is to make everyday living just a little easier, and to make a communal space a little more enticing.</p>
           </div>
-          <a data-w-id="b2fb4585-c262-cfb0-fb76-8ccc82219193" href="all-products.html" class="button-small w-inline-block">
+          <a data-w-id="b2fb4585-c262-cfb0-fb76-8ccc82219193" href="all-products.jsp" class="button-small w-inline-block">
             <div class="button-label">Shop Lighting</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
           </a>
         </div>
@@ -221,23 +221,23 @@
         <div class="w-layout-grid footer1-grid"><img src="images/Luma-Logo.svg" id="w-node-ad9fe897-5290-7c85-17ea-ecb6e10ff8ce-c739f7eb" alt="" class="image">
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f7f1-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Pages</div>
-            <a href="index.html" class="footer1-link">Homepage</a>
-            <a href="home-2.html" class="footer1-link">Homepage 2</a>
-            <a href="blog.html" class="footer1-link">Blog</a>
-            <a href="all-products.html" class="footer1-link">All Products</a>
+            <a href="index.jsp" class="footer1-link">Homepage</a>
+            <a href="home-2.jsp" class="footer1-link">Homepage 2</a>
+            <a href="blog.jsp" class="footer1-link">Blog</a>
+            <a href="all-products.jsp" class="footer1-link">All Products</a>
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f7fa-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Subpages</div>
-            <a href="about.html" class="footer1-link">About</a>
-            <a href="about-2.html" aria-current="page" class="footer1-link w--current">About 2</a>
-            <a href="contact.html" class="footer1-link">Contact</a>
-            <a href="contact-2.html" class="footer1-link">Contact 2</a>
+            <a href="about.jsp" class="footer1-link">About</a>
+            <a href="about-2.jsp" aria-current="page" class="footer1-link w--current">About 2</a>
+            <a href="contact.jsp" class="footer1-link">Contact</a>
+            <a href="contact-2.jsp" class="footer1-link">Contact 2</a>
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f805-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Additional</div>
-            <a href="promo-page.html" class="footer1-link">Promo Page (Uma)</a>
-            <a href="help/styleguide.html" class="footer1-link">Styleguide</a>
-            <a href="help/license.html" class="footer1-link">License</a>
+            <a href="promo-page.jsp" class="footer1-link">Promo Page (Uma)</a>
+            <a href="help/styleguide.jsp" class="footer1-link">Styleguide</a>
+            <a href="help/license.jsp" class="footer1-link">License</a>
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f80e-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Social Networks</div>

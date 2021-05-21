@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="UTF-8"%>
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
- <title>Luma - Webflow Ecommerce website template</title>
+  <meta charset="utf-8">
+  <title>Luma - Webflow Ecommerce website template</title>
   <meta content="A sleek, modern (and free) retail template that will keep the attention on your products. Take full control of the colors, web fonts, images, and other styles that make your brand shine." name="description">
   <meta content="Luma - Webflow Ecommerce website template" property="og:title">
   <meta content="A sleek, modern (and free) retail template that will keep the attention on your products. Take full control of the colors, web fonts, images, and other styles that make your brand shine." property="og:description">
@@ -25,7 +25,6 @@
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
-<title>Insert title here</title>
 </head>
 <body>
   <a id="notification" data-w-id="fc560965-213c-5f5a-18ab-3a6cb5c55beb" href="https://webflow.com/website/Prospero-Ecommerce-UI-Kit" target="_blank" class="notification-link-wrap w-inline-block">
@@ -46,7 +45,7 @@
         <nav role="navigation" class="nav1-menu w-nav-menu">
           <a href="index.jsp" class="nav-link w-nav-link">Home</a>
           <a href="all-products.jsp" class="nav-link w-nav-link">Our Products</a>
-          <a href="about.jsp" aria-current="page" class="nav-link w-nav-link w--current">About</a>
+          <a href="about.jsp" class="nav-link w-nav-link">About</a>
           <a href="contact.jsp" class="nav-link w-nav-link">Contact</a>
           <a href="blog.jsp" class="nav-link w-nav-link">Blog</a>
           <a href="help/styleguide.jsp" class="nav-link w-nav-link">Styleguide</a>
@@ -132,124 +131,166 @@
       </div>
     </div>
   </div>
-  <div class="wrapper m100">
+  <div class="wrapper first-wrap">
     <div class="section">
-      <div class="w-layout-grid content6-grid">
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1d0-e23fd67b" class="content6-headline-grid">
-          <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1d1-e23fd67b" class="content6-headline-wrap">
-            <div class="text-label">Stylish modern lighting options</div>
-            <div class="size1-text">Thoughtfully curated modern lighting fixtures</div>
-            <p class="paragraph-70">Create inspiring, beautifully illuminated rooms. Review our wide selection of stylish contemporary lamps for living room, bedroom, bath and kitchen—and get enlightened about modern design.</p>
+      <div class="w-dyn-list">
+        <div role="list" class="w-dyn-items">
+          <div role="listitem" class="w-dyn-item">
+            <div class="w-layout-grid hero1">
+              <div id="w-node-_18292f04-5852-a7c9-94c3-46fb1c70d3bb-4c3fd697" class="hero1-content">
+                <div class="label">Brand New</div>
+                <div class="size1-text"></div>
+                <p class="paragraph-70 paragraph70-bottom-clear"></p>
+              </div>
+              <div id="w-node-_18292f04-5852-a7c9-94c3-46fb1c70d3c3-4c3fd697" class="hero1-image"></div>
+              <div id="w-node-_18292f04-5852-a7c9-94c3-46fb1c70d3c4-4c3fd697" class="hero1-product-name">
+                <a href="#" class="size3-link"></a>
+                <p class="paragraph-70">Premium Light<br></p>
+                <p class="size3-text"></p>
+              </div>
+              <a id="w-node-_18292f04-5852-a7c9-94c3-46fb1c70d3cc-4c3fd697" data-w-id="18292f04-5852-a7c9-94c3-46fb1c70d3cc" href="#" class="button-large uma-button w-inline-block">
+                <div>Get UMA Mini</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
+              </a>
+            </div>
           </div>
         </div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1da-e23fd67b" class="content6-image1"></div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1db-e23fd67b" class="content6-image2"></div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1dc-e23fd67b" class="content6-image3"></div>
+        <div class="empty-state w-dyn-empty">
+          <div>No items found.</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="wrapper m20">
+  <div class="wrapper m0-100">
     <div class="section">
-      <div class="w-layout-grid content16-grid">
-        <div id="w-node-_15579270-7173-ae0f-f9a7-7d9d44b340ab-e23fd67b" class="content16-left-column">
-          <div class="content16-headline-wrap">
-            <div class="text-label">Let there be light</div>
-            <div class="size1-text">Stylish modern lighting options<br></div>
-            <p class="paragraph-70">The living room is easily the hardest working room in the house, as its entire purpose to serve multiple key functions all in one shared space. The goal is to make everyday living just a little easier, and to make a communal space a little more enticing.</p>
+      <div class="w-dyn-list">
+        <div role="list" class="w-dyn-items">
+          <div role="listitem" class="w-dyn-item">
+            <div class="w-layout-grid content11-grid">
+              <div id="w-node-cada28bb-1968-ba3c-8f5b-2a6fb07f3444-4c3fd697" class="content11-headline-wrap">
+                <div class="size1-text size1-full-clear">Belmont can be hung individually or in stunning groupings to provide warm and comfortable illumination to complement any residential, contract, or hospitality setting.</div>
+              </div>
+              <div id="w-node-cada28bb-1968-ba3c-8f5b-2a6fb07f3447-4c3fd697" class="image-wrap">
+                <a data-w-id="cada28bb-1968-ba3c-8f5b-2a6fb07f3448" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                  <div class="button-small white-small">
+                    <div>View Product</div>
+                  </div>
+                </a>
+                <div class="content11-image"></div>
+              </div>
+              <div id="w-node-cada28bb-1968-ba3c-8f5b-2a6fb07f344d-4c3fd697">
+                <a href="#" class="size6-link size6-top-clear">The Belmont Collection</a>
+                <p class="size4-text">$590</p>
+              </div>
+              <div id="w-node-cada28bb-1968-ba3c-8f5b-2a6fb07f3452-4c3fd697">
+                <p class="paragraph-70">The Belmont Collection was a collaborative creation with designer Brad Ascalon re-envisioning the traditional fabric shade lamp but with the warmth and preciousness of hand crafted furniture. </p>
+              </div>
+            </div>
           </div>
-          <a data-w-id="15579270-7173-ae0f-f9a7-7d9d44b340b6" href="all-products.jsp" class="button-small w-inline-block">
-            <div class="button-label">Shop Lighting</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
+        </div>
+        <div class="w-dyn-empty">
+          <div>No items found.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper m0-100">
+    <div class="section">
+      <div class="w-layout-grid content8-grid">
+        <div id="w-node-_641616c4-e787-e590-9bba-61667fda4a09-4c3fd697" class="content8-image"></div>
+        <div id="w-node-_641616c4-e787-e590-9bba-61667fda4a0a-4c3fd697" class="content8-content-wrap">
+          <div class="content8-quote-wrap">
+            <div class="label">What they say</div>
+            <div class="size1-text">UMA Mini is designed for effortless portability to take your light and music everywhere you go.</div>
+          </div>
+          <a data-w-id="641616c4-e787-e590-9bba-61667fda4a10" href="#" class="button-large w-inline-block">
+            <div>Learn More About UMA Mini</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
           </a>
         </div>
-        <p id="w-node-_15579270-7173-ae0f-f9a7-7d9d44b340ba-e23fd67b" class="paragraph-70">Lighting does not just illuminate your home. It actually creates an ambiance and functions like any other piece of decor. Simply put, the fixture you choose can make or break your space.<br><br>Pablo’s designs have been propelled to the forefront of American contemporary lighting by an uncompromising devotion to simplicity and utility. By fusing the highest technical sensibilities with the most appropriate material palette, Pablo is able to create unique, timeless designs with the power to transform any environment.<br><br>Looking for a way to make your outdoor and indoor spaces shine this summer? From ceilings draped in LED lights to shimmering outdoor patios, here are eight illuminating ways to dress up your home with lighting.<br><br>If you’ve ever rented or bought a house, you know that lighting can make or break an entire space. From dingy overhead lighting to fluorescent bathroom lights, the wrong lighting can be the difference between a good mood and a bad day.</p>
-      </div>
-    </div>
-  </div>
-  <div class="wrapper m100-50">
-    <div class="section">
-      <div class="w-layout-grid content17-grid">
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca743f3-e23fd67b" class="content17-headline-wrap">
-          <div class="text-label">People Behind the Lights</div>
-          <div class="size3-text">Meet our team<br></div>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca743f9-e23fd67b">
-          <div class="content17-author-pic content17-image1"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Calvin Holmes<br></div>
-          <p class="paragraph-70">The multidisciplinary designer specializes in furniture for the contract, hospitality and residential markets, as well as lighting, packaging.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74403-e23fd67b">
-          <div class="content17-author-pic content17-image2"></div>
-          <div class="text-label">Store Manager</div>
-          <div class="size4-text">Ellen Webb<br></div>
-          <p class="paragraph-70">Based in Amsterdam and Milan, Webb’s creative process begins with materiality and an empirical approach that is highly experimental.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7440d-e23fd67b">
-          <div class="content17-author-pic content17-image3"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Ivan Daniel<br></div>
-          <p class="paragraph-70">Interested in how the pragmatism of the traditional craftsman can create new design, he focuses on simplicity to spur technical innovations.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74417-e23fd67b">
-          <div class="content17-author-pic content17-image4"></div>
-          <div class="text-label">Store Manager</div>
-          <div class="size4-text">Daisy Bradley<br></div>
-          <p class="paragraph-70">Born in Venezuela, Daisy is a prolific designer with over twenty years of experience creating products for the transportation and consumer electronics.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74421-e23fd67b">
-          <div class="content17-author-pic content17-image5"></div>
-          <div class="text-label">Blog Writer</div>
-          <div class="size4-text">Elmer Walton<br></div>
-          <p class="paragraph-70">Interested in how the pragmatism of the traditional craftsman can create new design, he focuses on simplicity to spur technical innovations.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7442b-e23fd67b">
-          <div class="content17-author-pic content17-image6"></div>
-          <div class="text-label">Marketing</div>
-          <div class="size4-text">Ronnie Kelly<br></div>
-          <p class="paragraph-70">Born in Portugal, Kelly is a prolific designer with over twenty years of experience creating products for the transportation and consumer electronics.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74435-e23fd67b">
-          <div class="content17-author-pic content17-image7"></div>
-          <div class="text-label">Marketing</div>
-          <div class="size4-text">Bettie Walker<br></div>
-          <p class="paragraph-70">The multidisciplinary designer specializes in furniture for the contract, hospitality and residential markets, as well as lighting, packaging.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7443f-e23fd67b">
-          <div class="content17-author-pic content17-image8"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Francis Cobb<br></div>
-          <p class="paragraph-70">Based in Amsterdam and Milan, Cobb’s creative process begins with materiality and an empirical approach that is highly experimental.<br></p>
-        </div>
+        <div class="content8-grey-background"></div>
       </div>
     </div>
   </div>
   <div class="wrapper m100">
+    <div class="promopage-deco-part"></div>
+  </div>
+  <div class="wrapper m0-100">
     <div class="section">
-      <div class="w-layout-grid content24-grid">
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8a-e23fd67b" class="content24-quote">&quot;Bel Occhio is a study in weightlessness and transparency,” notes designer Pablo Pardo on his inspiration for this luminaire.&quot;</div>
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8c-e23fd67b" class="content24-image"></div>
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8d-e23fd67b">
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Transformative Light</div>
-              <p class="paragraph-70">Provides both focused and ambient illumination.<br></p>
+      <div class="w-layout-grid content14-grid">
+        <a id="w-node-ebe94861-0263-65ac-bccc-6c0750fd1be6-4c3fd697" href="#" class="content14-image content14-image1 w-inline-block"></a>
+        <a id="w-node-ebe94861-0263-65ac-bccc-6c0750fd1be7-4c3fd697" href="#" class="content14-image content14-image2 w-inline-block"></a>
+        <a id="w-node-ebe94861-0263-65ac-bccc-6c0750fd1be8-4c3fd697" href="#" class="content14-image content14-image3 w-inline-block"></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper m0-100">
+    <div class="section">
+      <div class="w-layout-grid content25-grid">
+        <div id="w-node-_9527820a-6663-4a54-6c21-42e6dc8066c0-4c3fd697">
+          <div class="text-label">And more!</div>
+          <div class="size3-text">Amazing Uma Mini Features</div>
+        </div>
+        <div id="w-node-_9527820a-6663-4a54-6c21-42e6dc8066cb-4c3fd697" class="content25-item">
+          <div class="text-label">Intuitive Controls<br></div>
+          <p class="paragraph-70">A touch sensitive, full range volume dial with dual light level control makes Uma Mini super tactile and simple to use in any occasion. Volume and music selection can also be managed from any mobile device via Bluetooth with up to 20 hours of wireless play per charge.<br></p>
+        </div>
+        <div id="w-node-_9527820a-6663-4a54-6c21-42e6dc8066d1-4c3fd697" class="content25-item">
+          <div class="text-label">Party Mode<br></div>
+          <p class="paragraph-70">Uma Mini is all about connecting spaces with light and music, allowing you to pair up 24 Minis from a single mobile device to make any place a party. Its perfect for indoor and outdoor and settings at home, lounge areas and hospitality settings alike.<br></p>
+        </div>
+        <div id="w-node-_9527820a-6663-4a54-6c21-42e6dc8066c5-4c3fd697" class="content25-item">
+          <div class="text-label">360° Sound &amp; Light</div>
+          <p class="paragraph-70">Uma Mini pairs an omnidirectional bass woofer with full range driver to deliver a powerful high-fidelity sound experience combined with warm-toned LEDs for setting the perfect ambiance in any environment.<br></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="section">
+      <div class="w-layout-grid content7-grid">
+        <div id="w-node-b9822256-bcec-35dd-9e7b-33e4c0cdd70a-4c3fd697" class="content7-content-wrap">
+          <div>
+            <div class="size1-text">Party Mode</div>
+            <div class="paragraph-70">Uma Mini is all about connecting spaces with light and music, allowing you to pair up 24 Minis from a single mobile device to make any place a party. Its perfect for indoor and outdoor and settings at home, lounge areas and hospitality settings alike.</div>
+          </div>
+        </div>
+        <div id="w-node-b9822256-bcec-35dd-9e7b-33e4c0cdd710-4c3fd697" class="content7-image"></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper m50">
+    <div class="section">
+      <div class="w-layout-grid headline-grid">
+        <div id="w-node-_4ed574b8-6ad0-5634-7da6-1bb6bf929492-4c3fd697">
+          <div class="text-label">Explore more</div>
+          <div class="size3-text size3-bottom-clear">Other products from our store</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper m20-100">
+    <div class="section">
+      <div class="w-dyn-list">
+        <div role="list" class="product4-grid w-dyn-items">
+          <div id="w-node-dcec4be3-efc5-5015-1fea-8b46a3f62ce5-4c3fd697" role="listitem" class="w-dyn-item">
+            <div class="image-wrap">
+              <a data-w-id="dcec4be3-efc5-5015-1fea-8b46a3f62ce7" style="opacity:0" href="#" class="item-overlay w-inline-block">
+                <div class="button-small white-small">
+                  <div>View Product</div>
+                </div>
+              </a>
+              <div class="product-image product-image-size-m">
+                <div class="label inside-label">Featured</div>
+                <div class="label black-label sale-label">On Sale</div>
+              </div>
+            </div>
+            <div class="product4-content-wrap">
+              <a href="#" class="size6-link"></a>
+              <div class="size4-text"></div>
             </div>
           </div>
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Two-In-One<br></div>
-              <p class="paragraph-70">Designed for pendant and tabletop applications.<br></p>
-            </div>
-          </div>
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Light Anywhere You Want It<br></div>
-              <p class="paragraph-70">Infinite adjustment with the touch of a hand.<br></p>
-            </div>
-          </div>
+        </div>
+        <div class="empty-state w-dyn-empty">
+          <div>No items found.</div>
         </div>
       </div>
     </div>
@@ -267,14 +308,14 @@
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f7fa-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Subpages</div>
-            <a href="about.jsp" aria-current="page" class="footer1-link w--current">About</a>
+            <a href="about.jsp" class="footer1-link">About</a>
             <a href="about-2.jsp" class="footer1-link">About 2</a>
             <a href="contact.jsp" class="footer1-link">Contact</a>
             <a href="contact-2.jsp" class="footer1-link">Contact 2</a>
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f805-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Additional</div>
-            <a href="promo-page.jsp" class="footer1-link">Promo Page (Uma)</a>
+            <a href="promo-page.jsp" aria-current="page" class="footer1-link w--current">Promo Page (Uma)</a>
             <a href="help/styleguide.jsp" class="footer1-link">Styleguide</a>
             <a href="help/license.jsp" class="footer1-link">License</a>
           </div>

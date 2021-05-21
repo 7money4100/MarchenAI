@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="UTF-8"%>
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
- <title>Luma - Webflow Ecommerce website template</title>
+<meta charset="utf-8">
+  <title>Luma - Webflow Ecommerce website template</title>
   <meta content="A sleek, modern (and free) retail template that will keep the attention on your products. Take full control of the colors, web fonts, images, and other styles that make your brand shine." name="description">
   <meta content="Luma - Webflow Ecommerce website template" property="og:title">
   <meta content="A sleek, modern (and free) retail template that will keep the attention on your products. Take full control of the colors, web fonts, images, and other styles that make your brand shine." property="og:description">
@@ -25,10 +25,9 @@
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
   <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
-<title>Insert title here</title>
 </head>
 <body>
-  <a id="notification" data-w-id="fc560965-213c-5f5a-18ab-3a6cb5c55beb" href="https://webflow.com/website/Prospero-Ecommerce-UI-Kit" target="_blank" class="notification-link-wrap w-inline-block">
+ <a id="notification" data-w-id="fc560965-213c-5f5a-18ab-3a6cb5c55beb" href="https://webflow.com/website/Prospero-Ecommerce-UI-Kit" target="_blank" class="notification-link-wrap w-inline-block">
     <div class="top-notification">
       <div class="section">
         <div class="w-layout-grid other4-grid">
@@ -46,8 +45,8 @@
         <nav role="navigation" class="nav1-menu w-nav-menu">
           <a href="index.jsp" class="nav-link w-nav-link">Home</a>
           <a href="all-products.jsp" class="nav-link w-nav-link">Our Products</a>
-          <a href="about.jsp" aria-current="page" class="nav-link w-nav-link w--current">About</a>
-          <a href="contact.jsp" class="nav-link w-nav-link">Contact</a>
+          <a href="about.jsp" class="nav-link w-nav-link">About</a>
+          <a href="contact.jsp" aria-current="page" class="nav-link w-nav-link w--current">Contact</a>
           <a href="blog.jsp" class="nav-link w-nav-link">Blog</a>
           <a href="help/styleguide.jsp" class="nav-link w-nav-link">Styleguide</a>
           <a href="help/license.jsp" class="nav-link w-nav-link">License</a>
@@ -132,123 +131,91 @@
       </div>
     </div>
   </div>
-  <div class="wrapper m100">
+  <div class="wrapper m100-80">
     <div class="section">
-      <div class="w-layout-grid content6-grid">
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1d0-e23fd67b" class="content6-headline-grid">
-          <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1d1-e23fd67b" class="content6-headline-wrap">
-            <div class="text-label">Stylish modern lighting options</div>
-            <div class="size1-text">Thoughtfully curated modern lighting fixtures</div>
-            <p class="paragraph-70">Create inspiring, beautifully illuminated rooms. Review our wide selection of stylish contemporary lamps for living room, bedroom, bath and kitchen—and get enlightened about modern design.</p>
-          </div>
+      <div class="w-layout-grid headline-grid">
+        <div id="w-node-_420088eb-45f2-550d-7632-fa89bf0e2db3-793fd680">
+          <div class="text-label">Contact LUMA</div>
+          <div class="size1-text">Thoughtfully curated modern lighting fixtures</div>
+          <p class="paragraph-70">Create inspiring, beautifully illuminated rooms. Review our wide selection of stylish contemporary lamps for living room, bedroom, bath and kitchen—and get enlightened about modern design.</p>
         </div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1da-e23fd67b" class="content6-image1"></div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1db-e23fd67b" class="content6-image2"></div>
-        <div id="w-node-f6962625-c7d0-9865-aca6-7c0094a6f1dc-e23fd67b" class="content6-image3"></div>
       </div>
     </div>
   </div>
-  <div class="wrapper m20">
-    <div class="section">
-      <div class="w-layout-grid content16-grid">
-        <div id="w-node-_15579270-7173-ae0f-f9a7-7d9d44b340ab-e23fd67b" class="content16-left-column">
-          <div class="content16-headline-wrap">
-            <div class="text-label">Let there be light</div>
-            <div class="size1-text">Stylish modern lighting options<br></div>
-            <p class="paragraph-70">The living room is easily the hardest working room in the house, as its entire purpose to serve multiple key functions all in one shared space. The goal is to make everyday living just a little easier, and to make a communal space a little more enticing.</p>
-          </div>
-          <a data-w-id="15579270-7173-ae0f-f9a7-7d9d44b340b6" href="all-products.jsp" class="button-small w-inline-block">
-            <div class="button-label">Shop Lighting</div><img src="images/Arrow2x.svg" alt="" class="button-arrow">
+  <div class="section">
+    <div class="w-layout-grid content23-grid">
+      <div id="w-node-_6d4ade57-b937-f780-b80c-0c79b1da0990-793fd680" class="content23-image"></div>
+      <div id="w-node-_6d4ade57-b937-f780-b80c-0c79b1da0991-793fd680" class="content23-item-wrap">
+        <div class="content23-item">
+          <div class="text-label">Headquaters</div>
+          <div class="paragraph">Headquarters<br>415-111-111111111<br>11th Street East<br>San Francisco, CA<br>United States<br>94111</div>
+        </div>
+        <div>
+          <a data-w-id="6d4ade57-b937-f780-b80c-0c79b1da099c" href="#" class="button-text w-inline-block">
+            <div class="button-label">View on Map</div><img src="images/arrow-dark2x.svg" alt="" class="button-arrow">
           </a>
         </div>
-        <p id="w-node-_15579270-7173-ae0f-f9a7-7d9d44b340ba-e23fd67b" class="paragraph-70">Lighting does not just illuminate your home. It actually creates an ambiance and functions like any other piece of decor. Simply put, the fixture you choose can make or break your space.<br><br>Pablo’s designs have been propelled to the forefront of American contemporary lighting by an uncompromising devotion to simplicity and utility. By fusing the highest technical sensibilities with the most appropriate material palette, Pablo is able to create unique, timeless designs with the power to transform any environment.<br><br>Looking for a way to make your outdoor and indoor spaces shine this summer? From ceilings draped in LED lights to shimmering outdoor patios, here are eight illuminating ways to dress up your home with lighting.<br><br>If you’ve ever rented or bought a house, you know that lighting can make or break an entire space. From dingy overhead lighting to fluorescent bathroom lights, the wrong lighting can be the difference between a good mood and a bad day.</p>
+      </div>
+      <div id="w-node-_6d4ade57-b937-f780-b80c-0c79b1da09a0-793fd680" class="content23-item-wrap">
+        <div class="content23-item">
+          <div class="text-label">Office &amp; PR Requests</div>
+          <div class="paragraph">Headquarters<br>415-111-111111111<br>11th Street East<br>San Francisco, CA<br>United States<br>94111</div>
+        </div>
+        <div>
+          <a data-w-id="6d4ade57-b937-f780-b80c-0c79b1da09ab" href="#" class="button-text w-inline-block">
+            <div class="button-label">View on Map</div><img src="images/arrow-dark2x.svg" alt="" class="button-arrow">
+          </a>
+        </div>
       </div>
     </div>
   </div>
   <div class="wrapper m100-50">
     <div class="section">
-      <div class="w-layout-grid content17-grid">
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca743f3-e23fd67b" class="content17-headline-wrap">
-          <div class="text-label">People Behind the Lights</div>
-          <div class="size3-text">Meet our team<br></div>
+      <div class="w-layout-grid cta7-grid">
+        <div id="w-node-_8e454688-028a-83b4-a215-b194917e0020-793fd680">
+          <div>
+            <div class="size3-text size3-top-clear">Subscribe for Updates<br></div>
+            <p class="paragraph-70 paragraph70-bottom-clear">Stay up to date with our newest collections, latest deals and special offers! We announce new collection every three weeks so be sure to stay in touch to catch the hottest pieces for you.<br></p>
+          </div>
+          <div class="cta7-form w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" class="cta7-form-wrap"><input type="email" class="text-field bottom-margin-field w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Enter your name" id="email-3" required=""><input type="email" class="text-field bottom-margin-field w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Enter your email" id="email-3" required=""><textarea placeholder="Enter your message" maxlength="5000" id="field-2" name="field-2" data-name="Field 2" class="text-area w-input"></textarea><input type="submit" value="Submit" data-wait="Please wait..." class="button-small form-centered-button w-button"></form>
+            <div class="success-message w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="error-message w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
         </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca743f9-e23fd67b">
-          <div class="content17-author-pic content17-image1"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Calvin Holmes<br></div>
-          <p class="paragraph-70">The multidisciplinary designer specializes in furniture for the contract, hospitality and residential markets, as well as lighting, packaging.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74403-e23fd67b">
-          <div class="content17-author-pic content17-image2"></div>
-          <div class="text-label">Store Manager</div>
-          <div class="size4-text">Ellen Webb<br></div>
-          <p class="paragraph-70">Based in Amsterdam and Milan, Webb’s creative process begins with materiality and an empirical approach that is highly experimental.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7440d-e23fd67b">
-          <div class="content17-author-pic content17-image3"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Ivan Daniel<br></div>
-          <p class="paragraph-70">Interested in how the pragmatism of the traditional craftsman can create new design, he focuses on simplicity to spur technical innovations.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74417-e23fd67b">
-          <div class="content17-author-pic content17-image4"></div>
-          <div class="text-label">Store Manager</div>
-          <div class="size4-text">Daisy Bradley<br></div>
-          <p class="paragraph-70">Born in Venezuela, Daisy is a prolific designer with over twenty years of experience creating products for the transportation and consumer electronics.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74421-e23fd67b">
-          <div class="content17-author-pic content17-image5"></div>
-          <div class="text-label">Blog Writer</div>
-          <div class="size4-text">Elmer Walton<br></div>
-          <p class="paragraph-70">Interested in how the pragmatism of the traditional craftsman can create new design, he focuses on simplicity to spur technical innovations.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7442b-e23fd67b">
-          <div class="content17-author-pic content17-image6"></div>
-          <div class="text-label">Marketing</div>
-          <div class="size4-text">Ronnie Kelly<br></div>
-          <p class="paragraph-70">Born in Portugal, Kelly is a prolific designer with over twenty years of experience creating products for the transportation and consumer electronics.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca74435-e23fd67b">
-          <div class="content17-author-pic content17-image7"></div>
-          <div class="text-label">Marketing</div>
-          <div class="size4-text">Bettie Walker<br></div>
-          <p class="paragraph-70">The multidisciplinary designer specializes in furniture for the contract, hospitality and residential markets, as well as lighting, packaging.<br></p>
-        </div>
-        <div id="w-node-f3496c2c-8ee9-32b0-6803-75773ca7443f-e23fd67b">
-          <div class="content17-author-pic content17-image8"></div>
-          <div class="text-label">Designer</div>
-          <div class="size4-text">Francis Cobb<br></div>
-          <p class="paragraph-70">Based in Amsterdam and Milan, Cobb’s creative process begins with materiality and an empirical approach that is highly experimental.<br></p>
+        <div id="w-node-_8e454688-028a-83b4-a215-b194917e0034-793fd680" class="cta7-map-wrap">
+          <div class="cta7-map w-widget w-widget-map"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="wrapper m100">
+  <div class="wrapper m50-80">
     <div class="section">
-      <div class="w-layout-grid content24-grid">
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8a-e23fd67b" class="content24-quote">&quot;Bel Occhio is a study in weightlessness and transparency,” notes designer Pablo Pardo on his inspiration for this luminaire.&quot;</div>
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8c-e23fd67b" class="content24-image"></div>
-        <div id="w-node-_0f83eee3-60fc-0871-9a6e-757004d21f8d-e23fd67b">
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Transformative Light</div>
-              <p class="paragraph-70">Provides both focused and ambient illumination.<br></p>
-            </div>
+      <div class="w-layout-grid content34-grid">
+        <div id="w-node-_3d09b860-35ce-ae8a-aa2f-f1997cd803b8-793fd680" class="size3-text">Excellence in Product Design<br></div>
+        <div id="w-node-_3d09b860-35ce-ae8a-aa2f-f1997cd803ba-793fd680" class="content34-item-wrap">
+          <div class="deco-dot"></div>
+          <div>
+            <div class="text-label">SLIM LED TECHNOLOGY<br></div>
+            <p class="paragraph-70">Cielo XL employs a dimmable LED flat panel light source to efficiently deliver a brilliantly warm light experience.<br></p>
           </div>
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Two-In-One<br></div>
-              <p class="paragraph-70">Designed for pendant and tabletop applications.<br></p>
-            </div>
+        </div>
+        <div id="w-node-_3d09b860-35ce-ae8a-aa2f-f1997cd803c1-793fd680" class="content34-item-wrap">
+          <div class="deco-dot"></div>
+          <div>
+            <div class="text-label">REFINED PRECISION</div>
+            <p class="paragraph-70">Employs an all aluminum CNC machined body allowing for excellent thermal heat dissipation to increase LED life up to 50K hours.<br></p>
           </div>
-          <div class="content24-item-wrap">
-            <div class="deco-dot"></div>
-            <div>
-              <div class="text-label">Light Anywhere You Want It<br></div>
-              <p class="paragraph-70">Infinite adjustment with the touch of a hand.<br></p>
-            </div>
+        </div>
+        <div id="w-node-_3d09b860-35ce-ae8a-aa2f-f1997cd803c8-793fd680" class="content34-item-wrap">
+          <div class="deco-dot"></div>
+          <div>
+            <div class="text-label">INFINITELY ADJUSTABLE</div>
+            <p class="paragraph-70">Features height adjustment at all times with a press of a button.<br></p>
           </div>
         </div>
       </div>
@@ -267,9 +234,9 @@
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f7fa-c739f7eb" class="footer1-links-wrap">
             <div class="size6-text">Subpages</div>
-            <a href="about.jsp" aria-current="page" class="footer1-link w--current">About</a>
+            <a href="about.jsp" class="footer1-link">About</a>
             <a href="about-2.jsp" class="footer1-link">About 2</a>
-            <a href="contact.jsp" class="footer1-link">Contact</a>
+            <a href="contact.jsp" aria-current="page" class="footer1-link w--current">Contact</a>
             <a href="contact-2.jsp" class="footer1-link">Contact 2</a>
           </div>
           <div id="w-node-_2d8a3600-59cf-08d2-fe17-bd16c739f805-c739f7eb" class="footer1-links-wrap">
@@ -302,5 +269,6 @@
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60a70edda9bb0658e03fd5e8" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
 </body>
 </html>
