@@ -43,13 +43,13 @@
       <a href="#" id="w-node-_8bdc9590-22a2-e972-4daa-ca5062e76206-62e76204" class="brand w-nav-brand"><img src="../images/LUMA.svg" alt=""></a>
       <div id="w-node-_8bdc9590-22a2-e972-4daa-ca5062e76209-62e76204" class="nav1-menu-wrap">
         <nav role="navigation" class="nav1-menu w-nav-menu">
-          <a href="../index.html" class="nav-link w-nav-link">Home</a>
-          <a href="../all-products.html" class="nav-link w-nav-link">Our Products</a>
-          <a href="../about.html" class="nav-link w-nav-link">About</a>
-          <a href="../contact.html" class="nav-link w-nav-link">Contact</a>
-          <a href="../blog.html" class="nav-link w-nav-link">Blog</a>
-          <a href="../help/styleguide.html" class="nav-link w-nav-link">Styleguide</a>
-          <a href="../help/license.html" aria-current="page" class="nav-link w-nav-link w--current">License</a>
+          <a href="../index.jsp" class="nav-link w-nav-link">Home</a>
+          <a href="../all-products.jsp" class="nav-link w-nav-link">Our Products</a>
+          <a href="../about.jsp" class="nav-link w-nav-link">About</a>
+          <a href="../contact.jsp" class="nav-link w-nav-link">Contact</a>
+          <a href="../blog.jsp" class="nav-link w-nav-link">Blog</a>
+          <a href="../help/styleguide.jsp" class="nav-link w-nav-link">Styleguide</a>
+          <a href="../help/license.jsp" aria-current="page" class="nav-link w-nav-link w--current">License</a>
         </nav>
         <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="rightSidebar" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper cart">
           <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block"><img src="../images/Cart-Icon2x_1Cart-Icon2x.png" width="16" alt="">
@@ -108,14 +108,14 @@
                       <div style="position:relative" data-wf-paypal-button="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;color&quot;:&quot;black&quot;,&quot;shape&quot;:&quot;rect&quot;,&quot;label&quot;:&quot;paypal&quot;,&quot;tagline&quot;:false,&quot;note&quot;:false}" class="paypal">
                         <div style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;z-index:999;cursor:auto"></div>
                       </div>
-                      <a href="../checkout.html" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton button-small white-small" data-loading-text="Hang Tight...">Continue to Checkout</a>
+                      <a href="../checkout.jsp" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton button-small white-small" data-loading-text="Hang Tight...">Continue to Checkout</a>
                     </div>
                   </div>
                 </form>
                 <div class="w-commerce-commercecartemptystate empty-state dark-cart-empty-state">
                   <div>No items found.</div>
                   <div class="keep-shopping-button-wrap">
-                    <a data-w-id="7fd4a83d-fa61-1e98-2570-9f9b65c13f7e" href="../all-products.html" class="button-small white-small w-inline-block">
+                    <a data-w-id="7fd4a83d-fa61-1e98-2570-9f9b65c13f7e" href="../all-products.jsp" class="button-small white-small w-inline-block">
                       <div class="button-label">Keep Shopping</div><img src="../images/arrow-dark2x.svg" alt="" class="button-arrow">
                     </a>
                   </div>
