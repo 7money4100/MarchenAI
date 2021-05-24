@@ -45,7 +45,7 @@
                     <div class="menu-wrapper">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            <a href="index.jsp"><img src="assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
@@ -54,15 +54,15 @@
                                     <li><a href="index.jsp">Home</a></li>
                                     <li><a href="shop.jsp">shop</a></li>
                                     <li><a href="blog.jsp">Blog</a></li>
-                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="login.jsp">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <!-- Header Right -->
                         <div class="header-right">
                             <ul>
-                                <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
-                                <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
+                                <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                                     <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                        <a href="industries.jsp" class="btn hero-btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                                 <img src="assets/img/gallery/new_product1.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
+                                <h3><a href="product_details.jsp">Thermo Ball Etip Gloves</a></h3>
                                 <span>$ 45,743</span>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                                 <img src="assets/img/gallery/new_product2.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
+                                <h3><a href="product_details.jsp">Thermo Ball Etip Gloves</a></h3>
                                 <span>$ 45,743</span>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                 <img src="assets/img/gallery/new_product3.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
+                                <h3><a href="product_details.jsp">Thermo Ball Etip Gloves</a></h3>
                                 <span>$ 45,743</span>
                             </div>
                         </div>
@@ -221,7 +221,7 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                    <a href="index.jsp"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
