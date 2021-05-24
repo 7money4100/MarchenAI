@@ -12,32 +12,29 @@ import com.MemberDAO;
 import com.MemberDTO;
 
 /**
- * Servlet implementation class JoinService
+ * Servlet implementation class LoginService
  */
-@WebServlet("/JoinService")
-public class JoinService extends HttpServlet {
+@WebServlet("/LoginService")
+public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
-		String member_id = request.getParameter("member_id");
+		String id = request.getParameter("member_id");
 		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
 		
-		MemberDTO dto = new MemberDTO(member_id, pw, name, email);
+		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.join(dto);
+		MemberDTO loginDTO = dao.login(dto);
 		
-		if(cnt > 0) {
+		if(loginDTO != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("id", member_id);
-			System.out.println("회원가입 성공");
-			response.sendRedirect("login.jsp");
+			session.setAttribute("info", loginDTO);
+			System.out.println("로그인 성공");
 		} else {
-			System.out.println("회원가입 실패");
-			response.sendRedirect("login.jsp");
+			System.out.println("로그인 실패");
 		}
+		response.sendRedirect("index.jsp");
 	}
 
 }
