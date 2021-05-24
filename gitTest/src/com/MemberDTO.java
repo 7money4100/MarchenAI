@@ -1,39 +1,35 @@
 package com;
 
 public class MemberDTO {
-	private String id;
+	private String member_id;
 	private String pw;
 	private String name;
-	private String mail;
+	private String email;
 	
-	public MemberDTO(String id, String pw, String name, String mail) {
-		super();
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.mail = mail;
-	}
-
-	public MemberDTO(String id, String pw) {
-		super();
-		this.id = id;
-		this.pw = pw;
-	}
-
+	
 	public MemberDTO(String name) {
 		super();
 		this.name = name;
 	}
-	
-	
-	
-	
-
-	public String getId() {
-		return id;
+	public MemberDTO(String member_id, String pw) {
+		super();
+		this.member_id = member_id;
+		this.pw = pw;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public MemberDTO(String member_id, String pw, String name, String email) {
+		super();
+		this.member_id = member_id;
+		this.pw = pw;
+		this.name = name;
+		this.email = email;
+	}
+	
+	
+	public String getMember_id() {
+		return member_id;
+	}
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
 	}
 	public String getPw() {
 		return pw;
@@ -47,10 +43,13 @@ public class MemberDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getMail() {
-		return mail;
+	public String getEmail() {
+		return email;
 	}
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
+
+
+	
 }
