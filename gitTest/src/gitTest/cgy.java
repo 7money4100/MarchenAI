@@ -1,5 +1,5 @@
 package gitTest;
 
 public class cgy {
-	public String cgy = "최근영 2";
+	public String cgy = "최근영 34";
 }
