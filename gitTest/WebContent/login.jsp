@@ -40,41 +40,15 @@
                             <nav>                                                
                                 <ul id="navigation">  
                                     <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">shop</a></li>
-                                    <li><a href="about.jsp">about</a></li>
-                                    <li class="hot"><a href="#">Latest</a>
-                                        <ul class="submenu">
-                                            <li><a href="shop.jsp"> Product list</a></li>
-                                            <li><a href="product_details.jsp"> Product Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.jsp">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.jsp">Blog</a></li>
-                                            <li><a href="blog-details.jsp">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="submenu">
-                                            <li><a href="login.jsp">Login</a></li>
-                                            <li><a href="cart.jsp">Cart</a></li>
-                                            <li><a href="elements.jsp">Element</a></li>
-                                            <li><a href="confirmation.jsp">Confirmation</a></li>
-                                            <li><a href="checkout.jsp">Product Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.jsp">Contact</a></li>
+                                    <li><a href="shop.jsp">Character</a></li>
+                                    <li><a href="blog.jsp">Blog</a></li>
+                                    <li><a href="login.jsp">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <!-- Header Right -->
                         <div class="header-right">
                             <ul>
-                                <li>
-                                    <div class="nav-search search-switch">
-                                        <span class="flaticon-search"></span>
-                                    </div>
-                                </li>
                                 <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
                                 <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
@@ -115,7 +89,32 @@
                                 <h2>New to our Shop?</h2>
                                 <p>There are advances being made in science and technology
                                     everyday, and a good example of this is the</p>
-                                <a href="#" class="btn_3">Create an Account</a>
+                                
+                                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="text" class="form-control" id="name" name="name" value=""
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="name" name="name" value=""
+                                            placeholder="Name">
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="password" name="password" value=""
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="password" class="form-control" id="password" name="password" value=""
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        
+                                        <button type="submit" value="submit" class="btn_3">
+                                            Create an Account
+                                        </button>
+                                    </div>
+                                </form>
+                                
                             </div>
                         </div>
                     </div>
