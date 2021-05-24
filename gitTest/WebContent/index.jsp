@@ -61,13 +61,13 @@
                                             <li><a href="product_details.jsp"> Product Details</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.jsp">Blog</a>
+                                    <li><a href="blog.jsp">게시판</a>
                                         <ul class="submenu">
                                             <li><a href="blog.jsp">Blog</a></li>
                                             <li><a href="blog-details.jsp">Blog Details</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Pages</a>
+                                    <li><a href="#">로그인</a>
                                         <ul class="submenu">
                                             <li><a href="login.jsp">Login</a></li>
                                             <li><a href="cart.jsp">Cart</a></li>
