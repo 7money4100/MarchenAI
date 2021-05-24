@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zxx">
 <head>
     <meta charset="utf-8">
@@ -33,14 +33,14 @@
                     <div class="menu-wrapper">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.jsp"><img src="assets/img/logo/logo.png" alt=""></a>
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
                                     <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">Character</a></li>
+                                    <li><a href="shop.jsp">shop</a></li>
                                     <li><a href="blog.jsp">Blog</a></li>
                                     <li><a href="login.jsp">Login</a></li>
                                 </ul>
@@ -49,8 +49,8 @@
                         <!-- Header Right -->
                         <div class="header-right">
                             <ul>
-                                <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
-                                <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
+                                <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Login</h2>
+                                <h2>Sign in/Login</h2>
                             </div>
                         </div>
                     </div>
@@ -84,37 +84,35 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
-                        <div class="login_part_text text-center">
-                            <div class="login_part_text_iner">
-                                <h2>New to our Shop?</h2>
-                                <p>There are advances being made in science and technology
-                                    everyday, and a good example of this is the</p>
-                                
+                        <div class="login_part_form">
+                            <div class="login_part_form_iner">
+                                <h3>Sign in</h3>
                                 <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                                     <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""
-                                            placeholder="Username">
+                                            placeholder="ID">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="name" name="name" value=""
+                                        <input type="password" class="form-control" id="password" name="password" value=""
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="text" class="form-control" id="name" name="name" value=""
                                             placeholder="Name">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="password" value=""
-                                            placeholder="Password">
-                                    </div>
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="password" value=""
-                                            placeholder="Password">
+                                        <input type="text" class="form-control" id="name" name="name" value=""
+                                            placeholder="Email">
                                     </div>
                                     <div class="col-md-12 form-group">
-                                        
                                         <button type="submit" value="submit" class="btn_3">
-                                            Create an Account
+                                            Sign in
+                                        </button>
+                                        <button type="submit" value="submit" class="btn_3">
+                                            Cancel
                                         </button>
                                     </div>
                                 </form>
-                                
                             </div>
                         </div>
                     </div>
@@ -161,7 +159,7 @@
                             <div class="single-footer-caption mb-30">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.jsp"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
@@ -283,5 +281,4 @@
     <script src="./assets/js/main.js"></script>
 
 </body>
-    
 </html>
