@@ -53,41 +53,15 @@
                             <nav>                                                
                                 <ul id="navigation">  
                                     <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">shop</a></li>
-                                    <li><a href="about.jsp">about</a></li>
-                                    <li class="hot"><a href="#">Latest</a>
-                                        <ul class="submenu">
-                                            <li><a href="shop.jsp"> Product list</a></li>
-                                            <li><a href="product_details.jsp"> Product Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.jsp">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.jsp">Blog</a></li>
-                                            <li><a href="blog-details.jsp">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="submenu">
-                                            <li><a href="login.jsp">Login</a></li>
-                                            <li><a href="cart.jsp">Cart</a></li>
-                                            <li><a href="elements.jsp">Element</a></li>
-                                            <li><a href="confirmation.jsp">Confirmation</a></li>
-                                            <li><a href="checkout.jsp">Product Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.jsp">Contact</a></li>
+                                    <li><a href="shop.jsp">Character</a></li>
+                                    <li><a href="blog.jsp">Blog</a></li>
+                                    <li><a href="login.jsp">Login</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <!-- Header Right -->
                         <div class="header-right">
                             <ul>
-                                <li>
-                                    <div class="nav-search search-switch">
-                                        <span class="flaticon-search"></span>
-                                    </div>
-                                </li>
                                 <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
                                 <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
@@ -110,7 +84,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Watch Shop</h2>
+                                <h2>Character</h2>
                             </div>
                         </div>
                     </div>
