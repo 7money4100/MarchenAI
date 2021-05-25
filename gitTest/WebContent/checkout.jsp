@@ -127,16 +127,17 @@
               <a class="tp_btn" href="#">Apply Coupon</a>
             </div>
             <div class="billing_details">
+            <form action="NewFile.jsp">
               <div class="row">
                 <div class="col-lg-8">
                   <h3>Billing Details</h3>
                   <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                     <div class="col-md-6 form-group p_star">
-                      <input type="text" class="form-control" id="first" name="name" />
+                      <input type="text" class="form-control" id="firstName" name="firstName" />
                       <span class="placeholder" data-placeholder="First name"></span>
                     </div>
                     <div class="col-md-6 form-group p_star">
-                      <input type="text" class="form-control" id="last" name="name" />
+                      <input type="text" class="form-control" id="lastName" name="lastName" />
                       <span class="placeholder" data-placeholder="Last name"></span>
                     </div>
                     <div class="col-md-12 form-group">
@@ -147,7 +148,7 @@
                       <span class="placeholder" data-placeholder="Phone number"></span>
                     </div>
                     <div class="col-md-6 form-group p_star">
-                      <input type="text" class="form-control" id="email" name="compemailany" />
+                      <input type="text" class="form-control" id="email" name="email" />
                       <span class="placeholder" data-placeholder="Email Address"></span>
                     </div>
                     <div class="col-md-12 form-group p_star">
@@ -158,7 +159,7 @@
                       </select>
                     </div>
                     <div class="col-md-12 form-group p_star">
-                      <input type="text" class="form-control" id="add1" name="add1" />
+                      <input type="text" class="form-control" id="add1" name="address" />
                       <span class="placeholder" data-placeholder="Address line 01"></span>
                     </div>
                     <div class="col-md-12 form-group p_star">
@@ -237,7 +238,8 @@
                       </li>
                       <li>
                         <a href="#">Total
-                          <span>$2210.00</span>
+                          <span id="totalPrice">1</span>
+                          <input type="text" name="totalPrice">
                         </a>
                       </li>
                     </ul>
@@ -269,11 +271,12 @@
                       <label for="f-option4">I¡¯ve read and accept the </label>
                       <a href="#">terms & conditions*</a>
                     </div>
-                    <a class="btn_3" href="#">Proceed to Paypal</a>
+                    <input type="submit" value="OK" class="btn_3" href="#">Proceed to Paypal</a>
                   </div>
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </section>
         <!--================End Checkout Area =================-->
