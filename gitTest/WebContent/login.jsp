@@ -101,7 +101,7 @@
                                 <h3>Sign in</h3>
                                 <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="name" name="name" value=""
+                                        <input type="text" class="form-control" id="id_text" name="name" value=""
                                             placeholder="ID">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
@@ -113,14 +113,14 @@
                                             placeholder="Name">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="name" name="name" value=""
+                                        <input type="text" class="form-control" id="asdasd" name="name" value=""
                                             placeholder="Email">
                                     </div>
                                     <div class="col-md-12 form-group">
-                                        <button type="submit" value="submit" class="btn_3">
+                                        <button href="JoinService" type="submit" value="submit" class="btn_3">
                                             Sign in
                                         </button>
-                                        <button type="submit" value="submit" class="btn_3">
+                                        <button href="login.jsp#asdasd" type="submit" value="submit" class="btn_3">
                                             Cancel
                                         </button>
                                     </div>
@@ -147,7 +147,7 @@
                                             <input type="checkbox" id="f-option" name="selector">
                                             <label for="f-option">Remember me</label>
                                         </div>
-                                        <button type="submit" value="submit" class="btn_3">
+                                        <button href="LoginService" type="submit" value="submit" class="btn_3">
                                             log in
                                         </button>
                                         <a class="lost_pass" href="#">forget password?</a>
