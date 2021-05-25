@@ -22,6 +22,7 @@ public class LoginService extends HttpServlet {
 		request.setCharacterEncoding("EUC-KR");
 		String id = request.getParameter("member_id");
 		String pw = request.getParameter("pw");
+		// login.jsp 에서 input text name 속성 지정해줄 것
 		
 		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDAO dao = new MemberDAO();
