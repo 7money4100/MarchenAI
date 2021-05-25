@@ -104,13 +104,12 @@
 					<div class="mt-10">
 						<input type="text" name="first_name" placeholder="제목"
 							onfocus="this.placeholder = ''"
-							onblur="this.placeholder = '제목'" required=""
+							
 							class="single-input">
 					</div>
 					<br>
 					<textarea class="single-textarea" placeholder="설명"
-						onfocus="this.placeholder = ''"
-						onblur="this.placeholder = '설명'" required=""></textarea>
+						onfocus="this.placeholder = ''"></textarea>
 					<br>
 					<div class="input-group mb-3">
 						<input type="file" value="파일선택하기" name="file" class="btn_5"/>
