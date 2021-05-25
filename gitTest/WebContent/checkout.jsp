@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="zxx">
-<head>
+<head> <!-- wefwef -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Watch shop | eCommers</title>

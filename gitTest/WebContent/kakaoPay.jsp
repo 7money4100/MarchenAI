@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	String name = request.getParameter("name");
+	String name = request.getParameter("name"); 
 	String email = request.getParameter("email");
 	String phone = request.getParameter("phone");
 	String address = request.getParameter("address");
 	//String convertPrice = (String)request.getAttribute("totalPrice");
 	//System.out.println("1");
-	//System.out.println(convertPrice);
+	//System.out.println(convertPrice);        wefwef
 	//int totalPrice = Integer.parseInt(convertPrice);
 	int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));
 %>
