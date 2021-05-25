@@ -120,16 +120,14 @@
 					<div>
 						<button type="submit"
 							class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
-							style="margin-left: 25%">취소하기</button>
-
-						<button type="submit"
-							class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
 							name="Btn_blogItemWrite" style="margin-left: 25%">게시판
 							업로드</button>
-						</td>
 					</div>
 			</form>
-
+			<a href="blog.jsp"
+				class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
+				style="margin-left: 25%">취소하기
+			</a>
 			<!--================Blog Area =================-->
 	</main>
 	<footer>
