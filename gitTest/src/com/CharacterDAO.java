@@ -14,7 +14,7 @@ public class CharacterDAO {
 	int cnt=0;
 	ResultSet rs = null;
 	CharacterDTO characterDto = null;
-	ArrayList<CharacterDTO> cList = null;
+	ArrayList<CharacterDTO> characterList = null;
 
 	public void conn() {
 		try {
@@ -44,9 +44,9 @@ public class CharacterDAO {
 		}
 	}
 	
-	public ArrayList<CharacterDTO> select(CharacterDTO dto) {
+	public ArrayList<CharacterDTO> characterSelect(CharacterDTO dto) {
 		
-		cList = new ArrayList<CharacterDTO>();
+		characterList = new ArrayList<CharacterDTO>();
 		
 		conn();
 		
@@ -65,7 +65,7 @@ public class CharacterDAO {
 				String filenameprefix = rs.getString(3);
 				
 				characterDto = new CharacterDTO(group_id, time, filenameprefix);
-				cList.add(characterDto);
+				characterList.add(characterDto);
 			}
 				
 		} catch (SQLException e) {
@@ -74,7 +74,7 @@ public class CharacterDAO {
 			close();
 		} 
 		
-		return cList;
+		return characterList;
 		
 	}
 }
