@@ -56,7 +56,7 @@ public class CharacterDAO {
 			
 			psmt.setInt(1, dto.getGroup_id());
 			psmt.setString(2, dto.getTime());
-			psmt.setString(3, dto.getFilenameprefix());
+			psmt.setString(3, dto.getFileNamePrefix());
 			rs = psmt.executeQuery();
 			
 			while (rs.next()) {
