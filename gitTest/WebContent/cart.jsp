@@ -26,6 +26,18 @@
 </head>
 
 <body>
+<!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
   <header>
     <!-- Header Start -->
     <div class="header-area">
@@ -192,6 +204,7 @@
                             <input type="radio" aria-label="Radio button for following text input">
                           </li>
                         </ul>
+                    
                         <h6>
                           Calculate Shipping
                           <i class="fa fa-caret-down" aria-hidden="true"></i>
