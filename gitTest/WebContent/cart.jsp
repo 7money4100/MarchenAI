@@ -227,8 +227,8 @@
                 </tbody>
               </table>
               <div class="checkout_btn_inner float-right">
-                <a class="btn_1" href="#">Continue Shopping</a>
-                <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                <a class="btn_1" href="shop.jsp">Continue Shopping</a>
+                <a class="btn_1 checkout_btn_1" href="checkout.jsp">Proceed to checkout</a>
               </div>
             </div>
           </div>
