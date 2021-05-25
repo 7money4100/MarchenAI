@@ -101,38 +101,34 @@
 		<section class="blog_area section-padding">
 			<form action="#">
 				<div class="form-group">
-					<div class="input-group mb-3">
-						<input type="text" class="form-control" placeholder='제목'
+					<div class="mt-10">
+						<input type="text" name="first_name" placeholder="제목"
 							onfocus="this.placeholder = ''"
-							onblur="this.placeholder = '제목'">
+							onblur="this.placeholder = '제목'" required=""
+							class="single-input">
 					</div>
+					<br>
+					<textarea class="single-textarea" placeholder="설명"
+						onfocus="this.placeholder = ''"
+						onblur="this.placeholder = '설명'" required=""></textarea>
+					<br>
 					<div class="input-group mb-3">
-							<textarea class="form-control" placeholder='설명'
-							onfocus="this.placeholder = ''"
-							onblur="this.placeholder = '설명'" ROWS="5" COLS="100"></textarea>
-							
-					</div>
-					<div class="input-group mb-3">
-						<tr >
-							<td colspan="2">
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="file" value="파일선택하기" name="file" class = "btn_3"/>
-							<input type="submit" value="업로드" class = "btn_3" /></td>
-						</tr>
-						
-						</div>
-						<br>
+						<input type="file" value="파일선택하기" name="file" class="btn_5"/>
+						<!-- <input type="submit" value="업로드" class = "btn_4"/> -->
 
-						<button
-							class="button rounded-0 primary-bg text-white w-50 btn_1 boxed-btn"
-							type="submit">취소하기</button>
+					</div>
+					<br>
+					<div>
+						<button type="submit"
+							class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
+							style="margin-left: 25%">취소하기</button>
 
 						<button type="submit"
-							class="button rounded-0 primary-bg text-white w-50 btn_1 boxed-btn"
-							name="Btn_blogItemWrite">게시판에 업로드하기</button></td>
-						
-
+							class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
+							name="Btn_blogItemWrite" style="margin-left: 25%">게시판
+							업로드</button>
+						</td>
+					</div>
 			</form>
 
 			<!--================Blog Area =================-->
