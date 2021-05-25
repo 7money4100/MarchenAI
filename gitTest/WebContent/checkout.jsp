@@ -127,7 +127,7 @@
               <a class="tp_btn" href="#">Apply Coupon</a>
             </div>
             <div class="billing_details">
-            <form action="NewFile.jsp">
+            <form action="kakaoPay.jsp">
               <div class="row">
                 <div class="col-lg-8">
                   <h3>Billing Details</h3>
