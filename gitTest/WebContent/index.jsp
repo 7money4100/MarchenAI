@@ -52,7 +52,7 @@
                             <nav>                                                
                                 <ul id="navigation">  
                                     <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">shop</a></li>
+                                    <li><a href="shop.jsp">Character</a></li>
                                     <li><a href="blog.jsp">Blog</a></li>
                                     <li><a href="login.jsp">Login</a></li>
                                 </ul>
@@ -85,14 +85,14 @@
                         <div class="row justify-content-between align-items-center">
                             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                                 <div class="hero__caption">
-                                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New Perfect Style</h1>
-                                    <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
+                                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Hello Indie!</h1>
+                                    <h3 data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">인디인디에 오신 여러분 환영합니다. AI가 당신만을 위해 만들어준 세상에 하나밖에 없는 캐릭터를 만나보세요!</h3>
                                     
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                                 <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="assets/img/hero/leader.png" alt="" class=" heartbeat"> <!-- Home 이미지  -->
+                                    <img src="assets/img/hero/main.png" alt="" class=" heartbeat"> <!-- Home 이미지  -->
                                 </div>
                             </div>
                         </div>
@@ -104,17 +104,17 @@
                         <div class="row justify-content-between align-items-center">
                             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                                 <div class="hero__caption">
-                                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New Perfect Style</h1>
-                                    <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
+                                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Hello Indie!</h1>
+                                    <h3 data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">인디인디에 오신 여러분 환영합니다. AI가 당신만을 위해 만들어준 세상에 하나밖에 없는 캐릭터를 만나보세요!</h3>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                        <a href="industries.jsp" class="btn hero-btn">Shop Now</a>
+                                        
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                                 <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="assets/img/hero/watch.png" alt="" class=" heartbeat">
+                                    <img src="assets/img/hero/main.png" alt="" class=" heartbeat">
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="section-tittle mb-70">
-                            <h2>New Arrivals</h2>
+                            <h2>인기 캐릭터 TOP3</h2>
                         </div>
                     </div>
                 </div>
@@ -141,8 +141,8 @@
                                 <img src="assets/img/gallery/new_product1.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.jsp">Thermo Ball Etip Gloves</a></h3>
-                                <span>$ 45,743</span>
+                                <h3><a href="product_details.jsp">캐릭터 이름1</a></h3>
+                                
                             </div>
                         </div>
                     </div>
@@ -152,8 +152,8 @@
                                 <img src="assets/img/gallery/new_product2.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.jsp">Thermo Ball Etip Gloves</a></h3>
-                                <span>$ 45,743</span>
+                                <h3><a href="product_details.jsp">캐릭터 이름2</a></h3>
+                                
                             </div>
                         </div>
                     </div>
@@ -163,8 +163,8 @@
                                 <img src="assets/img/gallery/new_product3.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.jsp">Thermo Ball Etip Gloves</a></h3>
-                                <span>$ 45,743</span>
+                                <h3><a href="product_details.jsp">캐릭터 이름3</a></h3>
+                               
                             </div>
                         </div>
                     </div>
