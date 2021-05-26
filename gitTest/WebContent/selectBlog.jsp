@@ -36,14 +36,12 @@
 
 <!-- 로그인 정보 받아오기 -->
 <%
+	String input_search="";
+	input_search = request.getParameter("input_search");
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	BlogDAO dao =  new BlogDAO();
 	ArrayList<BlogDTO> bList=null;
-	//if(info != null){
-		bList = dao.allSelect();
-	//}
-		
-	
+	bList = dao.select(input_search);
 %>
 <!--? Preloader Start -->
     <div id="preloader-active">
@@ -117,7 +115,7 @@
                 <div class="row">
                     <div class="col-lg-8 mb-5 mb-lg-0">
                         <div class="blog_left_sidebar">
-                        	<%for(int i=bList.size()-1; i>0; i--){ %> 
+                        	<%for(int i=bList.size()-1; i>=0; i--){ %> 
                         		<article class="blog_item">
                                 <div class="blog_item_img">
                                 
@@ -169,12 +167,12 @@
                     <div class="col-lg-4">
                         <div class="blog_right_sidebar">
                             <aside class="single_sidebar_widget search_widget">
-                                <form action="selectBlog.jsp">
+                                <form action="#">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" placeholder='Search Keyword'
                                                 onfocus="this.placeholder = ''"
-                                                onblur="this.placeholder = 'Search Keyword'" name="input_search">
+                                                onblur="this.placeholder = 'Search Keyword'">
                                             <div class="input-group-append">
                                                 <button class="btns" type="button"><i class="ti-search"></i></button>
                                             </div>

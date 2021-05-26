@@ -125,40 +125,37 @@ public class BlogDAO {
 		
 	}
 	
-//	// input_search 텍스트 필드 문자열 포함하는 게시글 검색
-//	public ArrayList<BlogDTO> select(String input_search) {
-//		bList = new ArrayList<BlogDTO>();
-//		conn();
-//		try {
-//			String sql = "SELECT * FROM blog WHERE title LIKE '%'||?||'%' "
-//					+ "OR content LIKE '%'||?||'%' OR member_id LIKE '%'||?||'%' "
-//					+ "ORDER BY num DESC";
-//			psmt = conn.prepareStatement(sql);
-//			psmt.setString(1, input_search);
-//			psmt.setString(2, input_search);
-//			psmt.setString(3, input_search);
-//			
-//			rs = psmt.executeQuery();
-//			while(rs.next()) {
-//				int blog_id = rs.getInt(1);
-//				String member_id = rs.getString(2);
-//				int group_id = rs.getInt(3);
-//				String title = rs.getString(4);
-//				String content = rs.getString(5);
-//				String time = rs.getString(6);
-//				String recommend = rs.getString(7);
-//				
-//				bDTO = new BlogDTO(blog_id, member_id, group_id, title, content, time, recommend);
-//				bList.add(bDTO);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			close();
-//		}
-//		
-//		return bList;
-//	}
+	// input_search 텍스트 필드 문자열 포함하는 게시글 검색
+	public ArrayList<BlogDTO> select(String input_search) {
+		bList = new ArrayList<BlogDTO>();
+		conn();
+		try {
+			String sql = "SELECT * FROM blog WHERE title LIKE '%'||?||'%' "
+					+ "OR content LIKE '%'||?||'%'";
+					
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, input_search);
+			psmt.setString(2, input_search);
+			
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				String filename = rs.getString(1);
+				String member_id = rs.getString(2);
+				String content = rs.getString(3);
+				String title = rs.getString(4);
+				int recommend = rs.getInt(5);
+				
+				bDTO = new BlogDTO(filename, member_id, content, title, recommend);
+				bList.add(bDTO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return bList;
+	}
 	
 	// 게시글 수정
 	public int update(BlogDTO bDto) {
