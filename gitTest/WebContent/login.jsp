@@ -25,6 +25,27 @@
         <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '141763927899081',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v10.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -120,9 +141,6 @@
                                         <button href="JoinService" type="submit" value="submit" class="btn_3">
                                             Sign in
                                         </button>
-                                        <button href="login.jsp#asdasd" type="submit" value="submit" class="btn_3">
-                                            Cancel
-                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -143,14 +161,12 @@
                                             placeholder="Password">
                                     </div>
                                     <div class="col-md-12 form-group">
-                                        <div class="creat_account d-flex align-items-center">
-                                            <input type="checkbox" id="f-option" name="selector">
-                                            <label for="f-option">Remember me</label>
-                                        </div>
                                         <button href="LoginService" type="submit" value="submit" class="btn_3">
                                             log in
                                         </button>
-                                        <a class="lost_pass" href="#">forget password?</a>
+                                        
+                                         <!-- login btn -->
+    <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true"></div>
                                     </div>
                                 </form>
                             </div>
