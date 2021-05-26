@@ -36,13 +36,15 @@
 
 <!-- 로그인 정보 받아오기 -->
 <%
+	String input_search="";
+	input_search = request.getParameter("input_search");
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	BlogDAO dao =  new BlogDAO();
-	ArrayList<BlogDTO> bList=null;
-	//if(info != null){
-		bList = dao.allSelect();
-	//}
-		
+	ArrayList<BlogDTO> bAllList=null;
+	ArrayList<BlogDTO> bSelectList=null;
+	bAllList = dao.allSelect();
+	bSelectList = dao.select(input_search);
+	System.out.println(bSelectList);
 	
 %>
 <!--? Preloader Start -->
@@ -117,29 +119,50 @@
                 <div class="row">
                     <div class="col-lg-8 mb-5 mb-lg-0">
                         <div class="blog_left_sidebar">
-                        	<%for(int i=bList.size()-1; i>0; i--){ %> 
-                        		<article class="blog_item">
-                                <div class="blog_item_img">
-                                
-                                    <img class="card-img rounded-0" src="<%=bList.get(i).getFilename()%>" alt="">
-                                  
-                                </div>
-
-                                <div class="blog_details">
-                                    <a class="d-inline-block" href="single-blog.jsp">
-                                        <h2><%=bList.get(i).getTitle()%></h2>
-                                    </a>
-                                    <p><%=bList.get(i).getContent()%></p>
-                                    <ul class="blog-info-link">
-                                        <li><%if(info != null){ %>
-                                        <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                        <%}else{%>
-                                        <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                        <%} %>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
+                        	<%if(input_search==null){ %>
+                        		<%for(int i=bAllList.size()-1; i>=0; i--){ %> 
+                        			<article class="blog_item">
+                              	  <div class="blog_item_img">
+                                 	   <img class="card-img rounded-0" src="<%=bAllList.get(i).getFilename()%>" alt="">
+                              	  </div>
+                               	 <div class="blog_details">
+                                	    <a class="d-inline-block" href="single-blog.jsp">
+                                 	       <h2><%=bAllList.get(i).getTitle()%></h2>
+                                 	   </a>
+                                 	   <p><%=bAllList.get(i).getContent()%></p>
+                                 	   <ul class="blog-info-link">
+                                 	       <li><%if(info != null){ %>
+                                  	      <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                 	       <%}else{%>
+                                 	       <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                  	      <%} %>
+                                  	      </li>
+                                  	  </ul>
+                               	 </div>
+                          	  </article>
+                        		<%} %>
+                        	<%}else{%>
+                        		<%for(int i=bSelectList.size()-1; i>=0; i--){ %> 
+                        			<article class="blog_item">
+                              	  <div class="blog_item_img">
+                                 	   <img class="card-img rounded-0" src="<%=bSelectList.get(i).getFilename()%>" alt="">
+                              	  </div>
+                               	 <div class="blog_details">
+                                	    <a class="d-inline-block" href="single-blog.jsp">
+                                 	       <h2><%=bSelectList.get(i).getTitle()%></h2>
+                                 	   </a>
+                                 	   <p><%=bSelectList.get(i).getContent()%></p>
+                                 	   <ul class="blog-info-link">
+                                 	       <li><%if(info != null){ %>
+                                  	      <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                 	       <%}else{%>
+                                 	       <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                  	      <%} %>
+                                  	      </li>
+                                  	  </ul>
+                               	 </div>
+                          	  </article>
+                        		<%} %>
                         	<%} %>
                         	
                         	
@@ -169,14 +192,14 @@
                     <div class="col-lg-4">
                         <div class="blog_right_sidebar">
                             <aside class="single_sidebar_widget search_widget">
-                                <form action="selectBlog.jsp">
+                                <form action="blog.jsp">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" placeholder='Search Keyword'
                                                 onfocus="this.placeholder = ''"
                                                 onblur="this.placeholder = 'Search Keyword'" name="input_search">
                                             <div class="input-group-append">
-                                                <button class="btns" type="button"><i class="ti-search"></i></button>
+                                                <button class="btns" type="submit"><i class="ti-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
