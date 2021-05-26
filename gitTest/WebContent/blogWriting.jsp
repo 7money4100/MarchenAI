@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html class="no-js" lang="zxx">
 <head>
 <meta charset="utf-8">
@@ -99,7 +99,7 @@
 		<!--? Hero Area End-->
 		<!--================Blog Area =================-->
 		<section class="blog_area section-padding">
-			<form action="#">
+			<form method="post" enctype="multipart/form-data" action="blog.jsp">
 				<div class="form-group">
 					<div class="mt-10">
 						<input type="text" name="first_name" placeholder="제목"
@@ -112,16 +112,13 @@
 						onfocus="this.placeholder = ''"></textarea>
 					<br>
 					<div class="input-group mb-3">
-						<input type="file" value="파일선택하기" name="file" class="btn_5"/>
-						<!-- <input type="submit" value="업로드" class = "btn_4"/> -->
-
+							<input type="file" name="filename1" size=40>
 					</div>
 					<br>
 					<div>
-						<button type="submit"
+						<input type="submit"
 							class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
-							name="Btn_blogItemWrite" style="margin-left: 25%">게시판
-							업로드</button>
+							name="Btn_blogItemWrite" style="margin-left: 25%" value="게시판 업로드">
 					</div>
 			</form>
 			<a href="blog.jsp"

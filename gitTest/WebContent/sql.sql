@@ -38,14 +38,15 @@ CREATE TABLE PAYMENT(
 );
 
 CREATE TABLE blog(
-	blog_id number,
+	filename varchar2(500),
 	member_id varchar2(20),
-	group_id number,
-	content varchar2(20),
-	time varchar2(20),
-	recommend varchar2(20),
-	constraint pk_blog_bid primary key(blog_id)
+	content varchar2(1000),
+	title varchar2(100),
+	recommend number,
+	constraint pk_filename primary key(filename),
+	constraint fk_member_id_blog FOREIGN KEY (member_id) REFERENCES member(member_id)
 );
+
 
 CREATE TABLE scrap(
 	member_id VARCHAR2(20),
@@ -57,3 +58,5 @@ CREATE TABLE scrap(
 	constraint fk_payment_id FOREIGN KEY (payment_id) REFERENCES payment(payment_id),
 	constraint fk_time FOREIGN KEY (time) REFERENCES payment(time)
 );
+
+select * from member;

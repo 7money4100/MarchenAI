@@ -32,10 +32,12 @@ public class LoginService extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", loginDTO);
 			System.out.println("로그인 성공");
+			response.sendRedirect("index.jsp");
 		} else {
 			System.out.println("로그인 실패");
+			response.sendRedirect("login.jsp");
 		}
-		response.sendRedirect("index.jsp");
+		
 	}
 
 }

@@ -1,3 +1,4 @@
+<%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!doctype html>
@@ -25,6 +26,9 @@
         <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<%
+	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -99,13 +103,14 @@
                         <div class="login_part_form">
                             <div class="login_part_form_iner">
                                 <h3>회원정보 수정</h3>
-                                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                <form class="row contact_form" action="UpdateMemberService" method="post" novalidate="novalidate">
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="name" name="name" value=""
-                                            placeholder="ID">
+                                        <h5 class="form-control"><%if(info != null){ %>
+                               		<%=info.getMember_id()%>
+                               		<%} %></h5>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="password" value=""
+                                        <input type="password" class="form-control" id="password" name="pw" value=""
                                             placeholder="Password">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
@@ -113,15 +118,12 @@
                                             placeholder="Name">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="name" name="name" value=""
+                                        <input type="text" class="form-control" id="name" name="email" value=""
                                             placeholder="Email">
                                     </div>
                                     <div class="col-md-12 form-group">
                                         <button type="submit" value="submit" class="btn_3">
                                             회원정보 수정하기
-                                        </button>
-                                        <button type="submit" value="submit" class="btn_3">
-                                            취소하기
                                         </button>
                                     </div>
                                 </form>
