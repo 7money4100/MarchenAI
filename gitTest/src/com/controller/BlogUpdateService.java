@@ -55,7 +55,7 @@ public class BlogUpdateService extends HttpServlet {
 		 }
 		 
 		 
-		 //realFolder = "img";
+		 realFolder = "img";
 		 System.out.println("절대경로>>"+realFolder);
 		 System.out.println("절대경로>>"+filename1);
 		 fullpath = realFolder + "/" + filename1;

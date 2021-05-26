@@ -60,3 +60,5 @@ CREATE TABLE scrap(
 );
 
 select * from member;
+
+select * from blog;

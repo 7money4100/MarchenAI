@@ -7,6 +7,7 @@ public class BlogDTO {
 	private String content;
 	private String title;
 	private int recommend;
+	
 	public BlogDTO(String filename, String member_id, String content, String title, int recommend) {
 		super();
 		this.filename = filename;
