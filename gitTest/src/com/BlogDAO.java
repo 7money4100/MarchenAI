@@ -56,15 +56,15 @@ public class BlogDAO {
 	public int insert(BlogDTO dto) {
 		conn();
 		try {
-			// blog_id, member_id, group_id, content, time, recommend
-			String sql = "INSERT INTO blog VALUES(blog_id.NEXTVAL, ?, ?, ?, ?, ?)";
+			// filename, member_id, content, title, recommend
+			String sql = "INSERT INTO blog VALUES(?, ?, ?, ?, ?)";
 			
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getMember_id());
-			psmt.setInt(2, dto.getGroup_id());
+			psmt.setString(1, dto.getFilename());
+			psmt.setString(2, dto.getMember_id());
 			psmt.setString(3, dto.getContent());
-			psmt.setString(4, dto.getTime());
-			psmt.setString(5, dto.getRecommend());
+			psmt.setString(4, dto.getTitle());
+			psmt.setInt(5, dto.getRecommend());
 			
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
@@ -76,74 +76,74 @@ public class BlogDAO {
 		return cnt;
 	}
 	
-	// 게시글 전체조회, 새로고침 때 사용
-	public ArrayList<BlogDTO> allSelect() {
-		bList = new ArrayList<BlogDTO>();
-		conn();
-		
-		try {
-			String sql = "SELECT * FROM blog";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			
-			// sql 값이 존재할 때
-			while(rs.next()) {
-				int blog_id = rs.getInt(1);
-				String member_id = rs.getString(2);
-				int group_id = rs.getInt(3);
-				String title = rs.getString(4);
-				String content = rs.getString(5);
-				String time = rs.getString(6);
-				String recommend = rs.getString(7);
-				
-				bDTO = new BlogDTO(blog_id, member_id, group_id, title, content, time, recommend);
-				bList.add(bDTO);
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		return bList;
-		
-	}
+//	// 게시글 전체조회, 새로고침 때 사용
+//	public ArrayList<BlogDTO> allSelect() {
+//		bList = new ArrayList<BlogDTO>();
+//		conn();
+//		
+//		try {
+//			String sql = "SELECT * FROM blog";
+//			psmt = conn.prepareStatement(sql);
+//			rs = psmt.executeQuery();
+//			
+//			// sql 값이 존재할 때
+//			while(rs.next()) {
+//				int blog_id = rs.getInt(1);
+//				String member_id = rs.getString(2);
+//				int group_id = rs.getInt(3);
+//				String title = rs.getString(4);
+//				String content = rs.getString(5);
+//				String time = rs.getString(6);
+//				String recommend = rs.getString(7);
+//				
+//				bDTO = new BlogDTO(blog_id, member_id, group_id, title, content, time, recommend);
+//				bList.add(bDTO);
+//			}
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		
+//		return bList;
+//		
+//	}
 	
-	// input_search 텍스트 필드 문자열 포함하는 게시글 검색
-	public ArrayList<BlogDTO> select(String input_search) {
-		bList = new ArrayList<BlogDTO>();
-		conn();
-		try {
-			String sql = "SELECT * FROM blog WHERE title LIKE '%'||?||'%' "
-					+ "OR content LIKE '%'||?||'%' OR member_id LIKE '%'||?||'%' "
-					+ "ORDER BY num DESC";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, input_search);
-			psmt.setString(2, input_search);
-			psmt.setString(3, input_search);
-			
-			rs = psmt.executeQuery();
-			while(rs.next()) {
-				int blog_id = rs.getInt(1);
-				String member_id = rs.getString(2);
-				int group_id = rs.getInt(3);
-				String title = rs.getString(4);
-				String content = rs.getString(5);
-				String time = rs.getString(6);
-				String recommend = rs.getString(7);
-				
-				bDTO = new BlogDTO(blog_id, member_id, group_id, title, content, time, recommend);
-				bList.add(bDTO);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		return bList;
-	}
+//	// input_search 텍스트 필드 문자열 포함하는 게시글 검색
+//	public ArrayList<BlogDTO> select(String input_search) {
+//		bList = new ArrayList<BlogDTO>();
+//		conn();
+//		try {
+//			String sql = "SELECT * FROM blog WHERE title LIKE '%'||?||'%' "
+//					+ "OR content LIKE '%'||?||'%' OR member_id LIKE '%'||?||'%' "
+//					+ "ORDER BY num DESC";
+//			psmt = conn.prepareStatement(sql);
+//			psmt.setString(1, input_search);
+//			psmt.setString(2, input_search);
+//			psmt.setString(3, input_search);
+//			
+//			rs = psmt.executeQuery();
+//			while(rs.next()) {
+//				int blog_id = rs.getInt(1);
+//				String member_id = rs.getString(2);
+//				int group_id = rs.getInt(3);
+//				String title = rs.getString(4);
+//				String content = rs.getString(5);
+//				String time = rs.getString(6);
+//				String recommend = rs.getString(7);
+//				
+//				bDTO = new BlogDTO(blog_id, member_id, group_id, title, content, time, recommend);
+//				bList.add(bDTO);
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		
+//		return bList;
+//	}
 	
 	// 게시글 수정
 	public int update(BlogDTO bDto) {

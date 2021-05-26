@@ -99,17 +99,17 @@
 		<!--? Hero Area End-->
 		<!--================Blog Area =================-->
 		<section class="blog_area section-padding">
-			<form method="post" enctype="multipart/form-data" action="blog.jsp">
+			<form method="post" enctype="multipart/form-data" action="BlogUpdateService">
 				<div class="form-group">
 					<div class="mt-10">
-						<input type="text" name="first_name" placeholder="제목"
-							onfocus="this.placeholder = ''"
-							
-							class="single-input">
+						<input type="text" name="title" placeholder="제목"
+							onfocus="this.placeholder = ''" class="single-input">
 					</div>
 					<br>
-					<textarea class="single-textarea" placeholder="설명"
-						onfocus="this.placeholder = ''"></textarea>
+					<input type="text" class="single-textarea" placeholder="설명"
+						onfocus="this.placeholder = ''" name="content">
+					<!-- <textarea class="single-textarea" placeholder="설명"
+						onfocus="this.placeholder = ''" name="content"></textarea>  -->
 					<br>
 					<div class="input-group mb-3">
 							<input type="file" name="filename1" size=40>
@@ -120,6 +120,7 @@
 							class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
 							name="Btn_blogItemWrite" style="margin-left: 25%" value="게시판 업로드">
 					</div>
+				</div>
 			</form>
 			<a href="blog.jsp"
 				class="button rounded-0 primary-bg w-50 text-white btn_1 boxed-btn"
