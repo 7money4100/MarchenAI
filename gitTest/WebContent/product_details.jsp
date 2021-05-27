@@ -1,3 +1,4 @@
+<%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -28,7 +29,7 @@
     
 
 <body>
-<% MemberDTO info = (MemberDTO) %>
+<% MemberDTO info = (MemberDTO)session.getAttribute("info");%>
 <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
