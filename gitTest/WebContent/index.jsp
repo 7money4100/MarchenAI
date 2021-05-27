@@ -165,7 +165,7 @@
                                 <img src="assets/img/gallery/new_product1.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.jsp">캐릭터 이름1</a></h3>
+                                <h3>캐릭터 이름1</h3>
                                 
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                                 <img src="assets/img/gallery/new_product2.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.jsp">캐릭터 이름2</a></h3>
+                                <h3>캐릭터 이름2</h3>
                                 
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                                 <img src="assets/img/gallery/new_product3.png" alt="">
                             </div>
                             <div class="product-caption">
-                                <h3><a href="product_details.jsp">캐릭터 이름3</a></h3>
+                                <h3>캐릭터 이름3</h3>
                                
                             </div>
                         </div>

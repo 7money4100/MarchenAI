@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.CharacterDTO"%>
+<%@page import="com.CharacterDAO"%>
 <%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -28,7 +31,20 @@
 
 <body>
 <%
+	
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	CharacterDAO dao = new CharacterDAO();
+	ArrayList<CharacterDTO> cRandomList = null;
+	// cRandomList = dao.characterRandomSelect(dto);
+	String name = null;
+	
+	
+	
+	//if(info != null){
+	   //String id = info.getId();
+	   //name = dao.select(info.getId());   
+	
+
 	%>
     <!--? Preloader Start -->
     <div id="preloader-active">
@@ -104,6 +120,9 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Hero Area End-->
+        <!-- Latest Products Start -->
         <form action="#"><!-- 미지정 -->
         	<div class="input-group mb-3" style="margin-left:33%">
 				<input type="file" value="파일선택하기" name="file" class="btn_3" />
@@ -111,11 +130,13 @@
 				<input type="submit" value="전송"> <!-- 전송 -->
 			</div>
 		</form>
-		<form action="#"><!-- 미지정 -->
-			<input type="submit" value="전송"> <!-- 전송 -->
+		<form action="CharacterRandomService"><!-- 미지정 -->
+			<div class="input-group mb-3 w-50" style="margin-left:33%">
+				<input type="submit" value="무작위 랜덤" class="btn_3"> <!-- 전송 -->
+			</div>
 		</form>
-        <!-- Hero Area End-->
-        <!-- Latest Products Start -->
+		
+		
         <section class="popular-items latest-padding">
             <div class="container">
                 <div class="row product-btn justify-content-between mb-40">
@@ -142,23 +163,24 @@
                     <!-- card one -->
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row">
-                        	<%for(int i=0; i<6;i++){%>
+                        	<%for( int i=cRandomList.size()-1; i>=0; i--){%>
                             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                     <div class="popular-img">
-                                    	<a href="product_details.jsp">
-                                       	 <img src="assets/img/gallery/popular1.png" alt="">
+                                    	<a>
+                                       	 <img src="<%=cRandomList.get(i).getCharacter_filename()%>" alt="">
                                        	</a>
-                                        <div class="img-cap">
-                                            <span>Add to cart</span>
+                                       	<div class="img-cap">
+                                        	<span onclick="location='cart.jsp'"> Add to cart</span>
                                         </div>
                                         <div class="favorit-items">
                                             <span class="flaticon-heart"></span>
-                                        </div>
+                                        </div></form>
+                                        
                                     </div>
                                     <div class="popular-caption">
-                                        <h3><a href="product_details.jsp">Thermo Ball Etip Gloves</a></h3>
-                                        <span>$ 45,743</span>
+                                        <h3><a><%=cRandomList.get(i).getCharacter_title()%></a></h3>
+                                        <span>2,000원</span>
                                     </div>
                                 </div>
                             </div>

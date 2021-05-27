@@ -1,39 +1,56 @@
 package com;
 
 public class CharacterDTO {
-	
-	private int group_id;
-	private String time;
-	private String fileNamePrefix;
-	
-	
+
+	private String character_filename;
+	private String member_id;
+	private String character_title;
 	
 	
-	public CharacterDTO(int group_id, String time, String fileNamePrefix) {
+	public CharacterDTO(String character_filename, String character_title) {
 		super();
-		this.group_id = group_id;
-		this.time = time;
-		this.fileNamePrefix = fileNamePrefix;
+		this.character_filename = character_filename;
+		this.character_title = character_title;
+	}
+
+
+	public CharacterDTO(String character_filename, String member_id, String character_title) {
+		super();
+		this.character_filename = character_filename;
+		this.member_id = member_id;
+		this.character_title = character_title;
+	}
+
+
+	public String getCharacter_filename() {
+		return character_filename;
+	}
+
+
+	public void setCharacter_filename(String character_filename) {
+		this.character_filename = character_filename;
+	}
+
+
+	public String getMember_id() {
+		return member_id;
+	}
+
+
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
+	}
+
+
+	public String getCharacter_title() {
+		return character_title;
+	}
+
+
+	public void setCharacter_title(String character_title) {
+		this.character_title = character_title;
 	}
 	
-	public int getGroup_id() {
-		return group_id;
-	}
-	public void setGroup_id(int group_id) {
-		this.group_id = group_id;
-	}
-	public String getTime() {
-		return time;
-	}
-	public void setTime(String time) {
-		this.time = time;
-	}
-	public String getFileNamePrefix() {
-		return fileNamePrefix;
-	}
-	public void setFileNamePrefix(String fileNamePrefix) {
-		this.fileNamePrefix = fileNamePrefix;
-	}
 	
 	
 	

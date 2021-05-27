@@ -14,10 +14,11 @@ CREATE TABLE member(
 );
 
 CREATE TABLE character(
-	group_id number,
-	time varchar2(20),
-	filenameprefix varchar2(20),
-	constraint pk_member_mid primary key(group_id)
+	character_filename varchar2(500),
+	member_id varchar2(20),
+	character_title varchar2(100),
+	constraint pk_character_filename primary key(character_filename),
+	constraint fk_member_id_characeter FOREIGN KEY (member_id) REFERENCES member(member_id)
 );
 
 CREATE TABLE cart(
@@ -62,3 +63,5 @@ CREATE TABLE scrap(
 select * from member;
 
 select * from blog;
+
+insert into CHARACTER values(

@@ -54,17 +54,17 @@ public class CharacterDAO {
 			String sql = "select * from character";
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setInt(1, dto.getGroup_id());
-			psmt.setString(2, dto.getTime());
-			psmt.setString(3, dto.getFileNamePrefix());
+			psmt.setString(1, dto.getCharacter_filename());
+			psmt.setString(2, dto.getMember_id());
+			psmt.setString(3, dto.getCharacter_title());
 			rs = psmt.executeQuery();
 			
 			while (rs.next()) {
-				int group_id = rs.getInt(1);
-				String time = rs.getString(2);
-				String filenameprefix = rs.getString(3);
+				String Character_filename = rs.getString(1);
+				String Member_id = rs.getString(2);
+				String Character_title = rs.getString(3);
 				
-				characterDto = new CharacterDTO(group_id, time, filenameprefix);
+				characterDto = new CharacterDTO(Character_filename, Member_id, Character_title);
 				characterList.add(characterDto);
 			}
 				
@@ -75,6 +75,39 @@ public class CharacterDAO {
 		} 
 		
 		return characterList;
+	}
+	
+	
+public ArrayList<CharacterDTO> characterRandomSelect(CharacterDTO dto) {
 		
+		characterList = new ArrayList<CharacterDTO>();
+		
+		conn();
+		
+		try {
+			String sql = "select * from character order by rand() limit 10";
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, dto.getCharacter_filename());
+			psmt.setString(2, dto.getMember_id());
+			psmt.setString(3, dto.getCharacter_title());
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				String Character_filename = rs.getString(1);
+				String Member_id = rs.getString(2);
+				String Character_title = rs.getString(3);
+				
+				characterDto = new CharacterDTO(Character_filename, Member_id, Character_title);
+				characterList.add(characterDto);
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		} 
+		
+		return characterList;
 	}
 }
