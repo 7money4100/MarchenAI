@@ -1,3 +1,4 @@
+<%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -26,6 +27,9 @@
 </head>
 
 <body>
+<%
+	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -56,15 +60,24 @@
                                 <li><a href="index.jsp">Home</a></li>
                                     <li><a href="shop.jsp">Character</a></li>
                                     <li><a href="blog.jsp">Blog</a></li>
-                                    <li><a href="login.jsp">Login</a></li>
+                                    <%if(info != null){ %>
+                                    <li><a href="LogoutService">Logout</a></li>
+								<%}else{ %>
+									<li><a href="login.jsp">Login</a></li>
+								<%} %>
                             </ul>
                         </nav>
                     </div>
                     <!-- Header Right -->
                     <div class="header-right">
                         <ul>
-                            <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
-                            <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                            <%if(info != null){ %>
+                               		<li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
+                               	 	<li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <%}else{ %>
+                                	<li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
+                               	 	<li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <%} %>
                         </ul>
                     </div>
                 </div>
