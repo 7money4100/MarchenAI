@@ -63,5 +63,24 @@ CREATE TABLE scrap(
 select * from member;
 
 select * from blog;
+select * from character;
 
-insert into CHARACTER values(
+insert into CHARACTER values('characterImg/1.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/2.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/3.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/4.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/5.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/6.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/7.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/8.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/9.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/10.png', 'song','aaa'); 
+
+
+select e.*
+from (select ROWNUM as rn, CHARACTER_FILENAME, MEMBER_ID, CHARACTER_TITLE
+      from character
+      order by dbms_random.value
+     ) e
+where rn <= 5;
+

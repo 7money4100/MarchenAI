@@ -36,16 +36,16 @@
 
 <!-- 로그인 정보 받아오기 -->
 <%
-	String input_search="";
-	input_search = request.getParameter("input_search");
-	MemberDTO info = (MemberDTO) session.getAttribute("info");
-	BlogDAO dao =  new BlogDAO();
-	ArrayList<BlogDTO> bAllList=null;
-	ArrayList<BlogDTO> bSelectList=null;
-	bAllList = dao.allSelect();
-	bSelectList = dao.select(input_search);
-	System.out.println(bSelectList);
-	
+   String input_search="";
+   input_search = request.getParameter("input_search");
+   MemberDTO info = (MemberDTO) session.getAttribute("info");
+   BlogDAO dao =  new BlogDAO();
+   ArrayList<BlogDTO> bAllList=null;
+   ArrayList<BlogDTO> bSelectList=null;
+   bAllList = dao.allSelect();
+   bSelectList = dao.select(input_search);
+   System.out.println(bSelectList);
+   
 %>
 <!--? Preloader Start -->
     <div id="preloader-active">
@@ -78,9 +78,9 @@
                                     <li><a href="blog.jsp">Blog</a></li>
                                     <%if(info != null){ %>
                                     <li><a href="LogoutService">Logout</a></li>
-								<%}else{ %>
-									<li><a href="login.jsp">Login</a></li>
-								<%} %>
+                        <%}else{ %>
+                           <li><a href="login.jsp">Login</a></li>
+                        <%} %>
                                 </ul>
                             </nav>
                         </div>
@@ -88,11 +88,11 @@
                         <div class="header-right">
                             <ul>
                                 <%if(info != null){ %>
-                               		<li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                     <li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%}else{ %>
-                                	<li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                   <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%} %>
                             </ul>
                         </div>
@@ -128,54 +128,54 @@
                 <div class="row">
                     <div class="col-lg-8 mb-5 mb-lg-0">
                         <div class="blog_left_sidebar">
-                        	<%if(input_search==null){ %>
-                        		<%for(int i=bAllList.size()-1; i>=0; i--){ %> 
-                        			<article class="blog_item">
-                              	  <div class="blog_item_img">
-                                 	   <img class="card-img rounded-0" src="<%=bAllList.get(i).getFilename()%>" alt="">
-                              	  </div>
-                               	 <div class="blog_details">
-                                	    <a class="d-inline-block" href="single-blog.jsp">
-                                 	       <h2><%=bAllList.get(i).getTitle()%></h2>
-                                 	   </a>
-                                 	   <p><%=bAllList.get(i).getContent()%></p>
-                                 	   <ul class="blog-info-link">
-                                 	       <li><%if(info != null){ %>
-                                  	      <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                 	       <%}else{%>
-                                 	       <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                  	      <%} %>
-                                  	      </li>
-                                  	  </ul>
-                               	 </div>
-                          	  </article>
-                        		<%} %>
-                        	<%}else{%>
-                        		<%for(int i=bSelectList.size()-1; i>=0; i--){ %> 
-                        			<article class="blog_item">
-                              	  <div class="blog_item_img">
-                                 	   <img class="card-img rounded-0" src="<%=bSelectList.get(i).getFilename()%>" alt="">
-                              	  </div>
-                               	 <div class="blog_details">
-                                	    <a class="d-inline-block" href="single-blog.jsp">
-                                 	       <h2><%=bSelectList.get(i).getTitle()%></h2>
-                                 	   </a>
-                                 	   <p><%=bSelectList.get(i).getContent()%></p>
-                                 	   <ul class="blog-info-link">
-                                 	       <li><%if(info != null){ %>
-                                  	      <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                 	       <%}else{%>
-                                 	       <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                  	      <%} %>
-                                  	      </li>
-                                  	  </ul>
-                               	 </div>
-                          	  </article>
-                        		<%} %>
-                        	<%} %>
-                        	
-                        	
-                        	
+                           <%if(input_search==null){ %>
+                              <%for(int i=bAllList.size()-1; i>=0; i--){ %> 
+                                 <article class="blog_item">
+                                   <div class="blog_item_img">
+                                       <img class="card-img rounded-0" src="<%=bAllList.get(i).getFilename()%>" alt="">
+                                   </div>
+                                   <div class="blog_details">
+                                       <a class="d-inline-block" href="single-blog.jsp">
+                                           <h2><%=bAllList.get(i).getTitle()%></h2>
+                                       </a>
+                                       <p><%=bAllList.get(i).getContent()%></p>
+                                       <ul class="blog-info-link">
+                                           <li><%if(info != null){ %>
+                                           <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                           <%}else{%>
+                                           <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                           <%} %>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </article>
+                              <%} %>
+                           <%}else{%>
+                              <%for(int i=bSelectList.size()-1; i>=0; i--){ %> 
+                                 <article class="blog_item">
+                                   <div class="blog_item_img">
+                                       <img class="card-img rounded-0" src="<%=bSelectList.get(i).getFilename()%>" alt="">
+                                   </div>
+                                   <div class="blog_details">
+                                       <a class="d-inline-block" href="single-blog.jsp">
+                                           <h2><%=bSelectList.get(i).getTitle()%></h2>
+                                       </a>
+                                       <p><%=bSelectList.get(i).getContent()%></p>
+                                       <ul class="blog-info-link">
+                                           <li><%if(info != null){ %>
+                                           <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                           <%}else{%>
+                                           <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                           <%} %>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </article>
+                              <%} %>
+                           <%} %>
+                           
+                           
+                           
                             <nav class="blog-pagination justify-content-center d-flex">
                                 <ul class="pagination">
                                     <li class="page-item">
@@ -213,8 +213,8 @@
                                         </div>
                                     </div>
                                 </form>
-                            	<a href="blogWriting.jsp"class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" name="Btn_blogItemWrite">
-                            	글쓰기</a>
+                               <a href="blogWriting.jsp"class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" name="Btn_blogItemWrite">
+                               글쓰기</a>
                             </aside>
                         </div>
                     </div>
@@ -350,7 +350,7 @@
     <script src="./assets/js/mail-script.js"></script>
     <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
     
-    <!-- Jquery Plugins, main Jquery -->	
+    <!-- Jquery Plugins, main Jquery -->   
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>

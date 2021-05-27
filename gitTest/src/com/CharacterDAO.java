@@ -78,25 +78,26 @@ public class CharacterDAO {
 	}
 	
 	
-public ArrayList<CharacterDTO> characterRandomSelect(CharacterDTO dto) {
+public ArrayList<CharacterDTO> characterRandomSelect() {
 		
 		characterList = new ArrayList<CharacterDTO>();
 		
 		conn();
 		
 		try {
-			String sql = "select * from character order by rand() limit 10";
+			String sql = "select e.*\r\n"
+					+ "from (select ROWNUM as rn, CHARACTER_FILENAME, MEMBER_ID, CHARACTER_TITLE\r\n"
+					+ "      from character\r\n"
+					+ "      order by dbms_random.value\r\n"
+					+ "     ) e\r\n"
+					+ "where rn <= 5";
 			psmt = conn.prepareStatement(sql);
-			
-			psmt.setString(1, dto.getCharacter_filename());
-			psmt.setString(2, dto.getMember_id());
-			psmt.setString(3, dto.getCharacter_title());
 			rs = psmt.executeQuery();
 			
 			while (rs.next()) {
-				String Character_filename = rs.getString(1);
-				String Member_id = rs.getString(2);
-				String Character_title = rs.getString(3);
+				String Character_filename = rs.getString(2);
+				String Member_id = rs.getString(3);
+				String Character_title = rs.getString(4);
 				
 				characterDto = new CharacterDTO(Character_filename, Member_id, Character_title);
 				characterList.add(characterDto);

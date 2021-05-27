@@ -34,17 +34,17 @@ public class CharacterRandomService extends HttpServlet {
 	    		 
 		 CharacterDAO dao = new CharacterDAO();
 		 CharacterDTO dto = new CharacterDTO(character_filename, member_id ,title);
-		 characterList = dao.characterRandomSelect(dto);
+		 characterList = dao.characterRandomSelect();
 		 
 		 if(characterList != null) {
+			 session.setAttribute("cdto", characterList);
 			 System.out.println("랜덤캐릭터 불러오기 성공!");
 			 response.sendRedirect("shop.jsp");
 		 }else {
 			 System.out.println("랜덤캐릭터 불러오기 실패");
 			 response.sendRedirect("index.jsp");
 		 }
-		}	 
-	     
+		}
 	     
 	     
 }
