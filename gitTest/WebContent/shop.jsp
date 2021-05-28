@@ -177,9 +177,13 @@
 									<div class="popular-img">
 										<a> <img src="<%=cList.get(i).getCharacter_filename()%>" alt="">
 										</a>
-										<div class="img-cap">
-											<span onclick="location:cart.jsp">Add to cart</span>
-										</div>
+										<form action="CartAddService" id="frm">
+                                			<div class="img-cap">
+                                    			<span onclick="document.getElementById('frm').submit();">Add to cart</span>
+                                   				<input name="Character_filename" value="<%=cList.get(i).getCharacter_filename()%>" style="display:none">
+                                   				<input name="Character_price" value="<%=cList.get(i).getCharacter_title()%>" style="display:none">
+                                			</div>
+                            			</form>
 										<div class="favorit-items">
 											<span class="flaticon-heart"></span>
 										</div>

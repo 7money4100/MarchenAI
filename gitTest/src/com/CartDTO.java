@@ -1,40 +1,38 @@
 package com;
 
 public class CartDTO {
-	private int cart_id;
+	private String character_filename;
 	private String member_id;
-	private int group_id;
+	private String character_title;
 	
-	public CartDTO(int cart_id, String member_id, int group_id) {
+	
+	public CartDTO(String character_filename, String member_id, String character_title) {
 		super();
-		this.cart_id = cart_id;
+		this.character_filename = character_filename;
 		this.member_id = member_id;
-		this.group_id = group_id;
+		this.character_title = character_title;
 	}
-
-	public int getCart_id() {
-		return cart_id;
+	
+	public String getCharacter_filename() {
+		return character_filename;
 	}
-
-	public void setCart_id(int cart_id) {
-		this.cart_id = cart_id;
+	public void setCharacter_filename(String character_filename) {
+		this.character_filename = character_filename;
 	}
-
 	public String getMember_id() {
 		return member_id;
 	}
-
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
 	}
-
-	public int getGroup_id() {
-		return group_id;
+	public String getCharacter_title() {
+		return character_title;
 	}
-
-	public void setGroup_id(int group_id) {
-		this.group_id = group_id;
+	public void setCharacter_title(String character_title) {
+		this.character_title = character_title;
 	}
+	
+	
 
 	
 }

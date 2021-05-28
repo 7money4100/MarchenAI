@@ -28,6 +28,16 @@ CREATE TABLE cart(
 	CONSTRAINT pk_cart_cid PRIMARY KEY(cart_id)
 );
 
+CREATE TABLE cart(
+	cart_filename varchar2(500),
+	member_id varchar2(20),
+	cart_price varchar2(20),
+	constraint fk_member_id_cart FOREIGN KEY (member_id) REFERENCES member(member_id),
+	constraint fk_cart_filename_cart FOREIGN KEY (cart_filename) REFERENCES character(character_filename)
+);
+
+
+
 CREATE TABLE PAYMENT(
 	payment_id NUMBER (20),
 	member_id varchar2(20),
@@ -75,6 +85,8 @@ insert into CHARACTER values('characterImg/7.png', 'song','aaa');
 insert into CHARACTER values('characterImg/8.png', 'song','aaa'); 
 insert into CHARACTER values('characterImg/9.png', 'song','aaa'); 
 insert into CHARACTER values('characterImg/10.png', 'song','aaa'); 
+
+insert into blog values('1.png','song', '제목','설명입니다',0); 
 
 
 select e.*

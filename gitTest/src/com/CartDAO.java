@@ -51,12 +51,12 @@ public class CartDAO {
 		conn();
 		
 		try {
-			String sql = "insert into scrap values(?, ?, ?)";
+			String sql = "insert into cart values(?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setInt(1, dto.getCart_id());
+			psmt.setString(1, dto.getCharacter_filename());
 			psmt.setString(2, dto.getMember_id());
-			psmt.setInt(3, dto.getGroup_id());
+			psmt.setString(3, dto.getCharacter_title());
 			cnt = psmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -70,78 +70,78 @@ public class CartDAO {
 	}
 	
 	// 장바구니에 조회해서 띄워줄 때
-	public ArrayList<CartDTO> cartSelect(String id) {
-			
-		cartList = new ArrayList<CartDTO>();
-			
-		conn();
-			
-		try {
-			String sql = "select * from cart where member_id = ?";
-			psmt = conn.prepareStatement(sql);
-			
-			psmt.setString(1, id);
-			rs = psmt.executeQuery();
-				
-			while (rs.next()) {
-				int cart_id = rs.getInt(1);
-				String member_id = rs.getString(2);
-				int group_id = rs.getInt(3);
-					
-				cartDto = new CartDTO(cart_id, member_id, group_id);
-				cartList.add(cartDto);
-			}
-					
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		return cartList;
-		
-		}
-	
-	// 장바구니 전체 삭제
-	public int cartDeleteAll(String id) {
-
-		conn();
-
-		try {
-		String sql = "delete from cart where member_id = ?";
-		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, id);
-		cnt = psmt.executeUpdate();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-
-		return cnt;
-
-		}
-	
-	// 장바구니 단일 삭제 (where절 비교할 값 생각해봐야 함)
-	public int cartDeleteOne(String cart_id) {
-
-	conn();
-
-	try {
-		String sql = "delete from scrap where group_id = ?";
-		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, cart_id);
-		cnt = psmt.executeUpdate();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-
-		return cnt;
-
-		}
+//	public ArrayList<CartDTO> cartSelect(String id) {
+//			
+//		cartList = new ArrayList<CartDTO>();
+//			
+//		conn();
+//			
+//		try {
+//			String sql = "select * from cart where member_id = ?";
+//			psmt = conn.prepareStatement(sql);
+//			
+//			psmt.setString(1, id);
+//			rs = psmt.executeQuery();
+//				
+//			while (rs.next()) {
+//				int cart_id = rs.getInt(1);
+//				String member_id = rs.getString(2);
+//				int group_id = rs.getInt(3);
+//					
+//				cartDto = new CartDTO(cart_id, member_id, group_id);
+//				cartList.add(cartDto);
+//			}
+//					
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		
+//		return cartList;
+//		
+//		}
+//	
+//	// 장바구니 전체 삭제
+//	public int cartDeleteAll(String id) {
+//
+//		conn();
+//
+//		try {
+//		String sql = "delete from cart where member_id = ?";
+//		psmt = conn.prepareStatement(sql);
+//		psmt.setString(1, id);
+//		cnt = psmt.executeUpdate();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//
+//		return cnt;
+//
+//		}
+//	
+//	// 장바구니 단일 삭제 (where절 비교할 값 생각해봐야 함)
+//	public int cartDeleteOne(String cart_id) {
+//
+//	conn();
+//
+//	try {
+//		String sql = "delete from scrap where group_id = ?";
+//		psmt = conn.prepareStatement(sql);
+//		psmt.setString(1, cart_id);
+//		cnt = psmt.executeUpdate();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//
+//		return cnt;
+//
+//		}
 
 }
