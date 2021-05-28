@@ -53,13 +53,13 @@ public class ScrapDAO {
 		conn();
 
 		try {
-			String sql = "insert into scrap values(? , ? , ? , ?)";
+			String sql = "insert into scrap values(? , ? , ?)";
 			psmt = conn.prepareStatement(sql);
 
-			psmt.setString(1, dto.getMember_id());
-			psmt.setInt(2, dto.getGroup_id());
-			psmt.setInt(3, dto.getPayment_id());
-			psmt.setString(4, dto.getTime());
+			psmt.setString(1, dto.getScrap_filename());
+			psmt.setString(2, dto.getMember_id());
+			psmt.setString(3, dto.getScrap_price());
+
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -87,12 +87,11 @@ public class ScrapDAO {
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
-				String member_id = rs.getString(1);
-				int group_id = rs.getInt(2);
-				int payment_id = rs.getInt(3);
-				String time = rs.getString(4);
+				String scrap_filename = rs.getString(1);
+				String member_id = rs.getString(2);
+				String scrap_price = rs.getString(3);
 
-				scrapDto = new ScrapDTO(member_id, group_id, payment_id, time);
+				scrapDto = new ScrapDTO(scrap_filename, member_id, scrap_price);
 				scrapList.add(scrapDto);
 			}
 
@@ -126,15 +125,15 @@ public class ScrapDAO {
 
 	}
 
-	// 스크랩 단일 삭제 (where절 비교할 값 생각해봐야 함)
-	public int scrapDeleteOne(String group_id) {
+	// 스크랩 단일 삭제
+	public int scrapDeleteOne(String filename) {
 
 		conn();
 
 		try {
-			String sql = "delete from scrap where group_id = ?";
+			String sql = "delete from scrap where scrap_filename = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, group_id);
+			psmt.setString(1, filename);
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {

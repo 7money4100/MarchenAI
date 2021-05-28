@@ -12,7 +12,7 @@ public class MemberDAO {
 	
 	Connection conn = null;
 	PreparedStatement psmt = null;
-	int cnt=0;
+	int cnt = 0;
 	ResultSet rs = null;
 	MemberDTO loginDto = null;
 
@@ -60,6 +60,7 @@ public class MemberDAO {
 		}finally {
 			close();
 		}
+		
 		return cnt;
 	}
 	
@@ -84,6 +85,7 @@ public class MemberDAO {
 		}finally {
 			close();
 		}
+		
 		return loginDto;
 	}
 	
@@ -104,7 +106,9 @@ public class MemberDAO {
 			e.printStackTrace();
 		}finally {
 			close();
-		}return cnt;
+		}
+		
+		return cnt;
 	}
 	
 	public String select(String member_id) {
@@ -123,7 +127,9 @@ public class MemberDAO {
 			e.printStackTrace();
 		}finally {
 			close();
-		}return name;
+		}
+		
+		return name;
 		
 	}
 	

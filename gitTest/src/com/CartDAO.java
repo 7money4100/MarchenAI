@@ -12,7 +12,7 @@ public class CartDAO {
 	
 	Connection conn = null;
 	PreparedStatement psmt = null;
-	int cnt=0;
+	int cnt = 0;
 	ResultSet rs = null;
 	CartDTO cartDto = null;
 	ArrayList<CartDTO> cartList = null;
@@ -51,12 +51,12 @@ public class CartDAO {
 		conn();
 		
 		try {
-			String sql = "insert into scrap values(?, ?, ?)";
+			String sql = "insert into cart values(?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			
-			psmt.setInt(1, dto.getCart_id());
+			psmt.setString(1, dto.getCart_filename());
 			psmt.setString(2, dto.getMember_id());
-			psmt.setInt(3, dto.getGroup_id());
+			psmt.setString(3, dto.getCart_price());
 			cnt = psmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -84,11 +84,11 @@ public class CartDAO {
 			rs = psmt.executeQuery();
 				
 			while (rs.next()) {
-				int cart_id = rs.getInt(1);
+				String cart_filename = rs.getString(1);
 				String member_id = rs.getString(2);
-				int group_id = rs.getInt(3);
+				String cart_price = rs.getString(3);
 					
-				cartDto = new CartDTO(cart_id, member_id, group_id);
+				cartDto = new CartDTO(cart_filename, member_id, cart_price);
 				cartList.add(cartDto);
 			}
 					
@@ -123,15 +123,15 @@ public class CartDAO {
 
 		}
 	
-	// 장바구니 단일 삭제 (where절 비교할 값 생각해봐야 함)
-	public int cartDeleteOne(String cart_id) {
+	// 장바구니 단일 삭제
+	public int cartDeleteOne(String filename) {
 
 	conn();
 
 	try {
-		String sql = "delete from scrap where group_id = ?";
+		String sql = "delete from cart where cart_filename = ?";
 		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, cart_id);
+		psmt.setString(1, filename);
 		cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {
