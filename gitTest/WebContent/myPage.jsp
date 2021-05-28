@@ -26,10 +26,10 @@
         <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<%
+	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-<!--? Preloader Start -->
+	<!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -58,11 +58,11 @@
                                     <li><a href="index.jsp">Home</a></li>
                                     <li><a href="shop.jsp">shop</a></li>
                                     <li><a href="blog.jsp">Blog</a></li>
-                                    <%if(info != null){ %>
-                                    <li><a href="LogoutService">Logout</a></li>
-								<%}else{ %>
-									<li><a href="login.jsp">Login</a></li>
-								<%} %>
+                                	<%if(info != null){ %>
+                                   		<li><a href="LogoutService">Logout</a></li>
+									<%}else{ %>
+										<li><a href="login.jsp">Login</a></li>
+									<%} %>
                                 </ul>
                             </nav>
                         </div>
@@ -114,9 +114,11 @@
                                 <h3>회원정보 수정</h3>
                                 <form class="row contact_form" action="UpdateMemberService" method="post" novalidate="novalidate">
                                     <div class="col-md-12 form-group p_star">
-                                        <h5 class="form-control"><%if(info != null){ %>
-                               		<%=info.getMember_id()%>
-                               		<%} %></h5>
+                                        <h5 class="form-control">
+                                        	<%if(info != null){ %>
+                               				<%=info.getMember_id()%>
+                               				<%} %>
+                               			</h5>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="password" class="form-control" id="password" name="pw" value=""
@@ -148,30 +150,36 @@
                     <div class="properties__button">
                       <h3>스크랩한 캐릭터</h3>
                     </div>
-                    
-                    <!-- Grid and List view -->
-                    <div class="grid-list-view">
-                    </div>
-                    <!-- Select items -->
-                    <div class="select-this">
-                        <form action="#">
-                        
-                        </form>
-                    </div>
+                    <button type="submit" value="submit" class="btn_3">스크랩 전체 삭제</button>
                 </div>
                 <!-- Nav Card -->
                 <div class="tab-content" id="nav-tabContent">
                     <!-- card one -->
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row">
+                        <!-- 해당 아이디의 스크랩 목록 보여줌 -->
                             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                     <div class="popular-img">
                                         <img src="assets/img/gallery/popular1.png" alt="">
-                                        <div class="img-cap">
-                                            <span>Add to cart</span>
-                                        </div>
-                                       
+                                        <!-- 스크랩 삭제 -->
+                                        <form action="scrapSelectDeleteService" id="scrapSelectDeleteService">
+	                                        <div class="favorit-items">
+	                                        	<span onclick="document.getElementBy('scrapSelectDeleteService').submit();">
+	                                            	<img src="./assets/img/remove.png"></img>
+	                                            </span>
+	                                            <%-- <input name="filename" value="<%=scrapList.get(i).getCharacter_filename()%>>" style="display:none"> --%>
+	                                        </div>
+                                        </form>
+                                        
+                                        <!-- 장바구니 추가 -->
+                                        <form action="cartUpdateService" id="cartUpdateService">
+	                                        <div class="img-cap">
+	                                        	<span onclick="document.getElementBy('cartUpdateService').submit();">Add to cart</span>
+	                                        	<%-- <input name="filename" value="<%=scrapList.get(i).getCharacter_filename()%>>" style="display:none"> --%>
+	                                        </div>
+                                        </form>
+                                        
                                     </div>
                                     <div class="popular-caption">
                                         <h3><a href="product_details.jsp">스크랩한 캐릭터1</a></h3>
@@ -179,77 +187,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-popular-items mb-50 text-center">
-                                    <div class="popular-img">
-                                        <img src="assets/img/gallery/popular2.png" alt="">
-                                        <div class="img-cap">
-                                            <span>Add to cart</span>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="popular-caption">
-                                        <h3><a href="product_details.jsp">스크랩한 캐릭터2</a></h3>
-                                        <span>$ 45,743</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-popular-items mb-50 text-center">
-                                    <div class="popular-img">
-                                        <img src="assets/img/gallery/popular3.png" alt="">
-                                        <div class="img-cap">
-                                            <span>Add to cart</span>
-                                        </div>
-                                    </div>
-                                    <div class="popular-caption">
-                                        <h3><a href="product_details.jsp">스크랩한 캐릭터3</a></h3>
-                                        <span>$ 45,743</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-popular-items mb-50 text-center">
-                                    <div class="popular-img">
-                                        <img src="assets/img/gallery/popular4.png" alt="">
-                                        <div class="img-cap">
-                                            <span>Add to cart</span>
-                                        </div>
-                                    </div>
-                                    <div class="popular-caption">
-                                        <h3><a href="product_details.jsp">스크랩한 캐릭터4</a></h3>
-                                        <span>$ 45,743</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-popular-items mb-50 text-center">
-                                    <div class="popular-img">
-                                        <img src="assets/img/gallery/popular5.png" alt="">
-                                        <div class="img-cap">
-                                            <span>Add to cart</span>
-                                        </div>
-                                    </div>
-                                    <div class="popular-caption">
-                                        <h3><a href="product_details.jsp">스크랩한 캐릭터5</a></h3>
-                                        <span>$ 45,743</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-popular-items mb-50 text-center">
-                                    <div class="popular-img">
-                                        <img src="assets/img/gallery/popular6.png" alt="">
-                                        <div class="img-cap">
-                                            <span>Add to cart</span>
-                                        </div>
-                                    </div>
-                                    <div class="popular-caption">
-                                        <h3><a href="product_details.jsp">스크랩한 캐릭터6</a></h3>
-                                        <span>$ 45,743</span>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>                    
                 </div>
