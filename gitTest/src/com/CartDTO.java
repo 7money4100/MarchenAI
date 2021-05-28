@@ -1,38 +1,38 @@
 package com;
 
 public class CartDTO {
-	private String character_filename;
+	private String cart_filename;
 	private String member_id;
-	private String character_title;
+	private String cart_price;
 	
-	
-	public CartDTO(String character_filename, String member_id, String character_title) {
+	public CartDTO(String cart_filename, String member_id, String cart_price) {
 		super();
-		this.character_filename = character_filename;
+		this.cart_filename = cart_filename;
 		this.member_id = member_id;
-		this.character_title = character_title;
+		this.cart_price = cart_price;
 	}
-	
-	public String getCharacter_filename() {
-		return character_filename;
+
+	public String getCart_filename() {
+		return cart_filename;
 	}
-	public void setCharacter_filename(String character_filename) {
-		this.character_filename = character_filename;
+
+	public void setCart_filename(String cart_filename) {
+		this.cart_filename = cart_filename;
 	}
+
 	public String getMember_id() {
 		return member_id;
 	}
+
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
 	}
-	public String getCharacter_title() {
-		return character_title;
-	}
-	public void setCharacter_title(String character_title) {
-		this.character_title = character_title;
-	}
-	
-	
 
-	
+	public String getCart_price() {
+		return cart_price;
+	}
+
+	public void setCart_price(String cart_price) {
+		this.cart_price = cart_price;
+	}
 }

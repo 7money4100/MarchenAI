@@ -17,12 +17,11 @@ public class BlogDTO {
 		this.recommend = recommend;
 	}
 	
-	public BlogDTO(int recommend) { //좋아요
+	// 좋아요
+	public BlogDTO(int recommend) { 
 		super();
 		this.recommend = recommend;
 	}
-
-
 
 	public String getFilename() {
 		return filename;
@@ -53,6 +52,5 @@ public class BlogDTO {
 	}
 	public void setRecommend(int recommend) {
 		this.recommend = recommend;
-	}
-	
+	}	
 }

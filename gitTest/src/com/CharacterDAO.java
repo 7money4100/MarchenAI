@@ -11,7 +11,7 @@ public class CharacterDAO {
 	
 	Connection conn = null;
 	PreparedStatement psmt = null;
-	int cnt=0;
+	int cnt = 0;
 	ResultSet rs = null;
 	CharacterDTO characterDto = null;
 	ArrayList<CharacterDTO> characterList = null;
@@ -53,18 +53,14 @@ public class CharacterDAO {
 		try {
 			String sql = "select * from character";
 			psmt = conn.prepareStatement(sql);
-			
-			psmt.setString(1, dto.getCharacter_filename());
-			psmt.setString(2, dto.getMember_id());
-			psmt.setString(3, dto.getCharacter_title());
 			rs = psmt.executeQuery();
 			
 			while (rs.next()) {
 				String Character_filename = rs.getString(1);
 				String Member_id = rs.getString(2);
-				String Character_title = rs.getString(3);
+				String Character_price = rs.getString(3);
 				
-				characterDto = new CharacterDTO(Character_filename, Member_id, Character_title);
+				characterDto = new CharacterDTO(Character_filename, Member_id, Character_price);
 				characterList.add(characterDto);
 			}
 				
@@ -86,7 +82,7 @@ public ArrayList<CharacterDTO> characterRandomSelect() {
 		
 		try {
 			String sql = "select e.*\r\n"
-					+ "from (select ROWNUM as rn, CHARACTER_FILENAME, MEMBER_ID, CHARACTER_TITLE\r\n"
+					+ "from (select ROWNUM as rn, CHARACTER_FILENAME, MEMBER_ID, CHARACTER_PRICE\r\n"
 					+ "      from character\r\n"
 					+ "      order by dbms_random.value\r\n"
 					+ "     ) e\r\n"
@@ -97,9 +93,9 @@ public ArrayList<CharacterDTO> characterRandomSelect() {
 			while (rs.next()) {
 				String Character_filename = rs.getString(2);
 				String Member_id = rs.getString(3);
-				String Character_title = rs.getString(4);
+				String Character_price = rs.getString(4);
 				
-				characterDto = new CharacterDTO(Character_filename, Member_id, Character_title);
+				characterDto = new CharacterDTO(Character_filename, Member_id, Character_price);
 				characterList.add(characterDto);
 			}
 				

@@ -1,17 +1,23 @@
 package com;
 
 public class ScrapDTO {
+	private String scrap_filename;
 	private String member_id;
-	private int group_id;
-	private int payment_id;
-	private String time;
+	private String scrap_price;
 	
-	public ScrapDTO(String member_id, int group_id, int payment_id, String time) {
+	public ScrapDTO(String scrap_filename, String member_id, String scrap_price) {
 		super();
+		this.scrap_filename = scrap_filename;
 		this.member_id = member_id;
-		this.group_id = group_id;
-		this.payment_id = payment_id;
-		this.time = time;
+		this.scrap_price = scrap_price;
+	}
+
+	public String getScrap_filename() {
+		return scrap_filename;
+	}
+
+	public void setScrap_filename(String scrap_filename) {
+		this.scrap_filename = scrap_filename;
 	}
 
 	public String getMember_id() {
@@ -22,28 +28,11 @@ public class ScrapDTO {
 		this.member_id = member_id;
 	}
 
-	public int getGroup_id() {
-		return group_id;
+	public String getScrap_price() {
+		return scrap_price;
 	}
 
-	public void setGroup_id(int group_id) {
-		this.group_id = group_id;
+	public void setScrap_price(String scrap_price) {
+		this.scrap_price = scrap_price;
 	}
-
-	public int getPayment_id() {
-		return payment_id;
-	}
-
-	public void setPayment_id(int payment_id) {
-		this.payment_id = payment_id;
-	}
-
-	public String getTime() {
-		return time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-	
 }
