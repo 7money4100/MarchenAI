@@ -71,6 +71,7 @@ CREATE TABLE scrap(
 );
 
 select * from member;
+select * from cart;
 
 select * from blog;
 select * from character;
