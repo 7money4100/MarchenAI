@@ -26,15 +26,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<!-- 로그인 정보 받아오기 -->
-<%
+	<!-- 로그인 정보 받아오기 -->
+	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
-		
-			//MessageDAO dao = new MessageDAO();
-			//ArrayList<MessageDTO> mlist = null;
-			//if(info != null){
-		//mlist = dao.select(info.getEmail());
-			//}
 	%>
 
 
@@ -69,10 +63,10 @@
                                     <li><a href="shop.jsp">Character</a></li>
                                     <li><a href="blog.jsp">Blog</a></li>
                                     <%if(info != null){ %>
-                                    <li><a href="LogoutService">Logout</a></li>
-								<%}else{ %>
-									<li><a href="login.jsp">Login</a></li>
-								<%} %>
+                                    	<li><a href="LogoutService">Logout</a></li>
+									<%}else{ %>
+										<li><a href="login.jsp">Login</a></li>
+									<%} %>
                                     
                                 </ul>
                             </nav>
@@ -100,53 +94,9 @@
         <!-- Header End -->
     </header>
     <main>
-        <!--? slider Area Start -->
-        <div class="slider-area ">
-            <div class="slider-active">
-                <!-- Single Slider -->
-                <div class="single-slider slider-height d-flex align-items-center slide-bg">
-                    <div class="container">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                                <div class="hero__caption">
-                                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Hello Indie!</h1>
-                                    <h3 data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">인디인디에 오신 여러분 환영합니다. AI가 당신만을 위해 만들어준 세상에 하나밖에 없는 캐릭터를 만나보세요!</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
-                                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="assets/img/hero/main.png" alt="" class=" heartbeat"> <!-- Home 이미지  -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Slider -->
-                <div class="single-slider slider-height d-flex align-items-center slide-bg">
-                    <div class="container">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                                <div class="hero__caption">
-                                    <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Hello Indie!</h1>
-                                    <h3 data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">인디인디에 오신 여러분 환영합니다. AI가 당신만을 위해 만들어준 세상에 하나밖에 없는 캐릭터를 만나보세요!</h3>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
-                                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="assets/img/hero/main.png" alt="" class=" heartbeat">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- slider Area End-->
+    	<div><img src="assets/img/hero/index_img.png" style="width:100%"></div>
+    	<!-- <div><img src="assets/img/hero/index_img.png" class="heartbeat" style="width:100%"></div> -->
+    	
         <!-- ? New Product Start -->
         <section class="new-product-area section-padding30">
             <div class="container">
