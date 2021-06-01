@@ -60,13 +60,13 @@
                   <div class="main-menu d-none d-lg-block">
                      <nav>
                         <ul id="navigation">
-                           <li><a href="index.jsp">Home</a></li>
-                           <li><a href="shop.jsp">Character</a></li>
-                           <li><a href="blog.jsp">Blog</a></li>
+                           <li><a href="index.jsp">홈</a></li>
+                           <li><a href="shop.jsp">캐릭터</a></li>
+                           <li><a href="blog.jsp">게시판</a></li>
                            <%if(info != null){ %>
-                                    <li><a href="LogoutService">Logout</a></li>
+                                    <li><a href="LogoutService">로그아웃</a></li>
                         <%}else{ %>
-                           <li><a href="login.jsp">Login</a></li>
+                           <li><a href="login.jsp">로그인</a></li>
                         <%} %>
                         </ul>
                      </nav>
@@ -96,19 +96,7 @@
    </header>
    <main>
       <!--? Hero Area Start-->
-      <div class="slider-area ">
-         <div class="single-slider slider-height2 d-flex align-items-center">
-            <div class="container">
-               <div class="row">
-                  <div class="col-xl-12">
-                     <div class="hero-cap text-center">
-                        <h2>게시판 업로드</h2>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+        <div><img src="assets/img/hero/board_writing_ban.png" style="width:100%"></div>
       <!--? Hero Area End-->
       <!--================Blog Area =================-->
       <section class="blog_area section-padding">
@@ -120,7 +108,7 @@
                </div>
                <br>
                <input type="text" class="single-textarea" placeholder="설명"
-                  onfocus="this.placeholder = ''" name="content">
+                  onfocus="this.placeholder = ''" name="content"">
                <!-- <textarea class="single-textarea" placeholder="설명"
                   onfocus="this.placeholder = ''" name="content"></textarea>  -->
                <br>

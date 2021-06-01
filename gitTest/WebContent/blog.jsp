@@ -13,11 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    
-    
-    
-    
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">    
 
     <!-- CSS here -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -73,13 +69,13 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">Character</a></li>
-                                    <li><a href="blog.jsp">Blog</a></li>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
                                     <%if(info != null){ %>
-                                    <li><a href="LogoutService">Logout</a></li>
+                                    <li><a href="LogoutService">로그아웃</a></li>
                         <%}else{ %>
-                           <li><a href="login.jsp">Login</a></li>
+                           <li><a href="login.jsp">로그인</a></li>
                         <%} %>
                                 </ul>
                             </nav>
@@ -108,19 +104,7 @@
     </header>
     <main>
         <!--? Hero Area Start-->
-        <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>Blog</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div><img src="assets/img/hero/board_ban.png" style="width:100%"></div>
         <!--? Hero Area End-->
         <!--================Blog Area =================-->
         <section class="blog_area section-padding">
@@ -204,7 +188,7 @@
                                 <form action="blog.jsp">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder='Search Keyword'
+                                            <input type="text" class="form-control" placeholder='키워드 검색'
                                                 onfocus="this.placeholder = ''"
                                                 onblur="this.placeholder = 'Search Keyword'" name="input_search">
                                             <div class="input-group-append">
