@@ -39,13 +39,12 @@
 	         // cList = dao.characterRandomSelect(); 
 	    	 // 인기 캐릭터 순위 select
 	    	  cList = new ArrayList<CharacterDTO>();
-	    	  cList.add(new CharacterDTO("characterImg/basic.png","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/basic.png","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/basic.png","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/basic.png","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/basic.png","basic"));
+	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
+	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
+	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
+	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
+	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
 	      }
-
    %>
 	<!--? Preloader Start -->
 	<div id="preloader-active">
@@ -75,13 +74,13 @@
 						<div class="main-menu d-none d-lg-block">
 							<nav>
 								<ul id="navigation">
-									<li><a href="index.jsp">Home</a></li>
-									<li><a href="shop.jsp">Character</a></li>
-									<li><a href="blog.jsp">Blog</a></li>
+									<li><a href="index.jsp">홈</a></li>
+									<li><a href="shop.jsp">캐릭터</a></li>
+									<li><a href="blog.jsp">게시판</a></li>
 									<%if(info != null){ %>
-									<li><a href="LogoutService">Logout</a></li>
+									<li><a href="LogoutService">로그아웃</a></li>
 									<%}else{ %>
-									<li><a href="login.jsp">Login</a></li>
+									<li><a href="login.jsp">로그인</a></li>
 									<%} %>
 								</ul>
 							</nav>
@@ -112,26 +111,17 @@
 		<!-- Header End -->
 	</header>
 	<main>
-		<!-- Hero Area Start-->
-		<div class="slider-area ">
-			<div class="single-slider slider-height2 d-flex align-items-center">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="hero-cap text-center">
-								<h2>Character</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!--? Hero Area Start-->
+        <div><img src="assets/img/hero/character_ban.png" style="width:100%"></div>
+        <!--? Hero Area End-->
+        <br>
+        <br>
 		<form action="#">
 			<!-- 미지정 -->
 			<div class="input-group mb-3" style="margin-left: 33%">
-				<input type="file" value="파일선택하기" name="file" class="btn_3" />
+				<input type="file" value="파일선택하기" name="file" style="display: inline-block; padding: 18px 36px; border-radius: 5px; background-color: transparent; border: 1px solid #eb6130; font-size: 15px; font-weight: 700; color: #eb6130; text-transform: uppercase; font-weight: 400;" />
 				<!-- <input type="submit" value="업로드" class = "btn_4"/> -->
-				<input type="submit" value="전송">
+				<input type="submit" value="전송" class="btn_3">
 				<!-- 전송 -->
 			</div>
 		</form>
@@ -154,12 +144,6 @@
 					<div class="select-this">
 						<form action="#">
 							<div class="select-itms">
-								<select name="select" id="select1">
-									<option value="">40 per page</option>
-									<option value="">50 per page</option>
-									<option value="">60 per page</option>
-									<option value="">70 per page</option>
-								</select>
 							</div>
 						</form>
 					</div>
@@ -179,7 +163,7 @@
 										</a>
 										<form action="CartAddService" id="frm">
                                 			<div class="img-cap">
-                                    			<span onclick="document.getElementById('frm').submit();">Add to cart</span>
+                                    			<span onclick="document.getElementById('frm').submit();">장바구니 추가</span>
                                    				<input name="Character_filename" value="<%=cList.get(i).getCharacter_filename()%>" style="display:none">
                                    				<input name="Character_price" value="<%=cList.get(i).getCharacter_price() %>" style="display:none">
                                 			</div>
