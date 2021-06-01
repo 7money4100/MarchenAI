@@ -86,13 +86,13 @@
 						<div class="main-menu d-none d-lg-block">
 							<nav>
 								<ul id="navigation">
-									<li><a href="index.jsp">Home</a></li>
-									<li><a href="shop.jsp">Character</a></li>
-									<li><a href="blog.jsp">Blog</a></li>
+									<li><a href="index.jsp">홈</a></li>
+									<li><a href="shop.jsp">캐릭터</a></li>
+									<li><a href="blog.jsp">블로그</a></li>
 									<%if(info != null){ %>
-                                    <li><a href="LogoutService">Logout</a></li>
+                                    <li><a href="LogoutService">로그아웃</a></li>
 								<%}else{ %>
-									<li><a href="login.jsp">Login</a></li>
+									<li><a href="login.jsp">로그인</a></li>
 								<%} %>
 								</ul>
 							</nav>
@@ -120,21 +120,9 @@
 		<!-- Header End -->
 	</header>
 	<main>
-		<!-- Hero Area Start-->
-		<div class="slider-area ">
-			<div class="single-slider slider-height2 d-flex align-items-center">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="hero-cap text-center">
-								<h2>Sign in/Login</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Hero Area End-->
+		<!--? Hero Area Start-->
+        <div><img src="assets/img/hero/join_login_ban.png" style="width:100%"></div>
+        <!--? Hero Area End-->
 		<!--================login_part Area =================-->
 		<section class="login_part section_padding ">
 			<div class="container">
@@ -142,28 +130,28 @@
 					<div class="col-lg-6 col-md-6">
 						<div class="login_part_form">
 							<div class="login_part_form_iner">
-								<h3>Sign in</h3>
+								<h3>회원가입</h3>
 								<form class="row contact_form" action="JoinService"
 									method="post" novalidate="novalidate">
 									<div class="col-md-12 form-group p_star">
 										<input type="text" class="form-control" id="id_text"
-											name="member_id" value="" placeholder="ID">
+											name="member_id" value="" placeholder="아이디">
 									</div>
 									<div class="col-md-12 form-group p_star">
 										<input type="password" class="form-control" id="password"
-											name="pw" value="" placeholder="Password">
+											name="pw" value="" placeholder="비밀번호">
 									</div>
 									<div class="col-md-12 form-group p_star">
 										<input type="text" class="form-control" id="name" name="name"
-											value="" placeholder="Name">
+											value="" placeholder="이름">
 									</div>
 									<div class="col-md-12 form-group p_star">
 										<input type="text" class="form-control" id="asdasd"
-											name="email" value="" placeholder="Email">
+											name="email" value="" placeholder="이메일">
 									</div>
 									<div class="col-md-12 form-group">
 										<button href="JoinService" type="submit" value="submit"
-											class="btn_3">Sign in</button>
+											class="btn_3">회원가입</button>
 									</div>
 								</form>
 							</div>
@@ -173,21 +161,21 @@
 						<div class="login_part_form">
 							<div class="login_part_form_iner">
 								<h3>
-									Welcome Back ! <br> Please Sign in now
+									환영합니다! <br> 회원가입 후 로그인해주세요.
 								</h3>
 								<form class="row contact_form" action="LoginService" method="post"
 									novalidate="novalidate">
 									<div class="col-md-12 form-group p_star">
 										<input type="text" class="form-control" id="name" name="member_id"
-											value="" placeholder="Username">
+											value="" placeholder="아이디">
 									</div>
 									<div class="col-md-12 form-group p_star">
 										<input type="password" class="form-control" id="password"
-											name="pw" value="" placeholder="Password">
+											name="pw" value="" placeholder="비밀번호">
 									</div>
 									<div class="col-md-12 form-group">
 										<button href="LoginService" type="submit" value="submit"
-											class="btn_3">log in</button>
+											class="btn_3">로그인</button>
 
 										<!-- login btn -->
 										<div class="fb-login-button" data-max-rows="1"

@@ -4,10 +4,10 @@
  */
  
  @font-face{ src : url("../fonts/LittlePanda_Demo.otf");
-font-family: "LittlePanda_Demo";}
+font-family: "GmarketSansTTFMedium";}
 
 @font-face{ src : url("../fonts/ELAND-Cho-M.ttf");
-font-family: "ELAND-Cho-M";}
+font-family: "GmarketSansTTFMedium";}
 
 
 .fa,
@@ -4303,7 +4303,7 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 @font-face {
-  font-family: 'LittlePanda_Demo';
+  font-family: "GmarketSansTTFMedium";
   font-style: normal;
   font-weight: normal;
   font-display: auto;
@@ -4311,9 +4311,9 @@ readers do not read off random characters that represent icons */
   src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
 
 .fab {
-  font-family: 'LittlePanda_Demo'; }
+  font-family: "GmarketSansTTFMedium"; }
 @font-face {
-  font-family: 'LittlePanda_Demo';
+  font-family: "GmarketSansTTFMedium";
   font-style: normal;
   font-weight: 400;
   font-display: auto;
@@ -4321,10 +4321,10 @@ readers do not read off random characters that represent icons */
   src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
 
 .far {
-  font-family: 'LittlePanda_Demo';
+  font-family: "GmarketSansTTFMedium";
   font-weight: 400; }
 @font-face {
-  font-family: 'LittlePanda_Demo';
+  font-family: "GmarketSansTTFMedium";
   font-style: normal;
   font-weight: 900;
   font-display: auto;
@@ -4333,5 +4333,5 @@ readers do not read off random characters that represent icons */
 
 .fa,
 .fas {
-  font-family: 'LittlePanda_Demo';
+  font-family: "GmarketSansTTFMedium";
   font-weight: 900; }

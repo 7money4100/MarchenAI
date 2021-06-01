@@ -1,7 +1,6 @@
 DROP TABLE member CASCADE constraints;
 DROP TABLE character CASCADE constraints;
 DROP TABLE cart CASCADE constraints;
-DROP TABLE PAYMENT cascade constraints;
 DROP TABLE blog cascade constraints;
 DROP TABLE scrap cascade constraints;
 
@@ -57,16 +56,16 @@ CREATE TABLE scrap(
 select * from scrap;
 
 
-insert into CHARACTER values('characterImg/1.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/2.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/3.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/4.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/5.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/6.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/7.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/8.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/9.png', 'song','aaa'); 
-insert into CHARACTER values('characterImg/10.png', 'song','aaa'); 
+insert into CHARACTER values('characterImg/1.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/2.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/3.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/4.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/5.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/6.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/7.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/8.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/9.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/10.png', 'choi','1000'); 
 
 
 select e.*

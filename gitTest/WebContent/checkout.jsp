@@ -57,13 +57,13 @@
                     <div class="main-menu d-none d-lg-block">
                         <nav>                                                
                             <ul id="navigation">  
-                                <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">Character</a></li>
-                                    <li><a href="blog.jsp">Blog</a></li>
+                                <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
                                     <%if(info != null){ %>
-                                    <li><a href="LogoutService">Logout</a></li>
+                                    <li><a href="LogoutService">로그아웃</a></li>
 								<%}else{ %>
-									<li><a href="login.jsp">Login</a></li>
+									<li><a href="login.jsp">로그인</a></li>
 								<%} %>
                             </ul>
                         </nav>
@@ -91,20 +91,9 @@
     <!-- Header End -->
   </header>
     <main>
-        <!-- Hero Area Start-->
-        <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>주문하기</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--? Hero Area Start-->
+        <div><img src="assets/img/hero/checkout_ban.png" style="width:100%"></div>
+        <!--? Hero Area End-->
         <!--================Checkout Area =================-->
         <section class="checkout_area section_padding">
           <div class="container">

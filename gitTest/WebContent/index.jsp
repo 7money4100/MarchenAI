@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
 	<!-- 로그인 정보 받아오기 -->
@@ -59,13 +60,13 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">Character</a></li>
-                                    <li><a href="blog.jsp">Blog</a></li>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
                                     <%if(info != null){ %>
-                                    	<li><a href="LogoutService">Logout</a></li>
+                                    	<li><a href="LogoutService">로그아웃</a></li>
 									<%}else{ %>
-										<li><a href="login.jsp">Login</a></li>
+										<li><a href="login.jsp">로그인</a></li>
 									<%} %>
                                     
                                 </ul>
@@ -94,8 +95,8 @@
         <!-- Header End -->
     </header>
     <main>
-    	<div><img src="assets/img/hero/index_img.png" style="width:100%"></div>
-    	<!-- <div><img src="assets/img/hero/index_img.png" class="heartbeat" style="width:100%"></div> -->
+    	<div><img src="assets/img/hero/index_main_ban.png" style="width:100%"></div>
+    	<!-- <div><img src="assets/img/hero/index_banner.png" class="heartbeat" style="width:100%"></div> -->
     	
         <!-- ? New Product Start -->
         <section class="new-product-area section-padding30">

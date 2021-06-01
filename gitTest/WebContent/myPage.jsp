@@ -55,13 +55,13 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="shop.jsp">shop</a></li>
-                                    <li><a href="blog.jsp">Blog</a></li>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
                                    <%if(info != null){ %>
-                                         <li><a href="LogoutService">Logout</a></li>
+                                         <li><a href="LogoutService">로그아웃</a></li>
                            <%}else{ %>
-                              <li><a href="login.jsp">Login</a></li>
+                              <li><a href="login.jsp">로그인</a></li>
                            <%} %>
                                 </ul>
                             </nav>
@@ -89,21 +89,9 @@
         <!-- Header End -->
     </header>
     <main>
-        <!-- Hero Area Start-->
-        <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>My Page</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Hero Area End-->
+        <!--? Hero Area Start-->
+        <div><img src="assets/img/hero/mypage_ban.png" style="width:100%"></div>
+        <!--? Hero Area End-->
         <!--================login_part Area =================-->
         <section class="login_part">
             <div class="container">
@@ -122,15 +110,15 @@
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="password" class="form-control" id="password" name="pw" value=""
-                                            placeholder="Password">
+                                            placeholder="비밀번호">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="name" value=""
-                                            placeholder="Name">
+                                            placeholder="이름">
                                     </div>
                                     <div class="col-md-12 form-group p_star">
                                         <input type="text" class="form-control" id="name" name="email" value=""
-                                            placeholder="Email">
+                                            placeholder="이메일">
                                     </div>
                                     <div class="col-md-12 form-group">
                                         <button type="submit" value="submit" class="btn_3">
@@ -175,7 +163,7 @@
                                         <!-- 장바구니 추가 -->
                                         <form action="cartUpdateService" id="cartUpdateService">
                                            <div class="img-cap">
-                                              <span onclick="document.getElementBy('cartUpdateService').submit();">Add to cart</span>
+                                              <span onclick="document.getElementBy('cartUpdateService').submit();">장바구니 추가</span>
                                               <%-- <input name="filename" value="<%=scrapList.get(i).getCharacter_filename()%>>" style="display:none"> --%>
                                            </div>
                                         </form>
