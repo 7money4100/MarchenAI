@@ -35,6 +35,7 @@
    String input_search="";
    input_search = request.getParameter("input_search");
    MemberDTO info = (MemberDTO) session.getAttribute("info");
+   String member_id = info.getMember_id();
    BlogDAO dao =  new BlogDAO();
    ArrayList<BlogDTO> bAllList=null;
    ArrayList<BlogDTO> bSelectList=null;
@@ -69,14 +70,14 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.jsp">홈</a></li>
-                                    <li><a href="shop.jsp">캐릭터</a></li>
-                                    <li><a href="blog.jsp">게시판</a></li>
+                                    <li><a href="index.jsp" style="font-size:20px">홈</a></li>
+                                    <li><a href="shop.jsp" style="font-size:20px">캐릭터</a></li>
+                                    <li><a href="blog.jsp" style="font-size:20px">게시판</a></li>
                                     <%if(info != null){ %>
-                                    <li><a href="LogoutService">로그아웃</a></li>
-                        <%}else{ %>
-                           <li><a href="login.jsp">로그인</a></li>
-                        <%} %>
+                                       <li><a href="LogoutService" style="font-size:20px">로그아웃</a></li>
+                           <%}else{ %>
+                              <li><a href="login.jsp" style="font-size:20px">로그인</a></li>
+                           <%} %>
                                 </ul>
                             </nav>
                         </div>
@@ -116,7 +117,15 @@
                               <%for(int i=bAllList.size()-1; i>=0; i--){ %> 
                                  <article class="blog_item">
                                    <div class="blog_item_img">
-                                       <img class="card-img rounded-0" src="<%=bAllList.get(i).getFilename()%>" alt="">
+                                         <form action="BlogDeleteService" id="blogDeleteService<%=i%>" style="float :right">
+                                           <div class="favorit-items">
+                                               <span onclick="document.getElementById('blogDeleteService<%=i%>').submit();">
+                                                  <img src="./assets/img/remove.png"></img>
+                                               </span>
+                                               <input name="title" value="<%=bAllList.get(i).getTitle()%>" style="display:none">
+                                           </div>
+                                        </form>
+                                       <img class="card-img rounded-0" src="<%=bAllList.get(i).getFilename()%>" alt="" style="width:610px; height:300px; object-fit:scale-down">
                                    </div>
                                    <div class="blog_details">
                                        <a class="d-inline-block" href="single-blog.jsp">
@@ -124,11 +133,35 @@
                                        </a>
                                        <p><%=bAllList.get(i).getContent()%></p>
                                        <ul class="blog-info-link">
+                                       <%ArrayList<BlogDTO> bList= dao.loveSelect(bAllList.get(i).getFilename(), member_id); %>
                                            <li><%if(info != null){ %>
-                                           <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                           <%}else{%>
-                                           <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                           <%if(bList.size() ==0){ %>
+                                           <form action="BlogLikeItService" id="addHeartBlog<%=i %>">
+                                                 <div class="favorit-items">
+                                                    <span onclick="document.getElementById('addHeartBlog<%=i %>').submit();">
+                                                       <img class="n" id="heart<%=i%>" src="./assets/img/heart.png" value="0"></img>
+                                                       <%=bAllList.get(i).getRecommend()%>
+                                                    </span>
+                                                    <input name="like" value="<%=bAllList.get(i).getRecommend()%>" style="display: none">
+                                                    <input name="file_name" value="<%=bAllList.get(i).getFilename()%>" style="display: none">
+                                                 </div>
+                                           </form>
+                                           <%}else{ %>
+                                           <form action="BlogLikeItService" id="addHeartBlog<%=i %>">
+                                                 <div class="favorit-items">
+                                                    <span onclick="document.getElementById('addHeartBlog<%=i %>').submit();">
+                                                       <img class="n" id="heart<%=i%>" src="./assets/img/redheart.png" value="0"></img>
+                                                       <%=bAllList.get(i).getRecommend()%>
+                                                    </span>
+                                                    <input name="like" value="<%=bAllList.get(i).getRecommend()%>" style="display: none">
+                                                    <input name="file_name" value="<%=bAllList.get(i).getFilename()%>" style="display: none">
+                                                 </div>
+                                           </form>
+                                           <!--<a href="BlogLikeItService?like=<%=bAllList.get(i).getRecommend()%>&file_name=<%=bAllList.get(i).getFilename()%>"><i class="flaticon-heart"></i> <%=bAllList.get(i).getRecommend()%></a>  -->
                                            <%} %>
+                                           <%}else{%>
+                                           <a href="login.jsp"><i class="flaticon-heart"></i> <%=bAllList.get(i).getRecommend() %></a>
+                                           <%}%>
                                            </li>
                                        </ul>
                                    </div>
@@ -138,7 +171,7 @@
                               <%for(int i=bSelectList.size()-1; i>=0; i--){ %> 
                                  <article class="blog_item">
                                    <div class="blog_item_img">
-                                       <img class="card-img rounded-0" src="<%=bSelectList.get(i).getFilename()%>" alt="">
+                                       <img class="card-img rounded-0" src="<%=bSelectList.get(i).getFilename()%>" alt="" style="width:610px; height:300px; object-fit:scale-down">
                                    </div>
                                    <div class="blog_details">
                                        <a class="d-inline-block" href="single-blog.jsp">
@@ -146,40 +179,41 @@
                                        </a>
                                        <p><%=bSelectList.get(i).getContent()%></p>
                                        <ul class="blog-info-link">
+                                       <%ArrayList<BlogDTO> bList= dao.loveSelect(bAllList.get(i).getFilename(), member_id); %>
                                            <li><%if(info != null){ %>
-                                           <a href="#"><i class="flaticon-heart"></i> 좋아요 0</a>
-                                           <%}else{%>
-                                           <a href="login.jsp"><i class="flaticon-heart"></i> 좋아요 0</a>
+                                           <%if(bList.size() ==0){ %>
+                                           <form action="BlogLikeItService" id="addHeartBlog<%=i %>">
+                                                 <div class="favorit-items">
+                                                    <span onclick="document.getElementById('addHeartBlog<%=i %>').submit();">
+                                                       <img class="n" id="heart<%=i%>" src="./assets/img/heart.png" value="0"></img>
+                                                       <%=bAllList.get(i).getRecommend()%>
+                                                    </span>
+                                                    <input name="like" value="<%=bAllList.get(i).getRecommend()%>" style="display: none">
+                                                    <input name="file_name" value="<%=bAllList.get(i).getFilename()%>" style="display: none">
+                                                 </div>
+                                           </form>
+                                           <%}else{ %>
+                                           <form action="BlogLikeItService" id="addHeartBlog<%=i %>">
+                                                 <div class="favorit-items">
+                                                    <span onclick="document.getElementById('addHeartBlog<%=i %>').submit();">
+                                                       <img class="n" id="heart<%=i%>" src="./assets/img/redheart.png" value="0"></img>
+                                                       <%=bAllList.get(i).getRecommend()%>
+                                                    </span>
+                                                    <input name="like" value="<%=bAllList.get(i).getRecommend()%>" style="display: none">
+                                                    <input name="file_name" value="<%=bAllList.get(i).getFilename()%>" style="display: none">
+                                                 </div>
+                                           </form>
+                                           <!--<a href="BlogLikeItService?like=<%=bAllList.get(i).getRecommend()%>&file_name=<%=bAllList.get(i).getFilename()%>"><i class="flaticon-heart"></i> <%=bAllList.get(i).getRecommend()%></a>  -->
                                            <%} %>
+                                           <%}else{%>
+                                           <a href="login.jsp"><i class="flaticon-heart"></i> <%=bAllList.get(i).getRecommend() %></a>
+                                           <%}%>
                                            </li>
                                        </ul>
                                    </div>
                                </article>
                               <%} %>
                            <%} %>
-                           
-                           
-                           
-                            <nav class="blog-pagination justify-content-center d-flex">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Previous">
-                                            <i class="ti-angle-left"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link">1</a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a href="#" class="page-link">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Next">
-                                            <i class="ti-angle-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -197,8 +231,20 @@
                                         </div>
                                     </div>
                                 </form>
-                               <a href="blogWriting.jsp"class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" name="Btn_blogItemWrite">
+                                <%if(info != null){ %>
+                                <a href="blogWriting.jsp"class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" name="Btn_blogItemWrite">
                                글쓰기</a>
+                                <%}else{ %>
+                                <a href="login.jsp"class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" name="Btn_blogItemWrite">
+                               글쓰기</a>
+                               <%} %>
+                               <%if(info != null){ %>
+                                  <a href="blog_my.jsp"class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" name="Btn_blogItemWrite">
+                                 내가쓴글 보러가기</a>
+                               <%}else{ %>
+                               <a href="login.jsp"class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" name="Btn_blogItemWrite">
+                                 내가쓴글 보러가기</a>
+                               <%} %>
                             </aside>
                         </div>
                     </div>
@@ -221,7 +267,6 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
                                 </div>
                                 </div>
                             </div>
@@ -230,12 +275,12 @@
                     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Quick Links</h4>
+                                <h4>바로가기</h4>
                                 <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Offers & Discounts</a></li>
-                                    <li><a href="#"> Get Coupon</a></li>
-                                    <li><a href="#">  Contact Us</a></li>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
+                                    <li><a href="login.jsp">회원가입 / 로그인</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -243,12 +288,10 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>New Products</h4>
+                                <h4>서비스</h4>
                                 <ul>
-                                    <li><a href="#">Woman Cloth</a></li>
-                                    <li><a href="#">Fashion Accessories</a></li>
-                                    <li><a href="#"> Man Accessories</a></li>
-                                    <li><a href="#"> Rubber made Toys</a></li>
+                                    <li><a href="shop.jsp">유사 캐릭터 추천</a></li>
+                                    <li><a href="shop.jsp">랜덤 캐릭터 추천</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -256,12 +299,12 @@
                     <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Support</h4>
+                                <h4>고객지원</h4>
                                 <ul>
-                                    <li><a href="#">Frequently Asked Questions</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Report a Payment Issue</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">Q&A</a></li>
+                                    <li><a href="#">이용약관</a></li>
+                                    <li><a href="#">개인정보처리방침</a></li>
                                 </ul>
                             </div>
                         </div>

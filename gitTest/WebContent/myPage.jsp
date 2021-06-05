@@ -1,3 +1,7 @@
+<%@page import="com.CharacterDTO"%>
+<%@page import="com.ScrapDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.ScrapDAO"%>
 <%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -28,7 +32,15 @@
 <body>
    <%
    MemberDTO info = (MemberDTO) session.getAttribute("info");
+   String memeber_id = info.getMember_id();
+   ScrapDAO dao = new ScrapDAO();
+   ArrayList<ScrapDTO> scrapList = null;
+   scrapList = dao.scrapSelect(memeber_id);
+   System.out.println(scrapList.size());
+   //ArrayList<CharacterDTO> cList = (ArrayList<CharacterDTO>) session.getAttribute("cdto");
    %>
+   
+   
    <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -55,14 +67,14 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.jsp">홈</a></li>
-                                    <li><a href="shop.jsp">캐릭터</a></li>
-                                    <li><a href="blog.jsp">게시판</a></li>
-                                   <%if(info != null){ %>
-                                         <li><a href="LogoutService">로그아웃</a></li>
-                           <%}else{ %>
-                              <li><a href="login.jsp">로그인</a></li>
-                           <%} %>
+		                            <li><a href="index.jsp" style="font-size:20px">홈</a></li>
+									<li><a href="shop.jsp" style="font-size:20px">캐릭터</a></li>
+									<li><a href="blog.jsp" style="font-size:20px">게시판</a></li>
+									<%if(info != null){ %>
+										<li><a href="LogoutService" style="font-size:20px">로그아웃</a></li>
+									<%}else{ %>
+										<li><a href="login.jsp" style="font-size:20px">로그인</a></li>
+									<%} %>
                                 </ul>
                             </nav>
                         </div>
@@ -91,7 +103,8 @@
     <main>
         <!--? Hero Area Start-->
         <div><img src="assets/img/hero/mypage_ban.png" style="width:100%"></div>
-        <!--? Hero Area End-->
+      	<!--? Hero Area End-->
+        <!-- Hero Area End-->
         <!--================login_part Area =================-->
         <section class="login_part">
             <div class="container">
@@ -99,7 +112,12 @@
                     <div>
                         <div class="login_part_form">
                             <div class="login_part_form_iner">
-                                <h3>회원정보 수정</h3>
+                                <h3>회원정보 수정
+	                                <form action="MemberOutService">
+	                       				<button type="submit" value="submit" class="btn_1" style="width:100px; height:30px; line-height:20px; padding:0px; text-align:center; float:right;">회원탈퇴</button>
+	                    			</form>
+                    			</h3>
+                                
                                 <form class="row contact_form" action="UpdateMemberService" method="post" novalidate="novalidate">
                                     <div class="col-md-12 form-group p_star">
                                         <h5 class="form-control">
@@ -136,9 +154,11 @@
             <div class="container">
                 <div class="row product-btn justify-content-between mb-40">
                     <div class="properties__button">
-                      <h3>스크랩한 캐릭터</h3>
+                      <h3 style="font-size:26px; line-height:36px; font-weight:700;">스크랩한 캐릭터</h3>
                     </div>
-                    <button type="submit" value="submit" class="btn_3">스크랩 전체 삭제</button>
+                    <form action="ScrapAllDeleteService">
+                       <button type="submit" value="submit" class="btn_1" style="width:150px; height:30px; padding:0px; text-align:center; float:right;">스크랩 전체 삭제</button>
+                    </form>
                 </div>
                 <!-- Nav Card -->
                 <div class="tab-content" id="nav-tabContent">
@@ -146,35 +166,36 @@
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row">
                         <!-- 해당 아이디의 스크랩 목록 보여줌 -->
+                        <%for(int i=0; i<scrapList.size();i++){ %>
                             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                     <div class="popular-img">
-                                        <img src="assets/img/gallery/popular1.png" alt="">
+                                        <img src="<%=scrapList.get(i).getScrap_filename()%>" alt="">
                                         <!-- 스크랩 삭제 -->
-                                        <form action="scrapSelectDeleteService" id="scrapSelectDeleteService">
+                                        <form action="ScrapDeleteService" id="scrapSelectDeleteService<%=i%>">
                                            <div class="favorit-items">
-                                              <span onclick="document.getElementBy('scrapSelectDeleteService').submit();">
+                                               <span onclick="document.getElementById('scrapSelectDeleteService<%=i%>').submit();">
                                                   <img src="./assets/img/remove.png"></img>
                                                </span>
-                                               <%-- <input name="filename" value="<%=scrapList.get(i).getCharacter_filename()%>>" style="display:none"> --%>
+                                               <input name="Character_filename" value="<%=scrapList.get(i).getScrap_filename()%>" style="display:none">
                                            </div>
                                         </form>
-                                        
                                         <!-- 장바구니 추가 -->
-                                        <form action="cartUpdateService" id="cartUpdateService">
-                                           <div class="img-cap">
-                                              <span onclick="document.getElementBy('cartUpdateService').submit();">장바구니 추가</span>
-                                              <%-- <input name="filename" value="<%=scrapList.get(i).getCharacter_filename()%>>" style="display:none"> --%>
-                                           </div>
-                                        </form>
-                                        
+                                        <form action="CartAddService" id="addCart<%=i %>">
+                                         <div class="img-cap">
+                                             <span onclick="document.getElementById('addCart<%=i %>').submit();">장바구니 추가</span>
+                                               <input name="Character_filename" value="<%=scrapList.get(i).getScrap_filename()%>" style="display:none">
+                                               <input name="Character_price" value="<%=scrapList.get(i).getScrap_price()%>" style="display:none">
+                                               <input name="num" value="<%=i%>" style="display:none">
+                                         </div>
+                                     </form>
                                     </div>
                                     <div class="popular-caption">
-                                        <h3><a href="product_details.jsp">스크랩한 캐릭터1</a></h3>
-                                        <span>$ 45,743</span>
+                                        <span><%=scrapList.get(i).getScrap_price()%>원</span>
                                     </div>
                                 </div>
                             </div>
+                            <%} %>
                             
                         </div>
                     </div>                    
@@ -198,7 +219,6 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
                                 </div>
                                 </div>
                             </div>
@@ -207,12 +227,12 @@
                     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Quick Links</h4>
+                                <h4>바로가기</h4>
                                 <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Offers & Discounts</a></li>
-                                    <li><a href="#"> Get Coupon</a></li>
-                                    <li><a href="#">  Contact Us</a></li>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
+                                    <li><a href="login.jsp">회원가입 / 로그인</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -220,12 +240,10 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>New Products</h4>
+                                <h4>서비스</h4>
                                 <ul>
-                                    <li><a href="#">Woman Cloth</a></li>
-                                    <li><a href="#">Fashion Accessories</a></li>
-                                    <li><a href="#"> Man Accessories</a></li>
-                                    <li><a href="#"> Rubber made Toys</a></li>
+                                    <li><a href="shop.jsp">유사 캐릭터 추천</a></li>
+                                    <li><a href="shop.jsp">랜덤 캐릭터 추천</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -233,12 +251,12 @@
                     <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Support</h4>
+                                <h4>고객지원</h4>
                                 <ul>
-                                    <li><a href="#">Frequently Asked Questions</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Report a Payment Issue</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">Q&A</a></li>
+                                    <li><a href="#">이용약관</a></li>
+                                    <li><a href="#">개인정보처리방침</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -250,7 +268,7 @@
                         <div class="footer-copy-right">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>               
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>                  
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-4 col-md-5">

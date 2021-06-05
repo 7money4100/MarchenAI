@@ -1,3 +1,6 @@
+<%@page import="com.CartDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.CartDAO"%>
 <%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -27,10 +30,15 @@
 </head>
 
 <body>
-
 <%
-	MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
+
+   MemberDTO info = (MemberDTO) session.getAttribute("info");
+   String memeber_id = info.getMember_id();
+   CartDAO dao = new CartDAO();
+   ArrayList<CartDTO> cList = dao.cartSelect(memeber_id);
+   
+%>   
+   
 <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -57,13 +65,13 @@
                     <div class="main-menu d-none d-lg-block">
                         <nav>                                                
                             <ul id="navigation">  
-                               <li><a href="index.jsp">홈</a></li>
-                                    <li><a href="shop.jsp">캐릭터</a></li>
-                                    <li><a href="blog.jsp">게시판</a></li>
-                                   <%if(info != null){ %>
-                                    <li><a href="LogoutService">로그아웃</a></li>
+	                            <li><a href="index.jsp" style="font-size:20px">홈</a></li>
+								<li><a href="shop.jsp" style="font-size:20px">캐릭터</a></li>
+								<li><a href="blog.jsp" style="font-size:20px">게시판</a></li>
+								<%if(info != null){ %>
+									<li><a href="LogoutService" style="font-size:20px">로그아웃</a></li>
 								<%}else{ %>
-									<li><a href="login.jsp">로그인</a></li>
+									<li><a href="login.jsp" style="font-size:20px">로그인</a></li>
 								<%} %>
                             </ul>
                         </nav>
@@ -72,11 +80,11 @@
                     <div class="header-right">
                         <ul>
                             <%if(info != null){ %>
-                               		<li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                     <li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%}else{ %>
-                                	<li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                   <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%} %>
                         </ul>
                     </div>
@@ -91,147 +99,80 @@
     <!-- Header End -->
   </header>
   <main>
-      <!--? Hero Area Start-->
-        <div><img src="assets/img/hero/cart_ban.png" style="width:100%"></div>
-      <!--? Hero Area End-->
+      <div><img src="assets/img/hero/cart_ban.png" style="width:100%"></div>
       <!--================Cart Area =================-->
       <section class="cart_area section_padding">
         <div class="container">
           <div class="cart_inner">
             <div class="table-responsive">
               <table class="table">
-                <thead>
+              <a href="CartAllDeleteService" class="btn_1" style="width:75px; height:30px; line-height:30px; padding:0px; text-align:center; float:right; ">전체삭제</a>
+              <thead>
+                 <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                 </tr>
                   <tr>
-                    <th scope="col" style="font-family:'Malgun Gothic'">상품</th>
-                    <th scope="col" style="font-family:'Malgun Gothic'">가격</th>
-                    <th scope="col" style="font-family:'Malgun Gothic'">수량</th>
-                    <th scope="col" style="font-family:'Malgun Gothic'">총 합</th>
+                    <th scope="col">상품</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col" style="text-align:right">금액</th>
                   </tr>
-                </thead>
+               </thead>
+                 <%for(int i=0; i<cList.size();i++){ %>
                 <tbody>
                   <tr>
                     <td>
                       <div class="media">
                         <div class="d-flex">
-                          <img src="assets/img/gallery/card1.png" alt="" />
-                        </div>
-                        <div class="media-body">
-                          <p>Minimalistic shop for multipurpose use</p>
+                          <img src="<%=cList.get(i).getCart_filename() %>" alt="" />
                         </div>
                       </div>
                     </td>
                     <td>
-                      <h5>$360.00</h5>
                     </td>
                     <td>
-                      <div class="product_count">
-                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                        <input class="input-number" type="text" value="1" min="0" max="10">
-                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
-                      </div>
                     </td>
-                    <td>
-                      <h5>$720.00</h5>
+                    <td style="text-align:right">
+                      <h5><%=cList.get(i).getCart_price()%>원</h5>
+                    </td>
+                    <td style="text-align:right">
+                       <form action="CartDeleteService" id="cartDeleteService<%=i%>">
+                           <div class="favorit-items">
+                               <span onclick="document.getElementById('cartDeleteService<%=i%>').submit();">
+                                  <img src="./assets/img/remove_small.png"></img>
+                                </span>
+                                <input name="cartFileName" value="<%=cList.get(i).getCart_filename() %>" style="display:none">
+                            </div>
+                        </form>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <div class="media">
-                        <div class="d-flex">
-                          <img src="assets/img/gallery/card2.png" alt="" />
-                        </div>
-                        <div class="media-body">
-                          <p>Minimalistic shop for multipurpose use</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <h5>$360.00</h5>
-                    </td>
-                    <td>
-                      <div class="product_count">
-                          <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                          <input class="input-number" type="text" value="1" min="0" max="10">
-                          <span class="input-number-increment"> <i class="ti-plus"></i></span>
-                      </div>
-                    </td>
-                    <td>
-                      <h5>$720.00</h5>
-                    </td>
-                  </tr>
-                  <tr class="bottom_button">
-                    <td>
-                      <a class="btn_1" href="#">Update Cart</a>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <div class="cupon_text float-right">
-                        <a class="btn_1" href="#">Close Coupon</a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <h5>Subtotal</h5>
-                    </td>
-                    <td>
-                      <h5>$2160.00</h5>
-                    </td>
-                  </tr>
-                  <tr class="shipping_area">
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <h5>Shipping</h5>
-                    </td>
-                    <td>
-                      <div class="shipping_box">
-                        <ul class="list">
-                          <li>
-                            Flat Rate: $5.00
-                            <input type="radio" aria-label="Radio button for following text input">
-                          </li>
-                          <li>
-                            Free Shipping
-                            <input type="radio" aria-label="Radio button for following text input">
-                          </li>
-                          <li>
-                            Flat Rate: $10.00
-                            <input type="radio" aria-label="Radio button for following text input">
-                          </li>
-                          <li class="active">
-                            Local Delivery: $2.00
-                            <input type="radio" aria-label="Radio button for following text input">
-                          </li>
-                        </ul>
-                    
-                        <h6>
-                          Calculate Shipping
-                          <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </h6>
-                        <select class="shipping_select">
-                          <option value="1">Bangladesh</option>
-                          <option value="2">India</option>
-                          <option value="4">Pakistan</option>
-                        </select>
-                        <select class="shipping_select section_bg">
-                          <option value="1">Select a State</option>
-                          <option value="2">Select a State</option>
-                          <option value="4">Select a State</option>
-                        </select>
-                        <input class="post_code" type="text" placeholder="Postcode/Zipcode" />
-                        <a class="btn_1" href="#">Update Details</a>
-                      </div>
-                    </td>
-                  </tr>
+                  
                 </tbody>
+                <%} %>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align:right">
+                      <h5>총 금액</h5>
+                    </td>
+                    <td style="text-align:right">
+                      <h5>
+                         <%int sum=0;
+                         for(int i=0; i<cList.size();i++){ 
+                            sum += Integer.parseInt(cList.get(i).getCart_price());
+                         } %>
+                         <%=sum %>원
+                      </h5>
+                    </td>
+                  </tr>
               </table>
               <div class="checkout_btn_inner float-right">
-                <a class="btn_1" href="shop.jsp">Continue Shopping</a>
-                <a class="btn_1 checkout_btn_1" href="checkout.jsp">Proceed to checkout</a>
+                <a class="btn_1" href="shop.jsp">쇼핑 계속하기</a>
+                <a class="btn_1 checkout_btn_1" href="checkout.jsp">결제하기</a>
               </div>
             </div>
           </div>
@@ -239,90 +180,87 @@
       <!--================End Cart Area =================-->
   </main>>
   <footer>
-      <!-- Footer Start-->
-      <div class="footer-area footer-padding">
-          <div class="container">
-              <div class="row d-flex justify-content-between">
-                  <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
-                      <div class="single-footer-caption mb-50">
-                          <div class="single-footer-caption mb-30">
-                              <!-- logo -->
-                              <div class="footer-logo">
-                                  <a href="index.jsp"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                              </div>
-                              <div class="footer-tittle">
-                                  <div class="footer-pera">
-                                      <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
-                              </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
-                      <div class="single-footer-caption mb-50">
-                          <div class="footer-tittle">
-                              <h4>Quick Links</h4>
-                              <ul>
-                                  <li><a href="#">About</a></li>
-                                  <li><a href="#"> Offers & Discounts</a></li>
-                                  <li><a href="#"> Get Coupon</a></li>
-                                  <li><a href="#">  Contact Us</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
-                      <div class="single-footer-caption mb-50">
-                          <div class="footer-tittle">
-                              <h4>New Products</h4>
-                              <ul>
-                                  <li><a href="#">Woman Cloth</a></li>
-                                  <li><a href="#">Fashion Accessories</a></li>
-                                  <li><a href="#"> Man Accessories</a></li>
-                                  <li><a href="#"> Rubber made Toys</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
-                      <div class="single-footer-caption mb-50">
-                          <div class="footer-tittle">
-                              <h4>Support</h4>
-                              <ul>
-                                  <li><a href="#">Frequently Asked Questions</a></li>
-                                  <li><a href="#">Terms & Conditions</a></li>
-                                  <li><a href="#">Privacy Policy</a></li>
-                                  <li><a href="#">Report a Payment Issue</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- Footer bottom -->
-              <div class="row align-items-center">
-                  <div class="col-xl-7 col-lg-8 col-md-7">
-                      <div class="footer-copy-right">
-                          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="index.jsp"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                </div>
+                                <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>바로가기</h4>
+                                <ul>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
+                                    <li><a href="login.jsp">회원가입 / 로그인</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>서비스</h4>
+                                <ul>
+                                    <li><a href="shop.jsp">유사 캐릭터 추천</a></li>
+                                    <li><a href="shop.jsp">랜덤 캐릭터 추천</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>고객지원</h4>
+                                <ul>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">Q&A</a></li>
+                                    <li><a href="#">이용약관</a></li>
+                                    <li><a href="#">개인정보처리방침</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer bottom -->
+                <div class="row align-items-center">
+                    <div class="col-xl-7 col-lg-8 col-md-7">
+                        <div class="footer-copy-right">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>                 
-                      </div>
-                  </div>
-                  <div class="col-xl-5 col-lg-4 col-md-5">
-                      <div class="footer-copy-right f-right">
-                          <!-- social -->
-                          <div class="footer-social">
-                              <a href="#"><i class="fab fa-twitter"></i></a>
-                              <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                              <a href="#"><i class="fab fa-behance"></i></a>
-                              <a href="#"><i class="fas fa-globe"></i></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- Footer End-->
-  </footer>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>                  
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4 col-md-5">
+                        <div class="footer-copy-right f-right">
+                            <!-- social -->
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
   <!--? Search model Begin -->
   <div class="search-model-box">
       <div class="h-100 d-flex align-items-center justify-content-center">
@@ -365,7 +303,7 @@
   <script src="./assets/js/mail-script.js"></script>
   <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
   
-  <!-- Jquery Plugins, main Jquery -->	
+  <!-- Jquery Plugins, main Jquery -->   
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/main.js"></script>
 

@@ -16,28 +16,30 @@ import com.MemberDTO;
  */
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
-		String id = request.getParameter("member_id");
-		String pw = request.getParameter("pw");
-		// login.jsp 에서 input text name 속성 지정해줄 것
-		
-		MemberDTO dto = new MemberDTO(id, pw);
-		MemberDAO dao = new MemberDAO();
-		MemberDTO loginDTO = dao.login(dto);
-		
-		if(loginDTO != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("info", loginDTO);
-			System.out.println("로그인 성공");
-			response.sendRedirect("index.jsp");
-		} else {
-			System.out.println("로그인 실패");
-			response.sendRedirect("login.jsp");
-		}
-		
-	}
+   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      request.setCharacterEncoding("EUC-KR");
+      String id = request.getParameter("member_id");
+      String pw = request.getParameter("pw");
+      // login.jsp 에서 input text name 속성 지정해줄 것
+      
+      HttpSession session = request.getSession();
+      session.invalidate();
+      MemberDTO dto = new MemberDTO(id, pw);
+      MemberDAO dao = new MemberDAO();
+      MemberDTO loginDTO = dao.login(dto);
+      
+      if(loginDTO != null) {
+         session = request.getSession();
+         session.setAttribute("info", loginDTO);
+         System.out.println("로그인 성공");
+         response.sendRedirect("index.jsp");
+      } else {
+         System.out.println("로그인 실패");
+         response.sendRedirect("login.jsp");
+      }
+      
+   }
 
 }

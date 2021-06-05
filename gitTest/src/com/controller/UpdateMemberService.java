@@ -19,12 +19,19 @@ public class UpdateMemberService extends HttpServlet {
    private static final long serialVersionUID = 1L;
 
    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      HttpSession session = request.getSession();
-      MemberDTO loginDTO = (MemberDTO)session.getAttribute("info");
+	   request.setCharacterEncoding("EUC-KR");
+	   HttpSession session = request.getSession();
+	      String member_id = "";
+	      MemberDTO loginDTO = (MemberDTO) session.getAttribute("info");
+
+	      if (loginDTO == null) {
+	         response.sendRedirect("login.jsp");
+	      } else {
+	         member_id = loginDTO.getMember_id();
+	      }
       //로그인 당시에서 받아오는 DTO, "info"라는 세션
       
       request.setCharacterEncoding("EUC-KR");
-      String member_id = loginDTO.getMember_id();
       String pw = request.getParameter("pw");
       String name = request.getParameter("name");
       String email = request.getParameter("email");

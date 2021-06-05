@@ -38,12 +38,20 @@ CREATE TABLE blog(
    filename varchar2(500),
    member_id varchar2(20),
    content varchar2(1000),
-   title varchar2(100),
+   title varchar2(100) not null,
    recommend number,
    constraint pk_filename primary key(filename),
    constraint fk_member_id_blog FOREIGN KEY (member_id) REFERENCES member(member_id)
 );
 select * from blog;
+
+
+CREATE TABLE love(
+   l_file_name varchar2(500),
+   l_member_id varchar2(20),
+   l_recommend number
+);
+select * from love;
 
 
 CREATE TABLE scrap(
@@ -56,16 +64,16 @@ CREATE TABLE scrap(
 select * from scrap;
 
 
-insert into CHARACTER values('characterImg/1.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/2.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/3.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/4.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/5.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/6.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/7.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/8.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/9.png', 'choi','1000'); 
-insert into CHARACTER values('characterImg/10.png', 'choi','1000'); 
+insert into CHARACTER values('characterImg/1.png', '1','1'); 
+insert into CHARACTER values('characterImg/2.png', '1','1'); 
+insert into CHARACTER values('characterImg/3.png', '1','1'); 
+insert into CHARACTER values('characterImg/4.png', '1','1'); 
+insert into CHARACTER values('characterImg/5.png', '1','1'); 
+insert into CHARACTER values('characterImg/6.png', '1','1'); 
+insert into CHARACTER values('characterImg/7.png', '1','1'); 
+insert into CHARACTER values('characterImg/8.png', '1','1'); 
+insert into CHARACTER values('characterImg/9.png', '1','1'); 
+insert into CHARACTER values('characterImg/10.png', '1','1'); 
 
 
 select e.*

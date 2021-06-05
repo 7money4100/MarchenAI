@@ -11,9 +11,7 @@ import javax.servlet.http.HttpSession;
 import com.MemberDAO;
 import com.MemberDTO;
 
-/**
- * Servlet implementation class JoinService
- */
+
 @WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;

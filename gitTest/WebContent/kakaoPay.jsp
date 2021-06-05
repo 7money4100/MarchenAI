@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	String name = request.getParameter("name"); 
-	String email = request.getParameter("email");
-	String phone = request.getParameter("phone");
-	String address = request.getParameter("address");
-	//String convertPrice = (String)request.getAttribute("totalPrice");
-	//System.out.println("1");
-	//System.out.println(convertPrice);        wefwef
-	//int totalPrice = Integer.parseInt(convertPrice);
-	int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));
+   String firstName = request.getParameter("firstName"); 
+   String lastName = request.getParameter("lastName");
+   String name = request.getParameter(firstName +lastName);
+   String phone = request.getParameter("number");
+   String email = request.getParameter("email");
+   String add1 = request.getParameter("add1");
+   String add2 = request.getParameter("add2");
+   String address = request.getParameter(add1+add2);
+   String zip = request.getParameter("zip");
+   int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));
 %>
 <!DOCTYPE html>
 <html>
@@ -20,6 +21,12 @@
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 <body>
+	<%if(name==null || phone==null || email==null || address==null || zip==null ){ %>
+		<script>
+			alert('정보를 입력해주세요.')
+			location.href="checkout.jsp"
+		</script>
+		<%}%>
     <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
@@ -30,14 +37,14 @@
             pg : 'kakaopay',
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
-            name : 'KH Books 도서 결제',
+            name : '인디인디',
             amount : <%=totalPrice%>,
             buyer_email : '<%=email%>',
             buyer_name : '<%=name%>',
             buyer_tel : '<%=phone%>',
             buyer_addr : '<%=address%>',
-            buyer_postcode : '123-456',
-            //m_redirect_url : 'http://www.naver.com'
+            buyer_postcode : '<%=zip%>',
+            m_redirect_url : 'CartAllDeleteService'
         }, function(rsp) {
             if ( rsp.success ) {
                 //[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
@@ -60,27 +67,25 @@
                         
                         alert(msg);
                     } else {
-                    	msg = '결제에 실패했습니다.';
-                    	msg += '에러내용 :'+ rsp.error_msg;
+                       msg = '결제에 실패했습니다.';
+                       msg += '에러내용 :'+ rsp.error_msg;
                         //[3] 아직 제대로 결제가 되지 않았습니다.
                         //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
                     }
                 });
                 //성공시 이동할 페이지
-                response.sendRedirect("index.jsp");
+                location.href="CartAllDeleteService";
                 
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
                 //실패시 이동할 페이지
-                response.sendRedirect("checkout.jsp");
-               	
+                location.href="checkout.jsp";
                 alert(msg);
             }
         });
         
     });
     </script>
- 
 </body>
 </html>

@@ -1,3 +1,6 @@
+<%@page import="com.CartDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.CartDAO"%>
 <%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -28,8 +31,12 @@
 
 <body>
 <%
-	MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
+   MemberDTO info = (MemberDTO) session.getAttribute("info");
+   String memeber_id = info.getMember_id();
+   CartDAO dao = new CartDAO();
+   ArrayList<CartDTO> cList = dao.cartSelect(memeber_id);
+
+   %>
 <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -57,13 +64,13 @@
                     <div class="main-menu d-none d-lg-block">
                         <nav>                                                
                             <ul id="navigation">  
-                                <li><a href="index.jsp">홈</a></li>
-                                    <li><a href="shop.jsp">캐릭터</a></li>
-                                    <li><a href="blog.jsp">게시판</a></li>
-                                    <%if(info != null){ %>
-                                    <li><a href="LogoutService">로그아웃</a></li>
+	                            <li><a href="index.jsp" style="font-size:20px">홈</a></li>
+								<li><a href="shop.jsp" style="font-size:20px">캐릭터</a></li>
+								<li><a href="blog.jsp" style="font-size:20px">게시판</a></li>
+								<%if(info != null){ %>
+									<li><a href="LogoutService" style="font-size:20px">로그아웃</a></li>
 								<%}else{ %>
-									<li><a href="login.jsp">로그인</a></li>
+									<li><a href="login.jsp" style="font-size:20px">로그인</a></li>
 								<%} %>
                             </ul>
                         </nav>
@@ -72,11 +79,11 @@
                     <div class="header-right">
                         <ul>
                             <%if(info != null){ %>
-                               		<li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                     <li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%}else{ %>
-                                	<li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                   <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%} %>
                         </ul>
                     </div>
@@ -92,200 +99,70 @@
   </header>
     <main>
         <!--? Hero Area Start-->
-        <div><img src="assets/img/hero/checkout_ban.png" style="width:100%"></div>
-        <!--? Hero Area End-->
+        <div><img src="assets/img/hero/pay_ban.png" style="width:100%"></div>
+     	<!--? Hero Area End-->
         <!--================Checkout Area =================-->
         <section class="checkout_area section_padding">
           <div class="container">
-            <div class="returning_customer">
-              <div class="check_title">
-                <h2>
-                  Returning Customer?
-                  <a href="#">Click here to login</a>
-                </h2>
-              </div>
-              <p>
-                If you have shopped with us before, please enter your details in the
-                boxes below. If you are a new customer, please proceed to the
-                Billing & Shipping section.
-              </p>
-              <form class="row contact_form" action="#" method="post" novalidate="novalidate">
-                <div class="col-md-6 form-group p_star">
-                  <input type="text" class="form-control" id="name" name="name" value=" " />
-                  <span class="placeholder" data-placeholder="Username or Email"></span>
-                </div>
-                <div class="col-md-6 form-group p_star">
-                  <input type="password" class="form-control" id="password" name="password" value="" />
-                  <span class="placeholder" data-placeholder="Password"></span>
-                </div>
-                <div class="col-md-12 form-group">
-                  <button type="submit" value="submit" class="btn_3">
-                    log in
-                  </button>
-                  <div class="creat_account">
-                    <input type="checkbox" id="f-option" name="selector" />
-                    <label for="f-option">Remember me</label>
-                  </div>
-                  <a class="lost_pass" href="#">Lost your password?</a>
-                </div>
-              </form>
-            </div>
-            <div class="cupon_area">
-              <div class="check_title">
-                <h2>
-                  Have a coupon?
-                  <a href="#">Click here to enter your code</a>
-                </h2>
-              </div>
-              <input type="text" placeholder="Enter coupon code" />
-              <a class="tp_btn" href="#">Apply Coupon</a>
-            </div>
             <div class="billing_details">
             <form action="kakaoPay.jsp">
               <div class="row">
                 <div class="col-lg-8">
-                  <h3>Billing Details</h3>
+                  <h3 style="font-size:26px; line-height:36px; font-weight:700; color:black">주문자 정보</h3>
                   <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                     <div class="col-md-6 form-group p_star">
-                      <input type="text" class="form-control" id="firstName" name="firstName" />
-                      <span class="placeholder" data-placeholder="First name"></span>
+                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="이름"/>
                     </div>
                     <div class="col-md-6 form-group p_star">
-                      <input type="text" class="form-control" id="lastName" name="lastName" />
-                      <span class="placeholder" data-placeholder="Last name"></span>
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <input type="text" class="form-control" id="company" name="company" placeholder="Company name" />
+                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="성"/>
                     </div>
                     <div class="col-md-6 form-group p_star">
-                      <input type="text" class="form-control" id="number" name="number" />
-                      <span class="placeholder" data-placeholder="Phone number"></span>
+                      <input type="text" class="form-control" id="number" name="number" placeholder="전화번호"/>
                     </div>
                     <div class="col-md-6 form-group p_star">
-                      <input type="text" class="form-control" id="email" name="email" />
-                      <span class="placeholder" data-placeholder="Email Address"></span>
+                      <input type="text" class="form-control" id="email" name="email" placeholder="이메일"/>
                     </div>
                     <div class="col-md-12 form-group p_star">
-                      <select class="country_select">
-                        <option value="1">Country</option>
-                        <option value="2">Country</option>
-                        <option value="4">Country</option>
-                      </select>
+                      <input type="text" class="form-control" id="add1" name="add1" placeholder="주소"/>
                     </div>
                     <div class="col-md-12 form-group p_star">
-                      <input type="text" class="form-control" id="add1" name="address" />
-                      <span class="placeholder" data-placeholder="Address line 01"></span>
-                    </div>
-                    <div class="col-md-12 form-group p_star">
-                      <input type="text" class="form-control" id="add2" name="add2" />
-                      <span class="placeholder" data-placeholder="Address line 02"></span>
-                    </div>
-                    <div class="col-md-12 form-group p_star">
-                      <input type="text" class="form-control" id="city" name="city" />
-                      <span class="placeholder" data-placeholder="Town/City"></span>
-                    </div>
-                    <div class="col-md-12 form-group p_star">
-                      <select class="country_select">
-                        <option value="1">District</option>
-                        <option value="2">District</option>
-                        <option value="4">District</option>
-                      </select>
+                      <input type="text" class="form-control" id="add2" name="add2" placeholder="상세 주소"/>
                     </div>
                     <div class="col-md-12 form-group">
-                      <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP" />
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <div class="creat_account">
-                        <input type="checkbox" id="f-option2" name="selector" />
-                        <label for="f-option2">Create an account?</label>
-                      </div>
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <div class="creat_account">
-                        <h3>Shipping Details</h3>
-                        <input type="checkbox" id="f-option3" name="selector" />
-                        <label for="f-option3">Ship to a different address?</label>
-                      </div>
-                      <textarea class="form-control" name="message" id="message" rows="1"
-                        placeholder="Order Notes"></textarea>
+                      <input type="text" class="form-control" id="zip" name="zip" placeholder="우편번호" />
                     </div>
                   </form>
                 </div>
                 <div class="col-lg-4">
                   <div class="order_box">
-                    <h2>Your Order</h2>
+                    <h2>나의 주문</h2>
                     <ul class="list">
                       <li>
-                        <a href="#">Product
-                          <span>Total</span>
+                        <a href="#">상품
+                          <span>가격</span>
                         </a>
                       </li>
                       <li>
-                        <a href="#">Fresh Blackberry
-                          <span class="middle">x 02</span>
-                          <span class="last">$720.00</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">Fresh Tomatoes
-                          <span class="middle">x 02</span>
-                          <span class="last">$720.00</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">Fresh Brocoli
-                          <span class="middle">x 02</span>
-                          <span class="last">$720.00</span>
+                        <a href="#">캐릭터
+                          <span class="middle">x <%int count=0; for(int i=0; i<cList.size();i++){ count +=1;} %><%=count %></span>
+                          <span class="last"><%int totalPrice= count * Integer.parseInt(cList.get(0).getCart_price());%><%=Integer.parseInt(cList.get(0).getCart_price()) %>원</span>
                         </a>
                       </li>
                     </ul>
                     <ul class="list list_2">
                       <li>
-                        <a href="#">Subtotal
-                          <span>$2160.00</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">Shipping
-                          <span>Flat rate: $50.00</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">Total
-                          <span id="totalPrice">1</span>
-                          <input type="text" name="totalPrice">
+                        <a href="#">총 금액
+                          <span><%=totalPrice %>원</span>
+                          <input style="display:none" name="totalPrice" value="<%= totalPrice%>">
                         </a>
                       </li>
                     </ul>
-                    <div class="payment_item">
-                      <div class="radion_btn">
-                        <input type="radio" id="f-option5" name="selector" />
-                        <label for="f-option5">Check payments</label>
-                        <div class="check"></div>
-                      </div>
-                      <p>
-                        Please send a check to Store Name, Store Street, Store Town,
-                        Store State / County, Store Postcode.
-                      </p>
-                    </div>
-                    <div class="payment_item active">
-                      <div class="radion_btn">
-                        <input type="radio" id="f-option6" name="selector" />
-                        <label for="f-option6">Paypal </label>
-                        <img src="img/product/single-product/card.jpg" alt="" />
-                        <div class="check"></div>
-                      </div>
-                      <p>
-                        Please send a check to Store Name, Store Street, Store Town,
-                        Store State / County, Store Postcode.
-                      </p>
-                    </div>
+                   
                     <div class="creat_account">
                       <input type="checkbox" id="f-option4" name="selector" />
-                      <label for="f-option4">I’ve read and accept the </label>
-                      <a href="#">terms & conditions*</a>
+                      <label for="f-option4">결제 내역을 확인했습니다. </label>
                     </div>
-                    <input type="submit" value="OK" class="btn_3" href="#">Proceed to Paypal</a>
+                    <input type="submit" value="결제하기" class="btn_3" href="#" style="width:300px"></a>
                   </div>
                 </div>
               </div>
@@ -309,7 +186,6 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
                                 </div>
                                 </div>
                             </div>
@@ -318,12 +194,12 @@
                     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Quick Links</h4>
+                                <h4>바로가기</h4>
                                 <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Offers & Discounts</a></li>
-                                    <li><a href="#"> Get Coupon</a></li>
-                                    <li><a href="#">  Contact Us</a></li>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
+                                    <li><a href="login.jsp">회원가입 / 로그인</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -331,12 +207,10 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>New Products</h4>
+                                <h4>서비스</h4>
                                 <ul>
-                                    <li><a href="#">Woman Cloth</a></li>
-                                    <li><a href="#">Fashion Accessories</a></li>
-                                    <li><a href="#"> Man Accessories</a></li>
-                                    <li><a href="#"> Rubber made Toys</a></li>
+                                    <li><a href="shop.jsp">유사 캐릭터 추천</a></li>
+                                    <li><a href="shop.jsp">랜덤 캐릭터 추천</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -344,12 +218,12 @@
                     <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Support</h4>
+                                <h4>고객지원</h4>
                                 <ul>
-                                    <li><a href="#">Frequently Asked Questions</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Report a Payment Issue</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">Q&A</a></li>
+                                    <li><a href="#">이용약관</a></li>
+                                    <li><a href="#">개인정보처리방침</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -361,7 +235,7 @@
                         <div class="footer-copy-right">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>                   
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>                  
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-4 col-md-5">
@@ -422,7 +296,7 @@
   <script src="./assets/js/mail-script.js"></script>
   <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
       
-  <!-- Jquery Plugins, main Jquery -->	
+  <!-- Jquery Plugins, main Jquery -->   
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/main.js"></script>
   

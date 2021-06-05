@@ -489,7 +489,7 @@ input:focus::-moz-placeholder {
     font-size: 20px;
     text-align: center;
     border-radius: 50%;
-    line-height: 48px;
+    line-height: 43px;
     border: 2px solid transparent;
 }
 @media (max-width: 575px) {

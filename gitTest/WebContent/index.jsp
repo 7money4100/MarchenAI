@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.BlogDAO"%>
 <%@page import="com.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -27,10 +29,12 @@
 
 </head>
 <body>
-	<!-- 로그인 정보 받아오기 -->
-	<%
-	MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
+   <!-- 로그인 정보 받아오기 -->
+   <%
+   MemberDTO info = (MemberDTO) session.getAttribute("info");
+   BlogDAO dao = new BlogDAO();
+   ArrayList<String> pList = dao.popular();
+   %>
 
 
 
@@ -60,27 +64,26 @@
                         <div class="main-menu d-none d-lg-block">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="index.jsp">홈</a></li>
-                                    <li><a href="shop.jsp">캐릭터</a></li>
-                                    <li><a href="blog.jsp">게시판</a></li>
+                                    <li><a href="index.jsp" style="font-size:20px">홈</a></li>
+                                    <li><a href="shop.jsp" style="font-size:20px">캐릭터</a></li>
+                                    <li><a href="blog.jsp" style="font-size:20px">게시판</a></li>
                                     <%if(info != null){ %>
-                                    	<li><a href="LogoutService">로그아웃</a></li>
-									<%}else{ %>
-										<li><a href="login.jsp">로그인</a></li>
-									<%} %>
-                                    
+                                       <li><a href="LogoutService" style="font-size:20px">로그아웃</a></li>
+                           <%}else{ %>
+                              <li><a href="login.jsp" style="font-size:20px">로그인</a></li>
+                           <%} %>
                                 </ul>
                             </nav>
                         </div>
                         <!-- Header Right -->
                         <div class="header-right">
                             <ul>
-                            	<%if(info != null){ %>
-                               		<li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                               <%if(info != null){ %>
+                                     <li><%=info.getMember_id()%>님 환영합니다.<a href="myPage.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="cart.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%}else{ %>
-                                	<li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
-                               	 	<li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
+                                   <li> <a href="login.jsp"><span class="flaticon-user"></span></a></li>
+                                      <li><a href="login.jsp"><span class="flaticon-shopping-cart"></span></a> </li>
                                 <%} %>
                             </ul>
                         </div>
@@ -95,9 +98,8 @@
         <!-- Header End -->
     </header>
     <main>
-    	<div><img src="assets/img/hero/index_main_ban.png" style="width:100%"></div>
-    	<!-- <div><img src="assets/img/hero/index_banner.png" class="heartbeat" style="width:100%"></div> -->
-    	
+       <div><img src="assets/img/hero/index_main_ban.png" style="width:100%"></div>
+       
         <!-- ? New Product Start -->
         <section class="new-product-area section-padding30">
             <div class="container">
@@ -105,44 +107,22 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="section-tittle mb-70">
-                            <h2>인기 캐릭터 TOP3</h2>
+                            <h2>인기 게시글</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-new-pro mb-30 text-center">
-                            <div class="product-img">
-                                <img src="assets/img/gallery/new_product1.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <h3>캐릭터 이름1</h3>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-new-pro mb-30 text-center">
-                            <div class="product-img">
-                                <img src="assets/img/gallery/new_product2.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <h3>캐릭터 이름2</h3>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-new-pro mb-30 text-center">
-                            <div class="product-img">
-                                <img src="assets/img/gallery/new_product3.png" alt="">
-                            </div>
-                            <div class="product-caption">
-                                <h3>캐릭터 이름3</h3>
-                               
-                            </div>
-                        </div>
-                    </div>
+                <%if(pList.size() != 0){ %>
+                   <%for(int i=0; i<pList.size();i++) {%>
+                      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                           <div class="single-new-pro mb-30 text-center">
+                               <div class="product-img">
+                                   <img src="<%=pList.get(i) %>" alt="">
+                                 </div>
+                           </div>
+                       </div>
+                   <%} %>
+                <%} %>
                 </div>
             </div>
         </section>
@@ -162,22 +142,22 @@
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-method mb-40">
                                 <i class="ti-package"></i>
-                                <h6>Free Shipping Method</h6>
-                                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                                <h6>구매 관련 정책</h6>
+                                <p>구매시 이메일을 정확히 기입해주시길 바랍니다.</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-method mb-40">
                                 <i class="ti-unlock"></i>
-                                <h6>Secure Payment System</h6>
-                                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                                <h6>저작권 보호 정책</h6>
+                                <p>대한민국 전체 개발사와 개발자를 위한 무상 리소스 지원 플랫폼입니다.</p>
                             </div>
                         </div> 
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-method mb-40">
                                 <i class="ti-reload"></i>
-                                <h6>Secure Payment System</h6>
-                                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                                <h6>환불 정책</h6>
+                                <p>구매 세부정보에 따라 환불이 불가능할 수도 있으니 고객센터에 문의해주세요.</p>
                             </div>
                         </div>
                     </div>
@@ -200,7 +180,6 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
                                 </div>
                                 </div>
                             </div>
@@ -209,12 +188,12 @@
                     <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Quick Links</h4>
+                                <h4>바로가기</h4>
                                 <ul>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#"> Offers & Discounts</a></li>
-                                    <li><a href="#"> Get Coupon</a></li>
-                                    <li><a href="#">  Contact Us</a></li>
+                                    <li><a href="index.jsp">홈</a></li>
+                                    <li><a href="shop.jsp">캐릭터</a></li>
+                                    <li><a href="blog.jsp">게시판</a></li>
+                                    <li><a href="login.jsp">회원가입 / 로그인</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -222,12 +201,11 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>New Products</h4>
+                                <h4>서비스</h4>
                                 <ul>
-                                    <li><a href="#">Woman Cloth</a></li>
-                                    <li><a href="#">Fashion Accessories</a></li>
-                                    <li><a href="#"> Man Accessories</a></li>
-                                    <li><a href="#"> Rubber made Toys</a></li>
+                                    <li><a href="shop.jsp">유사 캐릭터 추천</a></li>
+                                    <li><a href="shop.jsp">랜덤 캐릭터 추천</a></li>
+                                    <li><a href="kakaoPay1.jsp?totalPrice=15900">월 결제 서비스</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -235,12 +213,12 @@
                     <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Support</h4>
+                                <h4>고객지원</h4>
                                 <ul>
-                                    <li><a href="#">Frequently Asked Questions</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Report a Payment Issue</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">Q&A</a></li>
+                                    <li><a href="#">이용약관</a></li>
+                                    <li><a href="#">개인정보처리방침</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -313,7 +291,7 @@
     <script src="./assets/js/mail-script.js"></script>
     <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
     
-    <!-- Jquery Plugins, main Jquery -->	
+    <!-- Jquery Plugins, main Jquery -->   
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
     

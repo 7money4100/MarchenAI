@@ -32,19 +32,19 @@
 
 <body>
 	<%
-   		  MemberDTO info = (MemberDTO) session.getAttribute("info");
-	      ArrayList<CharacterDTO> cList = (ArrayList<CharacterDTO>) session.getAttribute("cdto");
-	      CharacterDAO dao = new CharacterDAO();
-	      if(cList == null){
-	         // cList = dao.characterRandomSelect(); 
-	    	 // 인기 캐릭터 순위 select
-	    	  cList = new ArrayList<CharacterDTO>();
-	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
-	    	  cList.add(new CharacterDTO("characterImg/card_back.jpg","basic"));
-	      }
+           MemberDTO info = (MemberDTO) session.getAttribute("info");
+         ArrayList<CharacterDTO> cList = (ArrayList<CharacterDTO>) session.getAttribute("cdto");
+         Boolean isRan = (Boolean) session.getAttribute("isRan");
+         CharacterDAO dao = new CharacterDAO();
+         if(cList == null){
+            // cList = dao.characterRandomSelect(); 
+           // 인기 캐릭터 순위 select
+            cList = new ArrayList<CharacterDTO>();
+            cList.add(new CharacterDTO("img/card_back.jpg","----"));
+            cList.add(new CharacterDTO("img/card_back.jpg","----"));
+            cList.add(new CharacterDTO("img/card_back.jpg","----"));
+            isRan=true;
+         }
    %>
 	<!--? Preloader Start -->
 	<div id="preloader-active">
@@ -74,13 +74,13 @@
 						<div class="main-menu d-none d-lg-block">
 							<nav>
 								<ul id="navigation">
-									<li><a href="index.jsp">홈</a></li>
-									<li><a href="shop.jsp">캐릭터</a></li>
-									<li><a href="blog.jsp">게시판</a></li>
+									<li><a href="index.jsp" style="font-size: 20px">홈</a></li>
+									<li><a href="shop.jsp" style="font-size: 20px">캐릭터</a></li>
+									<li><a href="blog.jsp" style="font-size: 20px">게시판</a></li>
 									<%if(info != null){ %>
-									<li><a href="LogoutService">로그아웃</a></li>
+									<li><a href="LogoutService" style="font-size: 20px">로그아웃</a></li>
 									<%}else{ %>
-									<li><a href="login.jsp">로그인</a></li>
+									<li><a href="login.jsp" style="font-size: 20px">로그인</a></li>
 									<%} %>
 								</ul>
 							</nav>
@@ -112,29 +112,50 @@
 	</header>
 	<main>
 		<!--? Hero Area Start-->
-        <div><img src="assets/img/hero/character_ban.png" style="width:100%"></div>
-        <!--? Hero Area End-->
-        <br>
-        <br>
-		<form action="#">
-			<!-- 미지정 -->
-			<div class="input-group mb-3" style="margin-left: 33%">
-				<input type="file" value="파일선택하기" name="file" style="display: inline-block; padding: 18px 36px; border-radius: 5px; background-color: transparent; border: 1px solid #eb6130; font-size: 15px; font-weight: 700; color: #eb6130; text-transform: uppercase; font-weight: 400;" />
-				<!-- <input type="submit" value="업로드" class = "btn_4"/> -->
-				<input type="submit" value="전송" class="btn_3">
-				<!-- 전송 -->
-			</div>
-		</form>
-		<form action="CharacterRandomService">
-			<!-- 미지정 -->
-			<div class="input-group mb-3" style="margin-left: 33%">
-				<input type="submit" value="무작위" class="btn_3">
-				<!-- 전송 -->
-			</div>
-		</form>
+		<div>
+			<img src="assets/img/hero/character_ban.png" style="width: 100%">
+		</div>
+		<!--? Hero Area End-->
+		<br> <br>
+		<table style="display: table; margin-left: auto; margin-right: auto">
+			<tr>
+			<%if(info !=null){ %>
+				<form action="test" enctype="multipart/form-data" method="post">
+					<td><input type="file" value="파일선택하기" name="file" /></td>
+					<td><input TYPE="IMAGE" src="./assets/img/btn/btn_up.png"
+						name="Submit" value="Submit" style="align: absmiddle"></td>
+				</form>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td>
+					<form action="CharacterGenerateService">
+						<input TYPE="IMAGE" src="./assets/img/btn/btn_random.png"
+							name="Submit" value="Submit" style="align: absmiddle">
+					</form>
+				</td>
+			<%}else{%>
+				<form action="login.jsp" enctype="multipart/form-data" method="post">
+					<td><input type="file" value="파일선택하기" name="file" /></td>
+					<td><input TYPE="IMAGE" src="./assets/img/btn/btn_up.png"
+						name="Submit" value="Submit" style="align: absmiddle"></td>
+				</form>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+				<td>
+					<form action="login.jsp">
+						<input TYPE="IMAGE" src="./assets/img/btn/btn_random.png"
+							name="Submit" value="Submit" style="align: absmiddle">
+					</form>
+				</td>
+			<%} %>
+			</tr>
+		</table>
 		<!-- Hero Area End-->
 		<!-- Latest Products Start -->
-		<section class="popular-items latest-padding">
+		<section class="popular-items latest-padding" style="padding-top:25px">
+			<div class="container" style="text-align: center; padding-bottom:0px">
+			<% if(!isRan){ %>
+				<img src="characterImg/origin.jpg" style="width:360px; height:523px; object-fit:scale-down">
+			<%} %>
+			</div>
 			<div class="container">
 				<div class="row product-btn justify-content-between mb-40">
 
@@ -143,8 +164,7 @@
 					<!-- Select items -->
 					<div class="select-this">
 						<form action="#">
-							<div class="select-itms">
-							</div>
+							<div class="select-itms"></div>
 						</form>
 					</div>
 				</div>
@@ -154,29 +174,65 @@
 					<div class="tab-pane fade show active" id="nav-home"
 						role="tabpanel" aria-labelledby="nav-home-tab">
 						<div class="row">
+							<%int test=0;%>
 							<%for(int i=0; i<cList.size();i++){%>
-							
+							<%String a ="heart"; 
+                     String heart= (String)session.getAttribute(cList.get(i).getCharacter_filename());
+                     System.out.println("세션값"+heart);
+                     %>
 							<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
 								<div class="single-popular-items mb-50 text-center">
 									<div class="popular-img">
-										<a> <img src="<%=cList.get(i).getCharacter_filename()%>" alt="">
-										</a>
-										<form action="CartAddService" id="frm">
-                                			<div class="img-cap">
-                                    			<span onclick="document.getElementById('frm').submit();">장바구니 추가</span>
-                                   				<input name="Character_filename" value="<%=cList.get(i).getCharacter_filename()%>" style="display:none">
-                                   				<input name="Character_price" value="<%=cList.get(i).getCharacter_price() %>" style="display:none">
-                                			</div>
-                            			</form>
-										<div class="favorit-items">
-											<span class="flaticon-heart"></span>
-										</div>
+										<a> <img src="<%=cList.get(i).getCharacter_filename()%>"
+											alt="">
+										</a><%if(cList.size()>=9){ %>
+										<form action="CartAddService" id="addCart<%=i %>">
+											<div class="img-cap">
+												<span
+													onclick="document.getElementById('addCart<%=i %>').submit();">장바구니
+													추가</span> <input name="Character_filename"
+													value="<%=cList.get(i).getCharacter_filename()%>"
+													style="display: none"> <input
+													name="Character_price"
+													value="<%=cList.get(i).getCharacter_price()%>"
+													style="display: none"> <input name="num"
+													value="<%=i%>" style="display: none">
+											</div>
+										</form>
+										<%if(heart==null){ %>
+										<form action="ScrapAddService" id="addHeart<%=i %>">
+											<div class="favorit-items">
+												<span
+													onclick="document.getElementById('addHeart<%=i %>').submit();">
+													<img class="n" id="heart<%=i%>"
+													src="./assets/img/heart.png" value="0"></img>
+												</span> <input name="Character_filename"
+													value="<%=cList.get(i).getCharacter_filename()%>"
+													style="display: none"> <input
+													name="Character_price"
+													value="<%=cList.get(i).getCharacter_price()%>"
+													style="display: none"> <input name="num"
+													value="<%=i%>" style="display: none">
+											</div>
+										</form>
+										<%}else{%>
+										<form action="ScrapDeleteService" id="addHeart<%=i %>">
+											<div class="favorit-items">
+												<span
+													onclick="document.getElementById('addHeart<%=i %>').submit();">
+													<img class="n" id="heart<%=i%>"
+													src="./assets/img/redheart.png" value="0"></img>
+												</span> <input name="Character_filename"
+													value="<%=cList.get(i).getCharacter_filename()%>"
+													style="display: none"> <input name="num"
+													value="<%=i%>" style="display: none"> <input
+													name="shop" value="shop" style="display: none">
+											</div>
+										</form>
+										<%} %><%} %>
 									</div>
 									<div class="popular-caption">
-										<h3>
-											Thermo Ball Etip Gloves</a>
-										</h3>
-										<span>$ 45,743</span>
+										<span><%=cList.get(i).getCharacter_price()%>원</span>
 									</div>
 								</div>
 							</div>
@@ -194,22 +250,22 @@
 						<div class="col-xl-4 col-lg-4 col-md-6">
 							<div class="single-method mb-40">
 								<i class="ti-package"></i>
-								<h6>Free Shipping Method</h6>
-								<p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+								<h6>구매 관련 정책</h6>
+								<p>구매시 이메일을 정확히 기입해주시길 바랍니다.</p>
 							</div>
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-6">
 							<div class="single-method mb-40">
 								<i class="ti-unlock"></i>
-								<h6>Secure Payment System</h6>
-								<p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+								<h6>저작권 보호 정책</h6>
+								<p>대한민국 전체 개발사와 개발자를 위한 무상 리소스 지원 플랫폼입니다.</p>
 							</div>
 						</div>
 						<div class="col-xl-4 col-lg-4 col-md-6">
 							<div class="single-method mb-40">
 								<i class="ti-reload"></i>
-								<h6>Secure Payment System</h6>
-								<p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+								<h6>환불 정책</h6>
+								<p>구매 세부정보에 따라 환불이 불가능할 수도 있으니 고객센터에 문의해주세요.</p>
 							</div>
 						</div>
 					</div>
@@ -232,10 +288,7 @@
 										src="assets/img/logo/logo2_footer.png" alt=""></a>
 								</div>
 								<div class="footer-tittle">
-									<div class="footer-pera">
-										<p>Asorem ipsum adipolor sdit amet, consectetur
-											adipisicing elitcf sed do eiusmod tem.</p>
-									</div>
+									<div class="footer-pera"></div>
 								</div>
 							</div>
 						</div>
@@ -243,12 +296,12 @@
 					<div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
 						<div class="single-footer-caption mb-50">
 							<div class="footer-tittle">
-								<h4>Quick Links</h4>
+								<h4>바로가기</h4>
 								<ul>
-									<li><a href="#">About</a></li>
-									<li><a href="#"> Offers & Discounts</a></li>
-									<li><a href="#"> Get Coupon</a></li>
-									<li><a href="#"> Contact Us</a></li>
+									<li><a href="index.jsp">홈</a></li>
+									<li><a href="shop.jsp">캐릭터</a></li>
+									<li><a href="blog.jsp">게시판</a></li>
+									<li><a href="login.jsp">회원가입 / 로그인</a></li>
 								</ul>
 							</div>
 						</div>
@@ -256,12 +309,10 @@
 					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
 						<div class="single-footer-caption mb-50">
 							<div class="footer-tittle">
-								<h4>New Products</h4>
+								<h4>서비스</h4>
 								<ul>
-									<li><a href="#">Woman Cloth</a></li>
-									<li><a href="#">Fashion Accessories</a></li>
-									<li><a href="#"> Man Accessories</a></li>
-									<li><a href="#"> Rubber made Toys</a></li>
+									<li><a href="shop.jsp">유사 캐릭터 추천</a></li>
+									<li><a href="shop.jsp">랜덤 캐릭터 추천</a></li>
 								</ul>
 							</div>
 						</div>
@@ -269,12 +320,12 @@
 					<div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
 						<div class="single-footer-caption mb-50">
 							<div class="footer-tittle">
-								<h4>Support</h4>
+								<h4>고객지원</h4>
 								<ul>
-									<li><a href="#">Frequently Asked Questions</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Report a Payment Issue</a></li>
+									<li><a href="#">공지사항</a></li>
+									<li><a href="#">Q&A</a></li>
+									<li><a href="#">이용약관</a></li>
+									<li><a href="#">개인정보처리방침</a></li>
 								</ul>
 							</div>
 						</div>
@@ -355,9 +406,26 @@
 	<script src="./assets/js/mail-script.js"></script>
 	<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
 
+
 	<!-- Jquery Plugins, main Jquery -->
 	<script src="./assets/js/plugins.js"></script>
 	<script src="./assets/js/main.js"></script>
+	<script type="text/javascript">
+                              
+      function changeImage(i){                                 
+         alert("11111");
+         var s = "heart";
+         s+=i; 
+         var e = document.getElementById(s);
+         if(sessionStorage.getItem(s)==null){
+            sessionStorage.setItem(s, "y");
+            e.src="./assets/img/redheart.png";
+         }else{
+            sessionStorage.removeItem(s);
+            e.src="./assets/img/heart.png";
+         }
+      }
+   </script>
 
 </body>
 </html>

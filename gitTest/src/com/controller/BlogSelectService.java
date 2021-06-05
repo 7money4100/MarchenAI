@@ -20,10 +20,6 @@ public class BlogSelectService extends HttpServlet {
 		String member_id="";
 		HttpSession session = request.getSession();
 	     MemberDTO loginDTO = (MemberDTO)session.getAttribute("info");
-	     
-	     
-	     
-	     
 	     if(loginDTO == null) {
 	    	 response.sendRedirect("login.jsp");
 	     }else {

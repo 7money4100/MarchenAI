@@ -22,6 +22,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class BlogUpdateService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 request.setCharacterEncoding("euc-kr");
+		 
 		 String fullpath= "";
 		 String title="";
 		 String content="";
@@ -54,7 +55,7 @@ public class BlogUpdateService extends HttpServlet {
 		  e.printStackTrace();
 		 }
 		 
-		 
+		 System.out.println(realFolder);
 		 realFolder = "img";
 		 System.out.println("절대경로>>"+realFolder);
 		 System.out.println("절대경로>>"+filename1);

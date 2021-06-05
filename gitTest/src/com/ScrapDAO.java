@@ -10,139 +10,174 @@ import java.util.ArrayList;
 
 public class ScrapDAO {
 
-	Connection conn = null;
-	PreparedStatement psmt = null;
-	int cnt = 0;
-	ResultSet rs = null;
-	ScrapDTO scrapDto = null;
-	ArrayList<ScrapDTO> scrapList = null;
+   Connection conn = null;
+   PreparedStatement psmt = null;
+   int cnt = 0;
+   ResultSet rs = null;
+   ScrapDTO scrapDto = null;
+   ArrayList<ScrapDTO> scrapList = null;
 
-	public void conn() {
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+   public void conn() {
+      try {
+         Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String db_id = "hr";
-			String db_pw = "hr";
+         String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+         String db_id = "hr";
+         String db_pw = "hr";
 
-			conn = DriverManager.getConnection(db_url, db_id, db_pw);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+         conn = DriverManager.getConnection(db_url, db_id, db_pw);
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
 
-	public void close() {
-		try {
-			if (rs != null) {
-				rs.close();
-			}
-			if (psmt != null) {
-				psmt.close();
-			}
-			if (conn != null) {
-				conn.close();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+   public void close() {
+      try {
+         if (rs != null) {
+            rs.close();
+         }
+         if (psmt != null) {
+            psmt.close();
+         }
+         if (conn != null) {
+            conn.close();
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      }
+   }
 
-	// 스크랩 추가 버튼 눌렀을 때
-	public int scrapUpdate(ScrapDTO dto) {
+   // 스크랩 추가 버튼 눌렀을 때
+   public int scrapUpdate(ScrapDTO dto) {
 
-		conn();
+      conn();
 
-		try {
-			String sql = "insert into scrap values(? , ? , ?)";
-			psmt = conn.prepareStatement(sql);
+      try {
+         String sql = "insert into scrap values(? , ? , ?)";
+         psmt = conn.prepareStatement(sql);
 
-			psmt.setString(1, dto.getScrap_filename());
-			psmt.setString(2, dto.getMember_id());
-			psmt.setString(3, dto.getScrap_price());
+         psmt.setString(1, dto.getScrap_filename());
+         psmt.setString(2, dto.getMember_id());
+         psmt.setString(3, dto.getScrap_price());
 
-			cnt = psmt.executeUpdate();
+         cnt = psmt.executeUpdate();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		return cnt;
-		
-	}
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
+      
+      return cnt;
+      
+   }
+   
+   // 스크랩 한 이미지 조회해서 띄워줄 때
+   public ArrayList<ScrapDTO> scrapSelect(String id) {
 
-	// 스크랩 한 이미지 조회해서 띄워줄 때
-	public ArrayList<ScrapDTO> scrapSelect(String id) {
+      scrapList = new ArrayList<ScrapDTO>();
 
-		scrapList = new ArrayList<ScrapDTO>();
+      conn();
 
-		conn();
+      try {
+         String sql = "select * from scrap where member_id = ?";
+         psmt = conn.prepareStatement(sql);
 
-		try {
-			String sql = "select * from scrap where member_id = ?";
-			psmt = conn.prepareStatement(sql);
+         psmt.setString(1, id);
+         rs = psmt.executeQuery();
 
-			psmt.setString(1, id);
-			rs = psmt.executeQuery();
+         while (rs.next()) {
+            String scrap_filename = rs.getString(1);
+            String member_id = rs.getString(2);
+            String scrap_price = rs.getString(3);
 
-			while (rs.next()) {
-				String scrap_filename = rs.getString(1);
-				String member_id = rs.getString(2);
-				String scrap_price = rs.getString(3);
+            scrapDto = new ScrapDTO(scrap_filename, member_id, scrap_price);
+            scrapList.add(scrapDto);
+         }
 
-				scrapDto = new ScrapDTO(scrap_filename, member_id, scrap_price);
-				scrapList.add(scrapDto);
-			}
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
+      return scrapList;
+   }
+   
+   
+   // 스크랩하려고하는 이미지가 이미 스크랩에 있는지 확인할 때
+   public ArrayList<ScrapDTO> scrapCheck(ScrapDTO dto) {
 
-		return scrapList;
-	}
+      scrapList = new ArrayList<ScrapDTO>();
 
-	// 스크랩 전체 삭제
-	public int scrapDeleteAll(String id) {
+      conn();
 
-		conn();
+      try {
+         String sql = "select * from scrap where member_id = ? and scrap_filename =?";
+         psmt = conn.prepareStatement(sql);
 
-		try {
-			String sql = "delete from scrap where member_id = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			cnt = psmt.executeUpdate();
+         psmt.setString(1, dto.getMember_id());
+         psmt.setString(2, dto.getScrap_filename());
+         rs = psmt.executeQuery();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
+         while (rs.next()) {
+            String scrap_filename = rs.getString(1);
+            String member_id = rs.getString(2);
+            String scrap_price = rs.getString(3);
 
-		return cnt;
+            scrapDto = new ScrapDTO(scrap_filename, member_id, scrap_price);
+            scrapList.add(scrapDto);
+         }
 
-	}
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
 
-	// 스크랩 단일 삭제
-	public int scrapDeleteOne(String filename) {
+      return scrapList;
+   }
 
-		conn();
+   // 스크랩 단일 삭제
+   public int scrapDeleteOne(ScrapDTO dto) {
 
-		try {
-			String sql = "delete from scrap where scrap_filename = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, filename);
-			cnt = psmt.executeUpdate();
+      conn();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		return cnt;
-		
-	}
+      try {
+         String sql = "delete from scrap where member_id = ? and scrap_filename =?";
+         psmt = conn.prepareStatement(sql);
+         psmt.setString(1, dto.getMember_id());
+         psmt.setString(2, dto.getScrap_filename());
+         cnt = psmt.executeUpdate();
+
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
+      
+      return cnt;
+      
+   }
+   
+   // 스크랩 전체 삭제
+   public int scrapDeleteAll(String id) {
+
+      conn();
+
+      try {
+         String sql = "delete from scrap where member_id = ?";
+         psmt = conn.prepareStatement(sql);
+         psmt.setString(1, id);
+         cnt = psmt.executeUpdate();
+
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
+
+      return cnt;
+
+   }
 }
