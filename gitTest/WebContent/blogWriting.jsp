@@ -60,14 +60,14 @@
                   <div class="main-menu d-none d-lg-block">
                      <nav>
                         <ul id="navigation">
-                     <li><a href="index.jsp" style="font-size:20px">홈</a></li>
-                     <li><a href="shop.jsp" style="font-size:20px">캐릭터</a></li>
-                     <li><a href="blog.jsp" style="font-size:20px">게시판</a></li>
-                     <%if(info != null){ %>
-                        <li><a href="LogoutService" style="font-size:20px">로그아웃</a></li>
-                     <%}else{ %>
-                        <li><a href="login.jsp" style="font-size:20px">로그인</a></li>
-                     <%} %>
+							<li><a href="index.jsp" style="font-size:20px">홈</a></li>
+							<li><a href="shop.jsp" style="font-size:20px">캐릭터</a></li>
+							<li><a href="blog.jsp" style="font-size:20px">게시판</a></li>
+							<%if(info != null){ %>
+								<li><a href="LogoutService" style="font-size:20px">로그아웃</a></li>
+							<%}else{ %>
+								<li><a href="login.jsp" style="font-size:20px">로그인</a></li>
+							<%} %>
                         </ul>
                      </nav>
                   </div>
