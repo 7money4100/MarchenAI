@@ -190,6 +190,7 @@
                                                     </span>
                                                     <input name="like" value="<%=bAllList.get(i).getRecommend()%>" style="display: none">
                                                     <input name="file_name" value="<%=bAllList.get(i).getFilename()%>" style="display: none">
+                                                    <input name="check" value="check" style="display: none">
                                                  </div>
                                            </form>
                                            <%}else{ %>
